@@ -1,6 +1,6 @@
 .App {
   font-family: "Varela Round", sans-serif;
-  color: white;
+  color: #414048;
   background-color: #9d4edd;
   min-height: 100vh;
 }
@@ -23,11 +23,13 @@ a:hover {
 
 a:hover i {
   color: #9d4edd;
-  transition: color ease-in-out 0.3s;
+  fill: #9d4edd;
+  transition: color, fill ease-in-out 0.3s;
 }
 
-span {
+span, svg {
   color: white;
+  fill: white;
 }
 
 span:hover {
@@ -36,7 +38,7 @@ span:hover {
   color: #9d4edd;
 }
 
-a:hover span {
+a:hover span, button:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;
@@ -50,7 +52,7 @@ i {
   vertical-align: middle;
 }
 
-i:hover {
+i:hover, button:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;

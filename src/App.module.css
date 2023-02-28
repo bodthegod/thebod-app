@@ -1,0 +1,54 @@
+.App {
+  font-family: "Varela Round", sans-serif;
+  color: white;
+  background-color: #9d4edd;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  transition: color ease-in-out 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: #9d4edd;
+  transition: color ease-in-out 0.3s;
+}
+
+span {
+  color: white;
+}
+
+span:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #9d4edd;
+}
+
+a:hover span {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #9d4edd;
+}
+
+
+i {
+  color: white;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #9d4edd;
+}

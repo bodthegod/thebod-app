@@ -1,0 +1,37 @@
+.Header {
+  font-size: 30px;
+  padding: 5%;
+  line-height: 19px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.Row {
+  height: 25vh;
+}
+
+.Input {
+  background: #fff;
+  border: 1px solid lightslategray;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: darkslategray;
+  text-align: center;
+  padding: 15px;
+}
+
+a {
+    color: darkslategray;
+}
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.Col {
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+}

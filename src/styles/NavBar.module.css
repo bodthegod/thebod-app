@@ -1,11 +1,15 @@
 .NavBar {
-  background-color: #242329
+  background-color: #242329;
+}
+
+.ToggleButton {
+  background-color: white;
 }
 
 .NavLink {
-    padding: 5px;
-  }
-  
-  .Active i {
-    color: #7f3df6;
-  }
+  padding: 5px;
+}
+
+.Active i {
+  color: #7f3df6;
+}

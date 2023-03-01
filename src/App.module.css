@@ -5,7 +5,14 @@
   min-height: 100vh;
 }
 .Main {
-    padding-top: 81px;
+  padding-top: 81px;
+}
+
+.Content {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #dadadf;
 }
 
 * {
@@ -27,9 +34,8 @@ a:hover i {
   transition: color, fill ease-in-out 0.3s;
 }
 
-span, svg {
+span {
   color: white;
-  fill: white;
 }
 
 span:hover {
@@ -38,12 +44,12 @@ span:hover {
   color: #9d4edd;
 }
 
-a:hover span, button:hover {
+a:hover span,
+button:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;
 }
-
 
 i {
   color: white;
@@ -52,7 +58,8 @@ i {
   vertical-align: middle;
 }
 
-i:hover, button:hover {
+i:hover,
+button:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;

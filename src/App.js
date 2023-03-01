@@ -5,14 +5,20 @@ import { Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
-
+import { CSSTransition } from "react-transition-group";
 function App() {
   return (
-    <div className={styles.App}>
+    <div className={`${styles.App} psychic`}>
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route exact path="/" render={() => <HomePage />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+                <HomePage />
+            )}
+          />
           <Route exact path="/login" render={() => <h1>Log In</h1>} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route render={() => <p>Page Not Found!</p>} />

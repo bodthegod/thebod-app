@@ -1,0 +1,43 @@
+/* Page transitions */
+
+.fade-appear-done {
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(1, 0, 0, 1),
+    opacity 0.6s cubic-bezier(1, 0, 0, 1);
+}
+
+.fade-appear {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(1, 0, 0, 1),
+    opacity 0.6s cubic-bezier(1, 0, 0, 1);
+}
+
+.psychic {
+  -webkit-animation: hue-rotate 5s ease-in;
+  animation: hue-rotate 5s ease-in;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b9f2ff;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+@keyframes hue-rotate {
+  0% {
+    background: #9d4edd;
+  }
+  25% {
+    background: #9d4edd;
+  }
+  50% {
+    background: #7f3df6;
+  }
+  75% {
+    background: #9d4edd;
+  }
+
+  100% {
+    background: #9d4edd;
+  }
+}

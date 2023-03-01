@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "../../styles/LogInSignUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 import { Col, Row, Container, Form, Button } from "react-bootstrap";
 
@@ -40,7 +41,7 @@ const SignUpForm = () => {
                 name="password2"
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className={btnStyles.Button} type="submit">
               Submit
             </Button>
           </Form>

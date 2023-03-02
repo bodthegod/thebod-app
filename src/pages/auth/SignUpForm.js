@@ -7,6 +7,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Col, Row, Container, Form, Button, Alert } from "react-bootstrap";
 import axios from "axios";
 import { CSSTransition } from "react-transition-group";
+import { TbUserPlus } from "react-icons/tb";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -46,7 +47,9 @@ const SignUpForm = () => {
       <Row className={styles.Row}>
         <Col className={styles.Col}>
           <Container>
-            <h1 className={styles.Header}>Sign Up</h1>
+            <h1 className={styles.Header}>
+              Sign Up <TbUserPlus />
+            </h1>
 
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="username">
@@ -98,8 +101,8 @@ const SignUpForm = () => {
                   {message}
                 </Alert>
               ))}
-              <Button className={btnStyles.Button} type="submit">
-                Submit
+              <Button className={`${btnStyles.Button} ${styles.LogInSignUpButton}`} type="submit">
+                Create account!
               </Button>
               {errors.non_field_errors?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>

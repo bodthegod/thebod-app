@@ -8,7 +8,9 @@ import { Col, Row, Container, Form, Button, Alert } from "react-bootstrap";
 import { CSSTransition } from "react-transition-group";
 import { RiLockPasswordLine } from "react-icons/ri";
 import axios from "axios";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 const LogInForm = () => {
+  const setCurrentUser = useSetCurrentUser();
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",
@@ -17,8 +19,6 @@ const LogInForm = () => {
 
   const [errors, setErrors] = useState({});
 
-  const history = useHistory();
-
   const handleChange = (e) => {
     setLogInData({
       ...logInData,
@@ -26,10 +26,12 @@ const LogInForm = () => {
     });
   };
 
+  const history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/dj-rest-auth/login/", logInData);
+      const { data } = await axios.post("/dj-rest-auth/login/", logInData);
+      setCurrentUser(data.user);
       history.push("/");
     } catch (err) {
       setErrors(err.response?.data);

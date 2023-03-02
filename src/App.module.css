@@ -43,6 +43,7 @@ span:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;
+  font-weight: 600;
 }
 
 a:hover span,
@@ -64,4 +65,5 @@ button:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;
+  font-weight: 600;
 }

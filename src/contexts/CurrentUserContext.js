@@ -26,9 +26,8 @@ export const CurrentUserProvider = ({ children }) => {
     handleMount();
   }, []);
 
-  // useMemo is used for access tokens before they are mounted
-  // if token is 401 error redirect
   useMemo(() => {
+    //always refreshes access token before request
     axiosReq.interceptors.request.use(
       async (config) => {
         try {
@@ -48,7 +47,8 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-
+    
+    // refreshes access_token if 401 error
     axiosRes.interceptors.response.use(
       (response) => response,
       async (err) => {
@@ -68,7 +68,7 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-  });
+  }, [history]);
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <SetCurrentUserContext.Provider value={setCurrentUser}>

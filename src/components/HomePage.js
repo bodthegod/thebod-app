@@ -4,17 +4,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import NavLink from "react-router-dom/NavLink";
 import { Jumbotron } from "react-bootstrap";
-import styles from "../styles/HomePage.module.css";
 import btnStyles from "../styles/Button.module.css";
-import "../App.css"
+import "../App.css";
 import { CSSTransition } from "react-transition-group";
 const HomePage = () => {
   return (
-    <CSSTransition 
+    <CSSTransition
       in={true}
-      appear={true} 
-      timeout={{ enter: 300}} 
-      classNames="fade">
+      appear={true}
+      timeout={{ enter: 300 }}
+      classNames="fade"
+    >
       <div className="mt-3">
         <Row className="text-center">
           <Col sm={12}>

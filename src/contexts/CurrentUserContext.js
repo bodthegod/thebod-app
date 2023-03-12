@@ -27,7 +27,7 @@ export const CurrentUserProvider = ({ children }) => {
   }, []);
 
   useMemo(() => {
-    //always refreshes access token before request
+    // always refreshes access token before request
     axiosReq.interceptors.request.use(
       async (config) => {
         try {
@@ -35,7 +35,7 @@ export const CurrentUserProvider = ({ children }) => {
         } catch (err) {
           setCurrentUser((prevCurrentUser) => {
             if (prevCurrentUser) {
-              history.push("/signin");
+              history.push("/login");
             }
             return null;
           });

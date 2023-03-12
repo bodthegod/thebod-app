@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -20,7 +21,17 @@ const NavBar = () => {
       </NavLink>
   )
 
-  const authIcons = <>{currentUser?.username}</>
+  const authIcons = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
+      </NavLink>
+
+    </>
+  );
   const unAuthIcons = (
     <>
       <NavLink

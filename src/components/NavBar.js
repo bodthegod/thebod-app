@@ -9,6 +9,17 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 const NavBar = () => {
   const currentUser = useCurrentUser();
 
+  const createPostIcon = (
+    <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/posts/create"
+      >
+        <i class="far fa-plus-square"></i>
+        <span>Create Post</span>
+      </NavLink>
+  )
+
   const authIcons = <>{currentUser?.username}</>
   const unAuthIcons = (
     <>
@@ -40,6 +51,7 @@ const NavBar = () => {
             </span>
           </Navbar.Brand>
         </NavLink>
+        {currentUser && createPostIcon}
         <Navbar.Toggle
           className={styles.ToggleButton}
           aria-controls="basic-navbar-nav"

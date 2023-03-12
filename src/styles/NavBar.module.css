@@ -13,3 +13,9 @@
 .Active i {
   color: #7f3df6;
 }
+.DropdownMenu:active {
+  background-color: #7f3df6 !important;
+}
+a::after {
+  display: none !important;
+}

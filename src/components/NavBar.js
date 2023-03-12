@@ -1,37 +1,70 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
+import { NavDropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
+import { TbMessagePlus } from "react-icons/tb";
+import axios from "axios";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  const handleLogOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {}
+  };
 
   const createPostIcon = (
     <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/posts/create"
-      >
-        <i class="far fa-plus-square"></i>
-        <span>Create Post</span>
-      </NavLink>
-  )
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/create"
+    >
+      <i>
+        <TbMessagePlus />
+      </i>
+      <span>Create Post</span>
+    </NavLink>
+  );
 
+  // authIcons variable to display icons if a user is
+  // authenticated / logged in
   const authIcons = (
     <>
-      <NavLink
-        className={styles.NavLink}
-        to={`/profiles/${currentUser?.profile_id}`}
+      <NavDropdown
+        title={
+          <div>
+            <Avatar src={currentUser?.profile_image} height={40} />
+            <span>{currentUser?.username}</span>
+          </div>
+        }
+        id="nav-dropdown"
       >
-        <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
-      </NavLink>
-
+        <NavDropdown.Item className={styles.DropdownMenu}>
+          <NavLink to={`/profiles/${currentUser?.profile_id}`}>
+            My Profile
+          </NavLink>
+        </NavDropdown.Item>
+        <NavDropdown.Item className={styles.DropdownMenu}>
+          <NavLink to="/" onClick={handleLogOut}>
+            Log out
+          </NavLink>
+        </NavDropdown.Item>
+      </NavDropdown>
     </>
   );
+  // unAuthIcons variable to display icons if a user is
+  // unauthenticated / logged out
   const unAuthIcons = (
     <>
       <NavLink

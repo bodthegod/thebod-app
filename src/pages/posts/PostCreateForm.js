@@ -13,6 +13,22 @@ import Asset from "../../components/Asset";
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
 
+  const [postData, setPostData] = useState({
+    title: "",
+    tags: "",
+    content: "",
+    image: "",
+  });
+
+  const { title, tags, content, image } = postData;
+
+  const handleChange = (e) => {
+    setPostData({
+      ...postData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -21,12 +37,19 @@ function PostCreateForm() {
           type="text"
           name="title"
           className={`${formStyles.Form} ${inputStyles.Input}`}
+          value={title}
+          onChange={handleChange}
         />
       </Form.Group>
 
       <Form.Group>
         <Form.Label>Choose your tag!</Form.Label>
-        <Form.Control as="select" className={`${formStyles.Form}`}>
+        <Form.Control
+          as="select"
+          className={`${formStyles.Form}`}
+          value={tags}
+          onChange={handleChange}
+        >
           <option value="bodybuilding">BodyBuilding</option>
           <option value="running">Running</option>
           <option value="sports">Sports</option>
@@ -45,6 +68,8 @@ function PostCreateForm() {
           rows={5}
           name="content"
           className={`${formStyles.Form} ${inputStyles.Input}`}
+          value={content}
+          onChange={handleChange}
         />
       </Form.Group>
 

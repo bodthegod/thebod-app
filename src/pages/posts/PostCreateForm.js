@@ -1,5 +1,13 @@
 import React, { useRef, useState } from "react";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import {
+  Alert,
+  Button,
+  Col,
+  Container,
+  Form,
+  Image,
+  Row,
+} from "react-bootstrap";
 import Upload from "../../assets/upload-img.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
@@ -76,6 +84,11 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group>
         <Form.Label>Choose your tag!</Form.Label>
@@ -95,6 +108,11 @@ function PostCreateForm() {
           <option value="crossfit">CrossFit</option>
         </Form.Control>
       </Form.Group>
+      {errors.tags?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group>
         <Form.Label>Describe your post!</Form.Label>
@@ -107,13 +125,20 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button className={btnStyles.Button} type="submit">
         Create Post?
       </Button>
 
-      <Button className={`${btnStyles.CancelButton} mx-3`} onClick={() => {}}>
+      <Button
+        className={`${btnStyles.CancelButton} mx-3`}
         onClick={() => history.goBack()}
+      >
         Cancel Post
       </Button>
     </div>
@@ -172,6 +197,11 @@ function PostCreateForm() {
                   hidden
                 />
               </Form.Group>
+              {errors.image?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
 
               <div className="d-md-none">{textFields}</div>
             </Container>

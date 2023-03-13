@@ -32,3 +32,36 @@
   box-shadow: none Imp !important;
 }
 
+.CancelButton {
+  align-self: center;
+  min-width: 100px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  padding: 7.5px;
+  margin-right: 2px;
+  margin-left: 2px;
+  background-color: #a32f1f;
+  border-color: #6d2319;
+  border-width: 1px;
+  color: white;
+}
+.CancelButton:hover {
+  background-color: #6d2319;
+  border-color: #a32f1f;
+  font-weight: 600;
+  color: #ffffff;
+}
+.CancelButton:active:focus {
+  border-color: #6d2319;
+  transition: color, fill ease-in-out 0.3s;
+}
+.CancelButton:not(:disabled):not(.disabled):active {
+  background-color: #6d2319;
+  transform: translateY(1px);
+  border-color: #6d2319;
+}
+.CancelButton:focus {
+  background-color: #6d2319;
+  border-color: #6d2319;
+  box-shadow: none Imp !important;
+}

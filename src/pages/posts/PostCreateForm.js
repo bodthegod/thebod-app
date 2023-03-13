@@ -109,11 +109,11 @@ function PostCreateForm() {
       </Form.Group>
 
       <Button className={btnStyles.Button} type="submit">
-        Create
+        Create Post?
       </Button>
 
-      <Button className={`${btnStyles.Button} mx-3`} onClick={() => {}}>
-        Cancel
+      <Button className={`${btnStyles.CancelButton} mx-3`} onClick={() => {}}>
+        Cancel Post
       </Button>
     </div>
   );

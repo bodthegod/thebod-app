@@ -1,0 +1,7 @@
+.Asset {
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+  }

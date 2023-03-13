@@ -113,6 +113,7 @@ function PostCreateForm() {
       </Button>
 
       <Button className={`${btnStyles.CancelButton} mx-3`} onClick={() => {}}>
+        onClick={() => history.goBack()}
         Cancel Post
       </Button>
     </div>

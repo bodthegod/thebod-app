@@ -12,10 +12,13 @@ import {
 import Avatar from "./Avatar";
 import { TbMessagePlus } from "react-icons/tb";
 import axios from "axios";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleLogOut = async () => {
     try {
@@ -86,7 +89,12 @@ const NavBar = () => {
     </>
   );
   return (
-    <Navbar className={styles.NavBar} expand="md" fixed="top">
+    <Navbar
+      expanded={expanded}
+      className={styles.NavBar}
+      expand="md"
+      fixed="top"
+    >
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
@@ -97,6 +105,8 @@ const NavBar = () => {
         </NavLink>
         {currentUser && createPostIcon}
         <Navbar.Toggle
+          onClick={() => setExpanded(!expanded)}
+          ref={ref}
           className={styles.ToggleButton}
           aria-controls="basic-navbar-nav"
         />

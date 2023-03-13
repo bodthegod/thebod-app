@@ -9,10 +9,13 @@
   background-color: #9d4edd;
   border-color: #9247cf;
   border-width: 1px;
+  color: white;
 }
 .Button:hover {
   background-color: #9247cf;
   border-color: #9d4edd;
+  font-weight: 600;
+  color: #ffffff;
 }
 .Button:active:focus {
   border-color: #9247cf;
@@ -28,3 +31,4 @@
   border-color: #9247cf;
   box-shadow: none Imp !important;
 }
+

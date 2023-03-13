@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import Upload from "../../assets/upload-img.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
@@ -9,6 +9,8 @@ import formStyles from "../../styles/PostCreateEditForm.module.css";
 import assetStyles from "../../styles/Asset.module.css";
 import { CSSTransition } from "react-transition-group";
 import Asset from "../../components/Asset";
+import { useHistory } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
@@ -21,6 +23,9 @@ function PostCreateForm() {
   });
 
   const { title, tags, content, image } = postData;
+
+  const imageInput = useRef(null);
+  const history = useHistory();
 
   const handleChange = (e) => {
     setPostData({
@@ -36,6 +41,26 @@ function PostCreateForm() {
         ...postData,
         image: URL.createObjectURL(e.target.files[0]),
       });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("tags", tags);
+    formData.append("content", content);
+    formData.append("image", imageInput.current.files[0]);
+
+    try {
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
   };
 
@@ -100,7 +125,7 @@ function PostCreateForm() {
       timeout={{ enter: 300 }}
       classNames="fade"
     >
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Row>
           <Col md={7} lg={8} className="d-none d-md-block p-0 p-md-2">
             <Container className={appStyles.Content}>{textFields}</Container>
@@ -111,36 +136,38 @@ function PostCreateForm() {
             >
               <Form.Group className="text-center">
                 {image ? (
-                    <>
+                  <>
                     <figure>
-                        <Image className={appStyles.Image} src={image} rounded/>
+                      <Image className={appStyles.Image} src={image} rounded />
                     </figure>
                     <div>
-                    <Form.Label
-                    className={`${btnStyles.Button} btn`}
-                    type="submit"
-                    htmlFor="image-upload">
+                      <Form.Label
+                        className={`${btnStyles.Button} btn`}
+                        type="submit"
+                        htmlFor="image-upload"
+                      >
                         Change Image
-                    </Form.Label>
+                      </Form.Label>
                     </div>
-                    </>
+                  </>
                 ) : (
-                    <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src={Upload}
-                    alt="Upload"
-                    message="Upload your photo here!"
-                    className={assetStyles.Asset}
-                  />
-                </Form.Label>
+                  <Form.Label
+                    className="d-flex justify-content-center"
+                    htmlFor="image-upload"
+                  >
+                    <Asset
+                      src={Upload}
+                      alt="Upload"
+                      message="Upload your photo here!"
+                      className={assetStyles.Asset}
+                    />
+                  </Form.Label>
                 )}
                 <Form.File
                   id="image-upload"
                   accept="image/*"
                   onChange={handleChangeImage}
+                  ref={imageInput}
                   hidden
                 />
               </Form.Group>

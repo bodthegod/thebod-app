@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import Upload from "../../assets/upload-img.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
@@ -8,8 +8,11 @@ import buttonStyles from "../../styles/Button.module.css";
 import formStyles from "../../styles/PostCreateEditForm.module.css";
 import assetStyles from "../../styles/Asset.module.css";
 import { CSSTransition } from "react-transition-group";
+import Asset from "../../components/Asset";
 
 function PostCreateForm() {
+  const [errors, setErrors] = useState({});
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -76,7 +79,7 @@ function PostCreateForm() {
                   className="d-flex justify-content-center"
                   htmlFor="image-upload"
                 >
-                  <img
+                  <Asset
                     src={Upload}
                     alt="Upload"
                     message="Upload your photo here!"

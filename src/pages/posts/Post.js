@@ -6,6 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import { axiosRes } from "../../api/axiosDefaults";
+import { CSSTransition } from "react-transition-group";
 
 const Post = (props) => {
   const {
@@ -61,6 +62,12 @@ const Post = (props) => {
   };
 
   return (
+    <CSSTransition
+      in={true}
+      appear={true}
+      timeout={{ enter: 300 }}
+      classNames="fade"
+    >
     <Card className={styles.Post}>
       <Card.Body>
         <Media className={styles.Container}>
@@ -135,6 +142,7 @@ const Post = (props) => {
         </div>
       </Card.Body>
     </Card>
+    </CSSTransition>
   );
 };
 

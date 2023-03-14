@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 import Toolbar from "../../components/Toolbar";
+import { CSSTransition } from "react-transition-group";
 
 function PostPage() {
   const { id } = useParams();
@@ -30,6 +31,12 @@ function PostPage() {
   }, [id]);
 
   return (
+    <CSSTransition
+      in={true}
+      appear={true}
+      timeout={{ enter: 300 }}
+      classNames="fade"
+    >
     <Container>
       <Row>
         <Col className="py-2 p-0 p-lg-2" lg={3}>
@@ -54,6 +61,7 @@ function PostPage() {
         </Col>
       </Row>
     </Container>
+    </CSSTransition>
   );
 }
 

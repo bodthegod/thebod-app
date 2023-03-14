@@ -33,10 +33,6 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/posts/create"
     >
-      <i>
-        <TbMessagePlus />
-      </i>
-      <span>Create Post</span>
     </NavLink>
   );
 

@@ -30,14 +30,14 @@ const Post = (props) => {
   return (
     <Card className={styles.Post}>
       <Card.Body>
-        <Media className="align-items-center justify-content-between">
+        <Media className={styles.Container}>
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="d-flex align-items-center">
-            <span className={styles.UpdatedAt}>{updated_at}</span>
-            {is_owner && postPage && "..."}
+          <div className={styles.AvatarPos}>
+            <span className={`${styles.UpdatedAt} ${styles.GentleShake}`}>{updated_at}</span>
+            <div className={styles.EditBtn}>{is_owner && postPage && "edit post"}</div>
           </div>
         </Media>
       </Card.Body>

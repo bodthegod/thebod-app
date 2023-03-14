@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import Post from "./Post";
 
 function PostPage() {
   const { id } = useParams();
@@ -41,7 +42,7 @@ function PostPage() {
 
         <Col className="py-2 p-0 p-lg-2" lg={6}>
           <Container className={`${appStyles.Content} mb-2`}>
-            <p>Placeholder Post</p>
+            <Post {...post.results[0]} setPosts={setPost} postPage/>
           </Container>
           <Container className={`${appStyles.Content} mt-3 mb-3`}>
             Comments
@@ -49,7 +50,7 @@ function PostPage() {
         </Col>
         <Col className="py-2 p-0 p-lg-2" lg={3}>
           <Container className={`${appStyles.Content} mb-3`}>
-            Like, feed, add
+            Like, feed
           </Container>
         </Col>
       </Row>

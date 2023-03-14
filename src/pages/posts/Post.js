@@ -7,8 +7,6 @@ import styles from "../../styles/Post.module.css";
 import appStyles from "../../App.module.css";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 
-
-
 const Post = (props) => {
   const {
     id,
@@ -52,7 +50,7 @@ const Post = (props) => {
         {tags && (
           <Card.Text>
             Type:
-            <Badge variant="secondary" className={styles.BadgePost}>
+            <Badge variant="secondary" className={styles.PostBadge}>
               {" "}
               {tags}
             </Badge>
@@ -64,12 +62,12 @@ const Post = (props) => {
               placement="top"
               overlay={<Tooltip>You can't like this!</Tooltip>}
             >
-              <i>
+              <i className={styles.Icon}>
                 <RiHeartsLine />
               </i>
             </OverlayTrigger>
           ) : like_id ? (
-            <span className={styles.Icon} onClick={() => {}}>
+            <span onClick={() => {}}>
               <i className={styles.Icon}>
                 <RiHeartsFill />
               </i>
@@ -92,7 +90,9 @@ const Post = (props) => {
           )}
           {likes_total}
           <Link to={`/posts/${id}`}>
-            <i className={styles.Icon}><RiChat3Line/></i>
+            <i className={styles.Icon}>
+              <RiChat3Line />
+            </i>
           </Link>
           {comments_total}
         </div>

@@ -4,21 +4,24 @@
   margin-bottom: 16px;
   text-align: center;
 }
+.PostBadge {
+  padding: 5px;
+  margin: 0 5px;
+  font-size: inherit;
+}
 
 .UpdatedAt {
   color: #212529;
 }
 .Icon {
-    color: rgb(0, 0, 0);
-    font-size: 1.6rem;
-    padding: 7px;
-    vertical-align: middle;
+  color: rgb(0, 0, 0);
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
 }
 .Icon:hover {
-    cursor: pointer;
-    transition: color ease-in-out 0.3s;
-    color: #9d4edd;
-    font-weight: 600;
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #9d4edd;
+  font-weight: 600;
 }
-  
- 

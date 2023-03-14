@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
-import appStyles from "../../App.module.css";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -41,7 +40,23 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err)
+      console.log(err);
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_total: post.likes_total - 1, like_id: null }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -89,7 +104,7 @@ const Post = (props) => {
               </i>
             </OverlayTrigger>
           ) : like_id ? (
-            <span onClick={() => {}}>
+            <span onClick={handleUnlike}>
               <i className={styles.LikedIcon}>
                 <RiHeartsFill />
               </i>
@@ -112,7 +127,7 @@ const Post = (props) => {
           )}
           {likes_total}
           <Link to={`/posts/${id}`}>
-            <i className={styles.Icon}>
+            <i className={`${styles.Icon}`}>
               <RiChat3Line />
             </i>
           </Link>

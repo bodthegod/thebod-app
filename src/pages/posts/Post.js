@@ -6,6 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
 import appStyles from "../../App.module.css";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Post = (props) => {
   const {
@@ -22,10 +23,27 @@ const Post = (props) => {
     image,
     updated_at,
     postPage,
+    setPosts,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_total: post.likes_total + 1, like_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err)
+    }
+  };
 
   return (
     <Card className={styles.Post}>
@@ -36,8 +54,12 @@ const Post = (props) => {
             {owner}
           </Link>
           <div className={styles.AvatarPos}>
-            <span className={`${styles.UpdatedAt} ${styles.GentleShake}`}>{updated_at}</span>
-            <div className={styles.EditBtn}>{is_owner && postPage && "edit post"}</div>
+            <span className={`${styles.UpdatedAt} ${styles.GentleShake}`}>
+              {updated_at}
+            </span>
+            <div className={styles.EditBtn}>
+              {is_owner && postPage && "edit post"}
+            </div>
           </div>
         </Media>
       </Card.Body>
@@ -68,12 +90,12 @@ const Post = (props) => {
             </OverlayTrigger>
           ) : like_id ? (
             <span onClick={() => {}}>
-              <i className={styles.Icon}>
+              <i className={styles.LikedIcon}>
                 <RiHeartsFill />
               </i>
             </span>
           ) : currentUser ? (
-            <span onClick={() => {}}>
+            <span onClick={handleLike}>
               <i className={styles.Icon}>
                 <RiHeartsLine />
               </i>

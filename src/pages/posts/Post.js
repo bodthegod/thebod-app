@@ -7,6 +7,7 @@ import styles from "../../styles/Post.module.css";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import { axiosRes } from "../../api/axiosDefaults";
 import { CSSTransition } from "react-transition-group";
+import { DropdownMenu } from "../../components/DropdownMenu";
 
 const Post = (props) => {
   const {
@@ -80,7 +81,7 @@ const Post = (props) => {
               {updated_at}
             </span>
             <div className={styles.EditBtn}>
-              {is_owner && postPage && "edit post"}
+              {is_owner && postPage && <DropdownMenu />}
             </div>
           </div>
         </Media>
@@ -104,7 +105,7 @@ const Post = (props) => {
           {is_owner ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>You can't like this!</Tooltip>}
+              overlay={<Tooltip>You can't heart this!</Tooltip>}
             >
               <i className={styles.Icon}>
                 <RiHeartsLine />
@@ -125,7 +126,7 @@ const Post = (props) => {
           ) : (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>Log in to like this post!</Tooltip>}
+              overlay={<Tooltip>Log in to heart this post!</Tooltip>}
             >
               <i className={styles.Icon}>
                 <RiHeartsLine />

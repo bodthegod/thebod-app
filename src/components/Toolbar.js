@@ -22,7 +22,7 @@ const Toolbar = () => {
           <i className={`${styles.Icon} m-3`}>
             <RiHeartsFill />
           </i>
-          My Liked Posts
+          My Hearted Posts
         </p>
       </Link>
       <Link to="/posts/create">

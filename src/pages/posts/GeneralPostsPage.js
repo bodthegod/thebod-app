@@ -28,7 +28,12 @@ function GeneralPostsPage({ message, filter = "" }) {
     };
 
     setHasLoaded(false);
-    fetchPosts();
+    const fetchTimer = setTimeout(() => {
+      fetchPosts();
+    }, 800);
+    return () => {
+      clearTimeout(fetchTimer);
+    };
   }, [filter, query, pathname]);
 
   return (
@@ -49,7 +54,7 @@ function GeneralPostsPage({ message, filter = "" }) {
             </Container>
           </Col>
           <Col className="py-2 p-0 p-lg-2" lg={6}>
-              <CgSearch className={styles.SearchIcon}/>
+            <CgSearch className={styles.SearchIcon} />
             <Form
               className={styles.SearchBar}
               onSubmit={(e) => e.preventDefault()}

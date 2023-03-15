@@ -1,32 +1,35 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
+import styles from "../../styles/GeneralPostsPage.module.css";
 import Asset from "../../components/Asset";
 import Toolbar from "../../components/Toolbar.js";
 import Post from "./Post";
-import NoResultsImage from "../../assets/no-result-found.jpg"
+import NoResultsImage from "../../assets/no-result-found.jpg";
+import { CgSearch } from "react-icons/cg";
 
 function GeneralPostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
+  const [query, setQuery] = useState("");
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}`);
+        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);
-      } catch (err) {
-      }
+      } catch (err) {}
     };
 
     setHasLoaded(false);
     fetchPosts();
-  }, [filter, pathname]);
+  }, [filter, query, pathname]);
 
   return (
     <CSSTransition
@@ -46,6 +49,19 @@ function GeneralPostsPage({ message, filter = "" }) {
             </Container>
           </Col>
           <Col className="py-2 p-0 p-lg-2" lg={6}>
+              <CgSearch className={styles.SearchIcon}/>
+            <Form
+              className={styles.SearchBar}
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <Form.Control
+                type="text"
+                className="mr-sm-2"
+                placeholder="Search..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </Form>
             {hasLoaded ? (
               <>
                 {posts.results.length ? (

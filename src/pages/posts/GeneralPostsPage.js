@@ -10,6 +10,8 @@ import Toolbar from "../../components/Toolbar.js";
 import Post from "./Post";
 import NoResultsImage from "../../assets/no-result-found.jpg";
 import { CgSearch } from "react-icons/cg";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function GeneralPostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -70,9 +72,15 @@ function GeneralPostsPage({ message, filter = "" }) {
             {hasLoaded ? (
               <>
                 {posts.results.length ? (
-                  posts.results.map((post) => (
-                    <Post key={post.id} {...post} setPosts={setPosts} />
-                  ))
+                  <InfiniteScroll
+                    children={posts.results.map((post) => (
+                      <Post key={post.id} {...post} setPosts={setPosts} />
+                    ))}
+                    dataLength={posts.results.length}
+                    loader={<Asset spinner />}
+                    hasMore={!!posts.next}
+                    next={() => fetchMoreData(posts, setPosts)}
+                  />
                 ) : (
                   <Container className={appStyles.Content}>
                     <Asset

@@ -11,7 +11,7 @@ const Toolbar = () => {
     <Container className={`${appStyles.Content} mb-2`}>
       <Link to="/feed">
         <p>
-          <i className={`${styles.Icon} m-3`}>
+          <i className={`${styles.Icon} ${styles.MyFeedIcon} m-3`}>
             <MdOutlineSportsHandball />
           </i>
           My Feed
@@ -19,15 +19,15 @@ const Toolbar = () => {
       </Link>
       <Link to="/liked">
         <p>
-          <i className={`${styles.Icon} m-3`}>
+          <i className={`${styles.Icon} ${styles.HeartIcon} m-3`}>
             <RiHeartsFill />
           </i>
-          My Hearted Posts
+          My Hearts
         </p>
       </Link>
       <Link to="/posts/create">
         <p>
-          <i className={`${styles.Icon} m-3`}>
+          <i className={`${styles.Icon} ${styles.CreatePostIcon} m-3`}>
             <MdOutlineLibraryAdd />
           </i>
           Create Post

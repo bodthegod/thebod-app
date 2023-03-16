@@ -194,7 +194,7 @@ function PostCreateForm() {
                   accept="image/*"
                   onChange={handleChangeImage}
                   ref={imageInput}
-                  hidden
+                  className="d-none"
                 />
               </Form.Group>
               {errors.image?.map((message, idx) => (

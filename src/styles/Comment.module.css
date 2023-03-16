@@ -1,0 +1,16 @@
+.CommentSection {
+    color: #9d4edd;
+    padding: 10px 10px 0px;
+    border-radius: 20px;
+}
+
+.CommentUsername {
+    text-underline-position: below;
+    color: #4c23e8;
+    font-weight: bold;
+    margin-right: 3px;
+}
+.Date {
+    font-weight: lighter;
+    color: #66348fc7;
+}

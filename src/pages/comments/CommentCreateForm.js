@@ -60,8 +60,8 @@ function CommentCreateForm(props) {
         </InputGroup>
       </Form.Group>
 
-      <Button className={buttonStyles.Button} type="submit">
-        Create Comment
+      <Button className={styles.CommentButton} type="submit">
+        Post Comment
       </Button>
     </Form>
   );

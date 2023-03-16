@@ -1,0 +1,14 @@
+.CommentEntryForm {
+  color: #9d4edd;
+  border-color: 0.5px #9d4edd;
+  padding-left: 15px;
+  border-radius: 20px !important;
+}
+
+.CommentEntryForm:focus {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 1px #9d4edd;
+  color: #9d4edd;
+  border-color: 0.5px #9d4edd;
+  border-radius: 20px ;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { NavDropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
@@ -10,9 +10,9 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
-import { TbMessagePlus } from "react-icons/tb";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -32,8 +32,7 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/posts/create"
-    >
-    </NavLink>
+    ></NavLink>
   );
 
   // authIcons variable to display icons if a user is
@@ -92,6 +91,7 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
+        <ScrollToTopButton />
         <NavLink to="/">
           <Navbar.Brand>
             <span>

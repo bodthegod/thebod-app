@@ -14,3 +14,14 @@
   font-weight: 600;
 }
 
+.HeartIcon {
+  color: rgba(224, 0, 0, 0.842);
+}
+
+.CreatePostIcon {
+  color: rgba(0, 126, 126, 0.781);
+}
+
+.MyFeedIcon {
+  color: rgba(18, 5, 199, 0.767);
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Comment.module.css";
 import Avatar from "../../components/Avatar";
 import { Media } from "react-bootstrap";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { DropdownMenu } from "../../components/DropdownMenu";
 import { axiosRes } from "../../api/axiosDefaults";
+import CommentEditForm from "./CommentEditForm";
 
 const Comment = (props) => {
   const {
@@ -20,6 +21,7 @@ const Comment = (props) => {
   } = props;
 
   const currentUser = useCurrentUser();
+  const [showEditForm, setShowEditForm] = useState(false);
   const is_owner = currentUser?.username === owner;
 
   const handleDelete = async () => {
@@ -52,12 +54,26 @@ const Comment = (props) => {
             <span className={styles.CommentUsername}>{owner}</span>
             <span className={styles.Date}> ~ {updated_at} </span>
             <span className={styles.DropdownMenu}>
-              {is_owner && (
-                <DropdownMenu handleEdit={() => {}} handleDelete={handleDelete} />
+              {is_owner && !showEditForm && (
+                <DropdownMenu
+                  handleEdit={() => setShowEditForm(true)}
+                  handleDelete={handleDelete}
+                />
               )}
             </span>
           </div>
-          <p>{comment_info}</p>
+          {showEditForm ? (
+            <CommentEditForm
+              id={id}
+              profile_id={profile_id}
+              profile_image={profile_image}
+              comment_info={comment_info}
+              setShowEditForm={setShowEditForm}
+              setComments={setComments}
+            />
+          ) : (
+            <p>{comment_info}</p>
+          )}
         </Media.Body>
       </Media>
     </div>

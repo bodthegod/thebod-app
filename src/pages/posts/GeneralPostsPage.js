@@ -46,6 +46,9 @@ function GeneralPostsPage({ message, filter = "" }) {
       classNames="fade"
     >
       <Container>
+        <Col className="py-2 p-0 p-lg-2" lg={3}>
+          <Toolbar />
+        </Col>
         <Row>
           <Col className="py-2 p-0 p-lg-2" lg={3}>
             <Container className={`${appStyles.Content} mb-3`}>
@@ -97,9 +100,6 @@ function GeneralPostsPage({ message, filter = "" }) {
                 <Asset spinner />
               </Container>
             )}
-          </Col>
-          <Col className="py-2 p-0 p-lg-2" lg={3}>
-            <Toolbar />
           </Col>
         </Row>
       </Container>

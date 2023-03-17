@@ -93,11 +93,11 @@ function PostPage() {
                   next={() => fetchMoreData(comments, setComments)}
                 />
               ) : currentUser ? (
-                <span className={`${styles.NoCommentsMsg} text-center`}>
+                <p className={`${styles.NoCommentsMsg} text-center`}>
                   It looks like there's no comments yet, start the conversation?
-                </span>
+                </p>
               ) : (
-                <span className={styles.NoCommentsMsg}>No comments yet, log in to comment!</span>
+                <p className={styles.NoCommentsMsg}>No comments yet, log in to comment!</p>
               )}
             </Container>
           </Col>

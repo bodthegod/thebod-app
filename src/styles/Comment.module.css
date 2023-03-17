@@ -1,6 +1,7 @@
 .CommentSection {
     color: #9d4edd;
-    padding: 10px 10px 0px;
+    padding-top: 10px;
+    margin-bottom: 5px;
     border-radius: 20px;
 }
 

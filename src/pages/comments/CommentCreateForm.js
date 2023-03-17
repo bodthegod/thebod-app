@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { Button, Form, InputGroup } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
-import buttonStyles from "../../styles/Button.module.css";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -30,7 +29,7 @@ function CommentCreateForm(props) {
         results: [
           {
             ...prevPost.results[0],
-            comments_count: prevPost.results[0].comments_count + 1,
+            comments_total: prevPost.results[0].comments_total + 1,
           },
         ],
       }));

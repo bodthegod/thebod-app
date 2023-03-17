@@ -46,18 +46,18 @@ function GeneralPostsPage({ message, filter = "" }) {
       classNames="fade"
     >
       <Container>
-        <Col className="py-2 p-0 p-lg-2" lg={3}>
-          <Toolbar />
-        </Col>
         <Row>
           <Col className="py-2 p-0 p-lg-2" lg={3}>
-            <Container className={`${appStyles.Content} mb-3`}>
+            <Toolbar />
+            <Container className={`${appStyles.Content} mb-3 mt-3`}>
               Search by tags
             </Container>
-            <Container className={`${appStyles.Content} mb-3`}>
+            <Container className={`${appStyles.Content} mb-3 mt-3`}>
               Most followed bloggers
             </Container>
           </Col>
+          
+       
           <Col className="py-2 p-0 p-lg-2" lg={6}>
             <CgSearch className={styles.SearchIcon} />
             <Form

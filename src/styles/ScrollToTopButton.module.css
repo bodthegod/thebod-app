@@ -14,12 +14,12 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-span i{
+button span i{
   animation: bounce 2s infinite;
   color: white;
 }
 
-span i:hover {
+button span i:hover {
   color: #add8e6;
 }
 

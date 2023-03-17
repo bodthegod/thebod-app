@@ -14,3 +14,19 @@
     font-weight: lighter;
     color: #66348fc7;
 }
+.DropdownMenu {
+    width: 20%;
+    padding: 0px;
+    color: gray;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+  }
+  
+  .DropdownMenu:hover {
+    color: #9d4edd;
+  }
+  
+  .DropdownMenu i {
+    color: #4C23E8;
+  }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import appStyles from "../../App.module.css";
+import styles from "../../styles/Post.module.css"
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -50,11 +51,12 @@ function PostPage() {
     >
       <Container>
         <Row>
-          <Col className="py-2 p-0 p-lg-2" lg={3}>
-            <Container className={`${appStyles.Content} mb-3`}>
+        <Col className="py-2 p-0 p-lg-2" lg={3}>
+            <Toolbar />
+            <Container className={`${appStyles.Content} mb-3 mt-3`}>
               Search by tags
             </Container>
-            <Container className={`${appStyles.Content} mb-3`}>
+            <Container className={`${appStyles.Content} mb-3 mt-3`}>
               Most followed bloggers
             </Container>
           </Col>
@@ -77,30 +79,27 @@ function PostPage() {
               ) : null}
               {comments.results.length ? (
                 <InfiniteScroll
-                children={comments.results.map((comment) => (
-                  <Comment
-                    key={comment.id}
-                    {...comment}
-                    setPost={setPost}
-                    setComments={setComments}
-                  />
-                ))}
-                dataLength={comments.results.length}
-                loader={<Asset spinner />}
-                hasMore={!!comments.next}
-                next={() => fetchMoreData(comments, setComments)}
-              />
+                  children={comments.results.map((comment) => (
+                    <Comment
+                      key={comment.id}
+                      {...comment}
+                      setPost={setPost}
+                      setComments={setComments}
+                    />
+                  ))}
+                  dataLength={comments.results.length}
+                  loader={<Asset spinner />}
+                  hasMore={!!comments.next}
+                  next={() => fetchMoreData(comments, setComments)}
+                />
               ) : currentUser ? (
-                <span>
-                  It looks like there's no comments yet, start the conversation?{" "}
+                <span className={`${styles.NoCommentsMsg} text-center`}>
+                  It looks like there's no comments yet, start the conversation?
                 </span>
               ) : (
-                <span>No comments yet, log in to comment!</span>
+                <span className={styles.NoCommentsMsg}>No comments yet, log in to comment!</span>
               )}
             </Container>
-          </Col>
-          <Col className="py-2 p-0 p-lg-2" lg={3}>
-            <Toolbar />
           </Col>
         </Row>
       </Container>

@@ -2,12 +2,17 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom, #9247cf 0%, #9247cf6e 100%);
+  transition: background-color 0.5s ease-in-out;
+  background-size: 100% 100%;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 .fade-appear-done {
   opacity: 1;
   transition: opacity 0.3s cubic-bezier(1, 0, 0, 1),

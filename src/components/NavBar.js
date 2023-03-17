@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { NavDropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
@@ -12,7 +12,6 @@ import {
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
-import ScrollToTopButton from "./ScrollToTopButton";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -91,7 +90,6 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <ScrollToTopButton />
         <NavLink to="/">
           <Navbar.Brand>
             <span>
@@ -110,7 +108,7 @@ const NavBar = () => {
           <Nav className="ml-auto">
             <NavLink
               exact
-              className={styles.NavLink}
+              className={`${styles.NavLink} ${styles.Home}`}
               activeClassName={styles.Active}
               to="/"
             >
@@ -122,6 +120,7 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    
   );
 };
 

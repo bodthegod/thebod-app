@@ -5,6 +5,7 @@ import styles from "../styles/Toolbar.module.css";
 import appStyles from "../App.module.css";
 import { MdOutlineLibraryAdd, MdOutlineSportsHandball } from "react-icons/md";
 import { RiHeartsFill } from "react-icons/ri";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const Toolbar = () => {
   return (
@@ -20,9 +21,9 @@ const Toolbar = () => {
       <Link to="/liked">
         <p>
           <i className={`${styles.Icon} ${styles.HeartIcon} m-3`}>
-            <RiHeartsFill />
+            <RiHeartsFill /> 
           </i>
-          My Hearts
+          My Hearts 
         </p>
       </Link>
       <Link to="/posts/create">
@@ -33,6 +34,7 @@ const Toolbar = () => {
           Create Post
         </p>
       </Link>
+      <ScrollToTopButton />
     </Container>
   );
 };

@@ -32,7 +32,7 @@ const ScrollToTopButton = () => {
       className={`${styles.Button} ${isVisible ? styles.show : ""}`}
       onClick={scrollToTop}
     >
-      <i class="fa-solid fa-circle-arrow-up"></i>
+      <span><i class="fa-solid fa-circle-arrow-up"></i></span>
     </button>
   );
 };

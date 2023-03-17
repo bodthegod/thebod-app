@@ -12,6 +12,7 @@ import NoResultsImage from "../../assets/no-result-found.jpg";
 import { CgSearch } from "react-icons/cg";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function GeneralPostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -53,11 +54,10 @@ function GeneralPostsPage({ message, filter = "" }) {
               Search by tags
             </Container>
             <Container className={`${appStyles.Content} mb-3 mt-3`}>
-              Most followed bloggers
+              <PopularProfiles />
             </Container>
           </Col>
-          
-       
+
           <Col className="py-2 p-0 p-lg-2" lg={6}>
             <CgSearch className={styles.SearchIcon} />
             <Form

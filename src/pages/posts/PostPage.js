@@ -16,6 +16,7 @@ import Comment from "../comments/Comment";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
   const { id } = useParams();
@@ -57,7 +58,7 @@ function PostPage() {
               Search by tags
             </Container>
             <Container className={`${appStyles.Content} mb-3 mt-3`}>
-              Most followed bloggers
+            <PopularProfiles />
             </Container>
           </Col>
 

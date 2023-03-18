@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
-import styles from "../../styles/PopularProfiles.module.css"
+import styles from "../../styles/PopularProfiles.module.css";
 import Asset from "../../components/Asset";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Profile from "./Profile";
+import { BiCrown } from "react-icons/bi";
 
 const PopularProfiles = () => {
   const [profileData, setProfileData] = useState({
@@ -35,9 +37,11 @@ const PopularProfiles = () => {
     <Container>
       {popularProfiles.results.length ? (
         <>
-          <p className={styles.MostFollowedBloggers}>Most Followed Bloggers</p>
+          <p className={`${styles.MostFollowedBloggers} text-center`}>
+            <BiCrown size={25} className={styles.CrownIcon}/> Most Followed
+          </p>
           {popularProfiles.results.map((profile) => (
-            <p key={profile.id}>{profile.owner}</p>
+            <Profile key={profile.id} profile={profile} />
           ))}
         </>
       ) : (

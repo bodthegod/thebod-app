@@ -1,0 +1,13 @@
+.UserAvatar {
+  height: 80px;
+  width: 80px;
+  margin: 5px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 850px) {
+  .UserAvatar {
+    width: 160px;
+    height: 160px;
+  }
+}

@@ -1,5 +1,8 @@
 .NavBar {
   background-color: #242329;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .ToggleButton {
@@ -21,4 +24,15 @@ a::after {
 }
 a:hover {
   color: #7f3df6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

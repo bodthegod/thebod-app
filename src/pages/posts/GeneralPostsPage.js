@@ -86,7 +86,7 @@ function GeneralPostsPage({ message, filter = "" }) {
                   />
                 ) : (
                   <Container className={appStyles.Content}>
-                    <Asset
+                    <Asset className={styles.NoResultsImage}
                       src={NoResultsImage}
                       width={40}
                       height={40}

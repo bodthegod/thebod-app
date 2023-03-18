@@ -6,8 +6,8 @@
 }
 
 .SearchBar input:focus {
-    border-color: rgb(160, 160, 160);
-    box-shadow: 0 0 0 0.2rem white;
+  border-color: rgb(160, 160, 160);
+  box-shadow: 0 0 0 0.2rem white;
 }
 
 .SearchIcon {
@@ -15,10 +15,17 @@
   color: rgb(0, 0, 0);
   font-size: 1.6rem;
   margin: 1.5%;
-
 }
 .SearchIcon:hover {
-    cursor: pointer;
-    transition: color ease-in-out 0.3s;
-    color: #9d4edd;
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #9d4edd;
+}
+
+@media only screen and (max-width: 767px) {
+  div img {
+    height: 40px;
+    width: 40px;
+
+  }
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
+import styles from "../../styles/ProfilePage.module.css";
 import PopularProfiles from "./PopularProfiles";
 import Toolbar from "../../components/Toolbar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -17,6 +18,9 @@ function ProfilePage() {
   const currentUser = useCurrentUser();
   const { id } = useParams();
   const setProfileData = useSetProfileData();
+  const { profilePage } = useProfileData();
+  const [profile] = profilePage.results;
+  const is_owner = currentUser?.username === profile?.owner;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,17 +44,41 @@ function ProfilePage() {
     <>
       <Row noGutters className="p-3 text-center">
         <Col lg={4} className="text-lg-left">
-          <p>Avatar</p>
+          <Image
+            roundedCircle
+            className={styles.UserAvatar}
+            src={profile?.image}
+          />
         </Col>
         <Col lg={4}>
-          <h3 className="mt-2 mb-4">Placeholder Username</h3>
-          <p>Followers, Following</p>
-          <p>Posts</p>
+          <h3 className="mt-2 mb-4">{profile?.owner}</h3>
+          <p className={styles.UserSocialNumbers}>
+            Posts
+            <span>{profile?.posts_total}</span>
+          </p>
+          <p className={styles.UserSocialNumbers}>
+            Followers
+            <span>{profile?.followers_total}</span>
+          </p>
+          <p className={styles.UserSocialNumbers}>
+            Following
+            <span>{profile?.following_total}</span>
+          </p>
         </Col>
         <Col lg={4} className="text-lg-right">
-        <p>Follow button</p>
+          {currentUser &&
+            !is_owner &&
+            (profile?.following_id ? (
+              <Button className={`${styles.FollowButton}`} onClick={() => {}}>
+                unfollow
+              </Button>
+            ) : (
+              <Button className={`${styles.FollowButton}`} onClick={() => {}}>
+                follow
+              </Button>
+            ))}
         </Col>
-        <Col className="p-3">Profile content</Col>
+        {profile?.content && (<Col className="p-2">{profile.content}</Col>)}
       </Row>
     </>
   );
@@ -67,32 +95,27 @@ function ProfilePage() {
     <Container>
       <Row>
         <Col className="pt-2 p-0 g-0" lg={3}>
-            <Toolbar />
+          <Toolbar />
 
-          <Container
-            className={`${appStyles.Content} mb-2`}
-          >
+          <Container className={`${appStyles.Content} mb-2`}>
             <PopularProfiles />
           </Container>
         </Col>
 
         <Col className="py-2 p-0 p-lg-2" lg={9}>
-
-    <Container className={appStyles.Content}>
-        {hasLoaded ? (
-            <>
-              {profileDetail}
-              {profileDetailPosts}
-            </>
-          ) : (
-            <Asset spinner />
-          )}
-        </Container>
-
+          <Container className={appStyles.Content}>
+            {hasLoaded ? (
+              <>
+                {profileDetail}
+                {profileDetailPosts}
+              </>
+            ) : (
+              <Asset spinner />
+            )}
+          </Container>
         </Col>
       </Row>
     </Container>
-
   );
 }
 

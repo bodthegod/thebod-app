@@ -4,13 +4,37 @@ import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import PopularProfiles from "./PopularProfiles";
 import Toolbar from "../../components/Toolbar";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useParams } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
+import {
+  useProfileData,
+  useSetProfileData,
+} from "../../contexts/ProfileDataContext";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const currentUser = useCurrentUser();
+  const { id } = useParams();
+  const setProfileData = useSetProfileData();
 
   useEffect(() => {
-      setHasLoaded(true);
-  }, [])
+    const fetchData = async () => {
+      try {
+        const [{ data: profilePage }] = await Promise.all([
+          axiosReq.get(`/profiles/${id}/`),
+        ]);
+        setProfileData((prevState) => ({
+          ...prevState,
+          profilePage: { results: [profilePage] },
+        }));
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, [id, setProfileData]);
 
   const profileDetail = (
     <>

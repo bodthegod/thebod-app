@@ -10,7 +10,7 @@ const PopularProfiles = () => {
   const { popularProfiles } = useProfileData();
 
   return (
-    <Container>
+    <Container className={styles.Content}>
       {popularProfiles.results.length ? (
         <>
           <p className={`${styles.MostFollowedBloggers} text-center`}>

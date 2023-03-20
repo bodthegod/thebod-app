@@ -15,15 +15,15 @@ const Toolbar = () => {
           <i className={`${styles.Icon} ${styles.MyFeedIcon} m-3`}>
             <MdOutlineSportsHandball />
           </i>
-          My Feed
+          <strong>My Feed</strong>
         </p>
       </Link>
       <Link to="/liked">
         <p>
           <i className={`${styles.Icon} ${styles.HeartIcon} m-3`}>
-            <RiHeartsFill /> 
+            <RiHeartsFill />
           </i>
-          My Hearts 
+          <strong>My Hearts </strong>
         </p>
       </Link>
       <Link to="/posts/create">
@@ -31,7 +31,7 @@ const Toolbar = () => {
           <i className={`${styles.Icon} ${styles.CreatePostIcon} m-3`}>
             <MdOutlineLibraryAdd />
           </i>
-          Create Post
+          <strong>Create Post</strong>
         </p>
       </Link>
       <ScrollToTopButton />

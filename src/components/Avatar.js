@@ -5,11 +5,11 @@ const Avatar = ({ src, height = 45, text }) => {
   return (
     <span>
       <img
-        className={styles.Avatar}
+        className={`${styles.Avatar} expanded`}
+        src={src}
         width={height}
         height={height}
-        src={src}
-        alt="profile avatar"
+        alt="avatar"
       />
       {text}
     </span>

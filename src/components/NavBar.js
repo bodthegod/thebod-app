@@ -22,6 +22,7 @@ const NavBar = () => {
   const handleLogOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
+      setExpanded(false)
       setCurrentUser(null);
     } catch (err) {}
   };
@@ -40,9 +41,9 @@ const NavBar = () => {
     <>
       <NavDropdown
         title={
-          <div>
+          <div className="expanded">
             <Avatar src={currentUser?.profile_image} height={40} />
-            <span>{currentUser?.username}</span>
+            <span className="expanded">{currentUser?.username}</span>
           </div>
         }
         id="nav-dropdown"

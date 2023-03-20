@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "../../styles/PopularProfiles.module.css";
+import scrollStyles from "../../styles/ScrollBar.module.css"
 import Asset from "../../components/Asset";
 import Profile from "./Profile";
 import { BiCrown } from "react-icons/bi";
@@ -10,7 +11,7 @@ const PopularProfiles = () => {
   const { popularProfiles } = useProfileData();
 
   return (
-    <Container className={styles.Content}>
+    <Container className={`${styles.Content} ${scrollStyles.ScrollBar}`}>
       {popularProfiles.results.length ? (
         <>
           <p className={`${styles.MostFollowedBloggers} text-center`}>

@@ -12,6 +12,7 @@ import {
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -22,7 +23,7 @@ const NavBar = () => {
   const handleLogOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
-      setExpanded(false)
+      setExpanded(false);
       setCurrentUser(null);
     } catch (err) {}
   };
@@ -50,11 +51,13 @@ const NavBar = () => {
       >
         <NavDropdown.Item className={styles.DropdownMenu}>
           <NavLink to={`/profiles/${currentUser?.profile_id}`}>
+            <AiOutlineUser className={`${styles.NavbarExpandedIcons} ${styles.ProfileIcon}`} size={25} />
             My Profile
           </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item className={styles.DropdownMenu}>
-          <NavLink to="/" onClick={handleLogOut}>
+          <NavLink className={styles.LogoutIcon} to="/" onClick={handleLogOut}>
+            <AiOutlineLogout className={`${styles.NavbarExpandedIcons} ${styles.LogoutIcon}`} size={25} />
             Log out
           </NavLink>
         </NavDropdown.Item>
@@ -121,7 +124,6 @@ const NavBar = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    
   );
 };
 

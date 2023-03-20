@@ -5,6 +5,17 @@
   animation-fill-mode: forwards;
 }
 
+.NavbarExpandedIcons {
+  margin-right: 7.5%;
+}
+
+.LogoutIcon {
+  color: rgb(214, 0, 0);
+}
+
+.ProfileIcon {
+color: #7f3df6;
+}
 .ToggleButton {
   background-color: white;
 }

@@ -17,6 +17,9 @@
   color: #666;
   margin-left: 0.5rem;
 }
+.UserPostsTitle {
+  font-size: 1.2rem;
+}
 
 .FollowButton {
   align-self: center;

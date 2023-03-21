@@ -1,3 +1,45 @@
 .ContentSplit {
     word-break: break-all;
   }
+  .UnfollowButton {
+    align-self: center;
+    min-width: 100px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    padding: 7.5px;
+    margin-bottom: 15px;
+    margin-right: 2px;
+    margin-left: 2px;
+    background-color: #FF5C5C;
+    border-color: #9247cf;
+    border-width: 1px;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    animation: bounce 0.3s infinite alternate;
+    transition: background-color 0.2s ease;
+  }
+  
+  .UnfollowButton:hover {
+    background-color: #E53D3D;
+    border-color: #9d4edd;
+    font-weight: 600;
+    color: #ffffff;
+    animation: btngentleshake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .UnfollowButton:active:focus {
+    border-color: #9247cf;
+    transition: color, fill ease-in-out 0.3s;
+  }
+  .UnfollowButton:not(:disabled):not(.disabled):active {
+    background-color: #9247cf;
+    transform: translateY(1px);
+    border-color: #9247cf;
+  }
+  .UnfollowButton:focus {
+    background-color: #9247cf;
+    border-color: #9247cf;
+    box-shadow: none Imp !important;
+  }

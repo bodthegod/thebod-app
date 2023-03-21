@@ -21,7 +21,7 @@
 }
 
 a {
-    color: darkslategray;
+  color: darkslategray;
 }
 .Link {
   text-decoration: none;
@@ -39,7 +39,17 @@ a {
 }
 
 .Col {
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: 0.3rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+.LoginImage {
+  object-fit: cover;
+  height: 50%;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .LoginImage {
+    display: none;
+  }
 }

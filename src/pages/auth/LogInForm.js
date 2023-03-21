@@ -4,7 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import { Col, Row, Container, Form, Button, Alert } from "react-bootstrap";
+import {
+  Col,
+  Row,
+  Container,
+  Form,
+  Button,
+  Alert,
+  Image,
+} from "react-bootstrap";
 import { CSSTransition } from "react-transition-group";
 import { RiLockPasswordLine } from "react-icons/ri";
 import axios from "axios";
@@ -92,15 +100,23 @@ const LogInForm = () => {
             </Form>
           </Container>
           <Container className="mb-5">
-            <Link className={styles.Link} to="/signup">
+            <Link className={`${styles.Link} mt-4 font-weight-bold`} to="/signup">
               Don't have an account? Click here to sign up!
             </Link>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert variant="danger" key={idx}>
-                {message}
+                {message} 
               </Alert>
             ))}
           </Container>
+          <Col className="text-center">
+            <Image
+              className={`${styles.LoginImage}`}
+              src={
+                "https://res.cloudinary.com/drhfh23tl/image/upload/v1679416297/login-img_hqathg.png"
+              }
+            />
+          </Col>
         </Col>
       </Row>
     </CSSTransition>

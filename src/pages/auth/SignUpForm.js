@@ -4,7 +4,15 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import { Col, Row, Container, Form, Button, Alert } from "react-bootstrap";
+import {
+  Col,
+  Row,
+  Container,
+  Form,
+  Button,
+  Alert,
+  Image,
+} from "react-bootstrap";
 import axios from "axios";
 import { CSSTransition } from "react-transition-group";
 import { TbUserPlus } from "react-icons/tb";
@@ -45,7 +53,7 @@ const SignUpForm = () => {
       classNames="fade"
     >
       <Row className={styles.Row}>
-        <Col className={styles.Col}>
+        <Col className={`${styles.Col} text-center`}>
           <Container>
             <h1 className={styles.Header}>
               Sign Up <TbUserPlus />
@@ -101,7 +109,10 @@ const SignUpForm = () => {
                   {message}
                 </Alert>
               ))}
-              <Button className={`${btnStyles.Button} ${styles.LogInSignUpButton}`} type="submit">
+              <Button
+                className={`${btnStyles.Button} ${styles.LogInSignUpButton}`}
+                type="submit"
+              >
                 Create account!
               </Button>
               {errors.non_field_errors?.map((message, idx) => (
@@ -112,9 +123,22 @@ const SignUpForm = () => {
             </Form>
           </Container>
           <Container className="mb-5">
-            <Link className={styles.Link} to="/login">
+            <Link
+              className={`${styles.Link} mt-4 font-weight-bold`}
+              to="/login"
+            >
               Have an account? Click here to log in.
             </Link>
+          </Container>
+          <Container>
+            <Col className="text-center">
+              <Image
+                className={`${styles.LoginImage} text-center`}
+                src={
+                  "https://res.cloudinary.com/drhfh23tl/image/upload/v1679416296/signup-img_px1uuh.png"
+                }
+              />
+            </Col>
           </Container>
         </Col>
       </Row>

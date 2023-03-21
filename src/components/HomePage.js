@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import NavLink from "react-router-dom/NavLink";
 import { Jumbotron } from "react-bootstrap";
 import btnStyles from "../styles/Button.module.css";
-import "../App.css";
 import { CSSTransition } from "react-transition-group";
 const HomePage = () => {
   return (

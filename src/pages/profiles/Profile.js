@@ -15,7 +15,7 @@ const Profile = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  const { handleFollow } = useSetProfileData();
+  const { handleFollow, handleUnfollow } = useSetProfileData();
 
   return (
     <div className={`my-3 d-flex align-items-center flex-column`}>
@@ -31,11 +31,17 @@ const Profile = (props) => {
         {currentUser &&
           !is_owner &&
           (following_id ? (
-            <Button className={`${btnStyles.CommentButton} ${styles.UnfollowButton}`} onClick={() => {}}>
+            <Button
+              className={`${btnStyles.CommentButton} ${styles.UnfollowButton}`}
+              onClick={() => handleUnfollow(profile)}
+            >
               unfollow <AiOutlineUserDelete size={20} />
             </Button>
           ) : (
-            <Button className={`${btnStyles.CommentButton}`} onClick={() => handleFollow(profile)}>
+            <Button
+              className={`${btnStyles.CommentButton} ${styles.FollowButton}`}
+              onClick={() => handleFollow(profile)}
+            >
               follow <AiOutlineUserAdd size={20} />
             </Button>
           ))}

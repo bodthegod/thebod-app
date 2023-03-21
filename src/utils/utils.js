@@ -15,6 +15,18 @@ export const fetchMoreData = async (resource, setResource) => {
   } catch (err) {}
 };
 
+export const unfollowHelper = (profile, clickedProfile) => {
+  return profile.id === clickedProfile.id
+    ? {
+        ...profile,
+        followers_total: profile.followers_total - 1,
+        following_id: null,
+      }
+    : profile.is_owner
+    ? { ...profile, following_total: profile.following_total - 1 }
+    : profile;
+};
+
 export const followHelper = (profile, clickedProfile, following_id) => {
   return profile.id === clickedProfile.id
     ? {

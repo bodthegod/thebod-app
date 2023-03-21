@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import { SlArrowDown } from "react-icons/sl";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ProfilePage.module.css";
@@ -22,7 +21,7 @@ function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const { id } = useParams();
-  const {setProfileData, handlefollow} = useSetProfileData();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { profilePage } = useProfileData();
   const [profile] = profilePage.results;
   const is_owner = currentUser?.username === profile?.owner;
@@ -78,11 +77,17 @@ function ProfilePage() {
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
-              <Button className={`${styles.UnfollowButton}`} onClick={() => {}}>
+              <Button
+                className={`${styles.UnfollowButton}`}
+                onClick={() => handleUnfollow(profile)}
+              >
                 unfollow
               </Button>
             ) : (
-              <Button className={`${styles.FollowButton}`} onClick={() => handlefollow(profile)}>
+              <Button
+                className={`${styles.FollowButton}`}
+                onClick={() => handleFollow(profile)}
+              >
                 follow
               </Button>
             ))}

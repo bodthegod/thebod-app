@@ -48,16 +48,16 @@
   perspective: 1000px;
 }
 .FollowButton:active:focus {
-  border-color: #9247cf;
+  border-color: #6c3499;
   transition: color, fill ease-in-out 0.3s;
 }
 .FollowButton:not(:disabled):not(.disabled):active {
-  background-color: #9247cf;
+  background-color: #6c3499;
   transform: translateY(1px);
   border-color: #9247cf;
 }
 .FollowButton:focus {
-  background-color: #9247cf;
+  background-color: #542877;
   border-color: #9247cf;
   box-shadow: none Imp !important;
 }
@@ -71,16 +71,17 @@
   margin-bottom: 15px;
   margin-right: 2px;
   margin-left: 2px;
-  background-color: #4c23e8;
+  background-color: #ff5c5c;
   border-color: #9247cf;
   border-width: 1px;
-  color: white;
+  color: #fff;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   animation: bounce 0.3s infinite alternate;
+  transition: background-color 0.2s ease;
 }
 
 .UnfollowButton:hover {
-  background-color: #9247cf;
+  background-color: #e53d3d;
   border-color: #9d4edd;
   font-weight: 600;
   color: #ffffff;
@@ -90,17 +91,17 @@
   perspective: 1000px;
 }
 .UnfollowButton:active:focus {
-  border-color: #9247cf;
+  border-color: #bb3030;
   transition: color, fill ease-in-out 0.3s;
 }
 .UnfollowButton:not(:disabled):not(.disabled):active {
-  background-color: #9247cf;
+  background-color: #bb3030;
   transform: translateY(1px);
-  border-color: #9247cf;
+  border-color: #bb3030;
 }
 .UnfollowButton:focus {
-  background-color: #9247cf;
-  border-color: #9247cf;
+  background-color: #942525;
+  border-color: #bb3030;
   box-shadow: none Imp !important;
 }
 

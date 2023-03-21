@@ -3,6 +3,7 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ProfilePage.module.css";
+import dropdownStyles from "../../styles/Comment.module.css"
 import PopularProfiles from "./PopularProfiles";
 import Toolbar from "../../components/Toolbar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -17,6 +18,7 @@ import { fetchMoreData } from "../../utils/utils";
 import Post from "../posts/Post";
 import NoResultsFoundImage from "../../assets/no-result-found.jpg";
 import { CSSTransition } from "react-transition-group";
+import { ProfileEditDropdownMenu } from "../../components/DropdownMenu";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -75,6 +77,7 @@ function ProfilePage() {
           </p>
         </Col>
         <Col lg={4} className="text-lg-right">
+          {profile?.is_owner && <ProfileEditDropdownMenu id={profile?.id} />}
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (

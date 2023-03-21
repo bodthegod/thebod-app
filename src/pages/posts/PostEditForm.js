@@ -102,7 +102,7 @@ function PostEditForm() {
         />
       </Form.Group>
       {errors.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}
@@ -126,7 +126,7 @@ function PostEditForm() {
         </Form.Control>
       </Form.Group>
       {errors.tags?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}
@@ -143,7 +143,7 @@ function PostEditForm() {
         />
       </Form.Group>
       {errors.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}
@@ -179,7 +179,7 @@ function PostEditForm() {
             >
               <Form.Group className="text-center">
                 <figure>
-                  <Image className={appStyles.Image} src={image} rounded />
+                  <Image className={styles.ImageInput} src={image} rounded />
                 </figure>
                 <div>
                   <Form.Label
@@ -199,7 +199,7 @@ function PostEditForm() {
                 />
               </Form.Group>
               {errors.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
+                <Alert variant="warning" className={styles.AlertStyles} key={idx}>
                   {message}
                 </Alert>
               ))}

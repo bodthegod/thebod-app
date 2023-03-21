@@ -85,7 +85,7 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}
@@ -109,7 +109,7 @@ function PostCreateForm() {
         </Form.Control>
       </Form.Group>
       {errors.tags?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}
@@ -126,7 +126,7 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}
@@ -164,7 +164,11 @@ function PostCreateForm() {
                 {image ? (
                   <>
                     <figure>
-                      <Image className={appStyles.Image} src={image} rounded />
+                      <Image
+                        className={styles.ImageInput}
+                        src={image}
+                        rounded
+                      />
                     </figure>
                     <div>
                       <Form.Label
@@ -198,7 +202,11 @@ function PostCreateForm() {
                 />
               </Form.Group>
               {errors.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
+                <Alert
+                  variant="warning"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}

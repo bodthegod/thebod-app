@@ -16,6 +16,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import Post from "../posts/Post";
 import NoResultsFoundImage from "../../assets/no-result-found.jpg";
+import { CSSTransition } from "react-transition-group";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -124,30 +125,37 @@ function ProfilePage() {
   );
 
   return (
-    <Container>
-      <Row>
-        <Col className="pt-2 p-0 g-0" lg={3}>
-          <Toolbar />
+    <CSSTransition
+      in={true}
+      appear={true}
+      timeout={{ enter: 300 }}
+      classNames="fade"
+    >
+      <Container>
+        <Row>
+          <Col className="pt-2 p-0 g-0" lg={3}>
+            <Toolbar />
 
-          <Container className={`${appStyles.Content} mb-2`}>
-            <PopularProfiles />
-          </Container>
-        </Col>
+            <Container className={`${appStyles.Content} mb-2`}>
+              <PopularProfiles />
+            </Container>
+          </Col>
 
-        <Col className="py-2 p-0 p-lg-2" lg={9}>
-          <Container className={appStyles.Content}>
-            {hasLoaded ? (
-              <>
-                {profileDetail}
-                {profileDetailPosts}
-              </>
-            ) : (
-              <Asset spinner />
-            )}
-          </Container>
-        </Col>
-      </Row>
-    </Container>
+          <Col className="py-2 p-0 p-lg-2" lg={9}>
+            <Container className={appStyles.Content}>
+              {hasLoaded ? (
+                <>
+                  {profileDetail}
+                  {profileDetailPosts}
+                </>
+              ) : (
+                <Asset spinner />
+              )}
+            </Container>
+          </Col>
+        </Row>
+      </Container>
+    </CSSTransition>
   );
 }
 

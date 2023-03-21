@@ -71,7 +71,7 @@ const LogInForm = () => {
                 />
               </Form.Group>
               {errors.username?.map((message, idx) => (
-                <Alert variant="danger" key={idx}>
+                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
                   {message}
                 </Alert>
               ))}
@@ -87,7 +87,7 @@ const LogInForm = () => {
                 />
               </Form.Group>
               {errors.password?.map((message, idx) => (
-                <Alert variant="danger" key={idx}>
+                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
                   {message}
                 </Alert>
               ))}
@@ -104,7 +104,7 @@ const LogInForm = () => {
               Don't have an account? Click here to sign up!
             </Link>
             {errors.non_field_errors?.map((message, idx) => (
-              <Alert variant="danger" key={idx}>
+              <Alert variant="danger" className={styles.AlertStyles} key={idx}>
                 {message} 
               </Alert>
             ))}

@@ -12,12 +12,13 @@
 
 .Input {
   background: #fff;
-  border: 1px solid lightslategray;
   box-sizing: border-box;
-  border-radius: 3px;
   color: darkslategray;
   text-align: center;
   padding: 15px;
+  text-align: center;
+  border: 1.5px solid blueviolet;
+  border-radius: 20px;
 }
 
 a {
@@ -51,5 +52,27 @@ a {
 @media (max-width: 767px) {
   .LoginImage {
     display: none;
+  }
+}
+
+.AlertStyles {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: #8b0000;
+  background-color: #ffc6c6;
+  border-color: #ffa5a5;
+  animation: alert-animation 0.5s ease-in-out forwards;
+}
+
+@keyframes alert-animation {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

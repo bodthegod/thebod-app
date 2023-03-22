@@ -1,5 +1,5 @@
 .SearchBar input {
-  border-radius: 5px;
+  border-radius: 20px;
   color: purple;
   padding-left: 50px;
   margin-bottom: 15px;
@@ -20,6 +20,23 @@
   cursor: pointer;
   transition: color ease-in-out 0.3s;
   color: #9d4edd;
+}
+
+.Tags {
+  background-color: #9d4edd;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.Tags:hover {
+  background-color: #7700d8;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.Tags span:active {
+  background-color: #2f0055;
+  cursor: pointer;
+  animation: ease-in-out 0.5s;
 }
 
 @media only screen and (max-width: 767px) {

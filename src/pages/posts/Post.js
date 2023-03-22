@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Post.module.css";
+import tagsStyles from "../../styles/GeneralPostsPage.module.css";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import { axiosRes } from "../../api/axiosDefaults";
 import { CSSTransition } from "react-transition-group";
@@ -113,10 +114,8 @@ const Post = (props) => {
           {content && <Card.Text>{content}</Card.Text>}
           {tags && (
             <Card.Text>
-              Type:
-              <Badge variant="secondary" className={styles.PostBadge}>
-                {" "}
-                {tags}
+              <Badge variant="primary" className={tagsStyles.Tags}>
+                <span>{tags}</span>
               </Badge>
             </Card.Text>
           )}

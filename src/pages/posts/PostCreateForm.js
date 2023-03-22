@@ -94,18 +94,19 @@ function PostCreateForm() {
         <Form.Label>Choose your tag!</Form.Label>
         <Form.Control
           as="select"
+          name="tags"
           className={`${formStyles.Form}`}
           value={tags}
           onChange={handleChange}
         >
-          <option value="bodybuilding">BodyBuilding</option>
-          <option value="running">Running</option>
-          <option value="sports">Sports</option>
-          <option value="fitness">Fitness</option>
-          <option value="wellbeing">Wellbeing</option>
-          <option value="strength training">Strength Training</option>
-          <option value="hypertrophy">Hypertrophy</option>
-          <option value="crossfit">CrossFit</option>
+          <option value="BodyBuilding">BodyBuilding</option>
+          <option value="Running">Running</option>
+          <option value="Sports">Sports</option>
+          <option value="Fitness">Fitness</option>
+          <option value="Wellbeing">Wellbeing</option>
+          <option value="Strength Training">Strength Training</option>
+          <option value="Hypertrophy">Hypertrophy</option>
+          <option value="CrossFit">CrossFit</option>
         </Form.Control>
       </Form.Group>
       {errors.tags?.map((message, idx) => (

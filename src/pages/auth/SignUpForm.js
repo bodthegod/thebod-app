@@ -19,7 +19,7 @@ import { TbUserPlus } from "react-icons/tb";
 import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
-  useRedirect('loggedIn');
+  useRedirect("loggedIn");
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -151,6 +151,7 @@ const SignUpForm = () => {
           <Container>
             <Col className="text-center">
               <Image
+                alt="Cartoon Fitness blog sign up image"
                 className={`${styles.LoginImage} text-center`}
                 src={
                   "https://res.cloudinary.com/drhfh23tl/image/upload/v1679416296/signup-img_px1uuh.png"

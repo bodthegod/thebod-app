@@ -170,6 +170,7 @@ function PostCreateForm() {
                       <Image
                         className={styles.ImageInput}
                         src={image}
+                        alt="Your new uploaded image"
                         rounded
                       />
                     </figure>

@@ -179,7 +179,12 @@ function PostEditForm() {
             >
               <Form.Group className="text-center">
                 <figure>
-                  <Image className={styles.ImageInput} src={image} rounded />
+                  <Image
+                    className={styles.ImageInput}
+                    src={image}
+                    alt="Your new uploaded image"
+                    rounded
+                  />
                 </figure>
                 <div>
                   <Form.Label
@@ -199,7 +204,11 @@ function PostEditForm() {
                 />
               </Form.Group>
               {errors.image?.map((message, idx) => (
-                <Alert variant="warning" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="warning"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}

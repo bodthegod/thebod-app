@@ -144,7 +144,7 @@ const ProfileEditForm = () => {
               <Form.Group>
                 {image && (
                   <figure>
-                    <Image src={image} fluid />
+                    <Image src={image} alt="Your new profile picture" fluid />
                   </figure>
                 )}
 

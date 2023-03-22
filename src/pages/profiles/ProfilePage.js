@@ -58,6 +58,7 @@ function ProfilePage() {
             roundedCircle
             className={styles.UserAvatar}
             src={profile?.image}
+            alt="Profile avatar"
           />
         </Col>
         <Col lg={4}>

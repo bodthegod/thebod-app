@@ -27,7 +27,7 @@ function App() {
             exact
             path="/"
             render={() => (
-              <GeneralPostsPage message="No results found, try another keyword?" />
+              <GeneralPostsPage message="No results found, try another keyword or tag?" />
             )}
           />
           <Route

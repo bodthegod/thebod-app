@@ -106,17 +106,82 @@ function GeneralPostsPage({ message, filter = "" }) {
             )}
           </Col>
           <Col className="py-2 p-0 p-lg-2" lg={3}>
-          <Container className={`${appStyles.Content} mb-3 mt-3`}>
-            <p className=" font-weight-bold ml-2">Search by Post Tags</p>
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags(null)}>All Tags</Badge>     
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Bodybuilding")}>BodyBuilding</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Running")}>Running</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Sports")}>Sports</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Fitness")}>Fitness</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Wellbeing")}>Wellbeing</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Strength Training")}>Strength Training</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Hypertrophy")}>Hypertrophy</Badge>             
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("CrossFit")}>CrossFit</Badge>             
+            <Container
+              className={`${appStyles.Content} mb-3 mt-3 d-none d-lg-block`}
+            >
+              <p className=" font-weight-bold ml-2">Search by Post Tags</p>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags(null)}
+              >
+                All Tags
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Bodybuilding")}
+              >
+                BodyBuilding
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Running")}
+              >
+                Running
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Sports")}
+              >
+                Sports
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Fitness")}
+              >
+                Fitness
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Wellbeing")}
+              >
+                Wellbeing
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Strength Training")}
+              >
+                Strength Training
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("Hypertrophy")}
+              >
+                Hypertrophy
+              </Badge>
+              <Badge
+                variant="primary"
+                pill
+                className={`${styles.Tags}`}
+                onClick={() => setTags("CrossFit")}
+              >
+                CrossFit
+              </Badge>
             </Container>
           </Col>
         </Row>

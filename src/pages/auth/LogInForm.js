@@ -43,7 +43,7 @@ const LogInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
-      history.goBack();
+      history.push("/");
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -125,6 +125,7 @@ const LogInForm = () => {
           </Container>
           <Col className="text-center">
             <Image
+              alt="Cartoon Fitness blog login image"
               className={`${styles.LoginImage}`}
               src={
                 "https://res.cloudinary.com/drhfh23tl/image/upload/v1679416297/login-img_hqathg.png"

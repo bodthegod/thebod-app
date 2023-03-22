@@ -3,7 +3,6 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ProfilePage.module.css";
-import dropdownStyles from "../../styles/Comment.module.css"
 import PopularProfiles from "./PopularProfiles";
 import Toolbar from "../../components/Toolbar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";

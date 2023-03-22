@@ -99,7 +99,7 @@ function PostCreateForm() {
           value={tags}
           onChange={handleChange}
         >
-          <option value="BodyBuilding">BodyBuilding</option>
+          <option value="Bodybuilding">BodyBuilding</option>
           <option value="Running">Running</option>
           <option value="Sports">Sports</option>
           <option value="Fitness">Fitness</option>

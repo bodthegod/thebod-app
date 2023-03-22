@@ -55,9 +55,6 @@ function PostPage() {
         <Col className="py-2 p-0 p-lg-2" lg={3}>
             <Toolbar />
             <Container className={`${appStyles.Content} mb-3 mt-3`}>
-              Search by tags
-            </Container>
-            <Container className={`${appStyles.Content} mb-3 mt-3`}>
             <PopularProfiles />
             </Container>
           </Col>

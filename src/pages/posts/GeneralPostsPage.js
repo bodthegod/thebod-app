@@ -109,7 +109,7 @@ function GeneralPostsPage({ message, filter = "" }) {
           <Container className={`${appStyles.Content} mb-3 mt-3`}>
             <p className=" font-weight-bold ml-2">Search by Post Tags</p>
               <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags(null)}>All Tags</Badge>     
-              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("BodyBuilding")}>BodyBuilding</Badge>             
+              <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Bodybuilding")}>BodyBuilding</Badge>             
               <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Running")}>Running</Badge>             
               <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Sports")}>Sports</Badge>             
               <Badge variant="primary" pill className={`${styles.Tags}`} onClick={() => setTags("Fitness")}>Fitness</Badge>             

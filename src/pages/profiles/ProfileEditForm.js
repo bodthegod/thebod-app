@@ -100,7 +100,7 @@ const ProfileEditForm = () => {
       </Form.Group>
 
       {errors?.description?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" className={alertStyles.AlertStyles} key={idx}>
           {message}
         </Alert>
       ))}

@@ -18,6 +18,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -43,6 +44,7 @@ const LogInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
+      setTokenTimestamp(data);
       history.push("/");
     } catch (err) {
       setErrors(err.response?.data);

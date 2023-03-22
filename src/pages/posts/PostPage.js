@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import appStyles from "../../App.module.css";
-import styles from "../../styles/Post.module.css"
+import styles from "../../styles/Post.module.css";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -35,9 +35,7 @@ function PostPage() {
         ]);
         setPost({ results: [post] });
         setComments(comments);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
 
     handleMount();
@@ -52,10 +50,10 @@ function PostPage() {
     >
       <Container>
         <Row>
-        <Col className="py-2 p-0 p-lg-2" lg={3}>
+          <Col className="py-2 p-0 p-lg-2" lg={3}>
             <Toolbar />
             <Container className={`${appStyles.Content} mb-3 mt-3`}>
-            <PopularProfiles />
+              <PopularProfiles />
             </Container>
           </Col>
 
@@ -95,7 +93,9 @@ function PostPage() {
                   It looks like there's no comments yet, start the conversation?
                 </p>
               ) : (
-                <p className={styles.NoCommentsMsg}>No comments yet, log in to comment!</p>
+                <p className={styles.NoCommentsMsg}>
+                  No comments yet, log in to comment!
+                </p>
               )}
             </Container>
           </Col>

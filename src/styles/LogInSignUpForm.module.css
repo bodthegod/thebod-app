@@ -42,7 +42,7 @@ a {
 .Col {
   margin-bottom: 2rem;
   background-color: #e9ecef;
-  border-radius: 0.3rem;
+  border-radius: 20px;
 }
 .LoginImage {
   object-fit: cover;

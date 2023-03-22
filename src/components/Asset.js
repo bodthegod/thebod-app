@@ -1,5 +1,5 @@
 import React from "react";
-import { HashLoader } from "react-spinners";
+import HashLoader from "react-spinners/HashLoader";
 import styles from "../styles/Asset.module.css";
 
 const Asset = ({ spinner, src, message }) => {

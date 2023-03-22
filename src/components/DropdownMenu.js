@@ -2,7 +2,8 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/DropdownMenu.module.css";
 import { TbGridDots } from "react-icons/tb";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import { useHistory } from "react-router";
 
 const DropdownSelect = React.forwardRef(({ onClick }, ref) => (
@@ -32,7 +33,7 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
             onClick={handleDelete}
             aria-label="remove post"
           >
-            <i className="fas fa-eraser"/>
+            <i className="fas fa-eraser" />
           </Dropdown.Item>
         </OverlayTrigger>
         <OverlayTrigger placement="top" overlay={<Tooltip>Edit</Tooltip>}>
@@ -41,7 +42,7 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
             onClick={handleEdit}
             aria-label="edit or change post"
           >
-            <i className="fas fa-cogs"/>
+            <i className="fas fa-cogs" />
           </Dropdown.Item>
         </OverlayTrigger>
       </Dropdown.Menu>
@@ -55,7 +56,10 @@ export function ProfileEditDropdownMenu({ id }) {
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={DropdownSelect} />
 
-      <Dropdown.Menu className="text-center" popperConfig={{ strategy: "fixed" }}>
+      <Dropdown.Menu
+        className="text-center"
+        popperConfig={{ strategy: "fixed" }}
+      >
         <OverlayTrigger
           placement="top"
           overlay={<Tooltip>Edit your profile</Tooltip>}
@@ -65,7 +69,7 @@ export function ProfileEditDropdownMenu({ id }) {
             aria-label="edit profile"
             className={styles.DropdownItem}
           >
-            <i className="fas fa-cogs"/>
+            <i className="fas fa-cogs" />
           </Dropdown.Item>
         </OverlayTrigger>
 
@@ -78,7 +82,7 @@ export function ProfileEditDropdownMenu({ id }) {
             aria-label="change password"
             className={styles.DropdownItem}
           >
-            <i className="fas fa-user-lock"/>
+            <i className="fas fa-user-lock" />
           </Dropdown.Item>
         </OverlayTrigger>
       </Dropdown.Menu>

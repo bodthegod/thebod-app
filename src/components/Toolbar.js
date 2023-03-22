@@ -1,6 +1,7 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import Link from "react-router-dom/Link";
+import { useLocation } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 import styles from "../styles/Toolbar.module.css";
 import appStyles from "../App.module.css";
 import { MdOutlineLibraryAdd, MdOutlineSportsHandball } from "react-icons/md";
@@ -24,7 +25,9 @@ const Toolbar = () => {
         className={pathname === "/liked" ? styles.active : null}
       >
         <p>
-          <i className={`${styles.Icon} ${styles.HeartIcon} ${styles.ActivePath} m-3`}>
+          <i
+            className={`${styles.Icon} ${styles.HeartIcon} ${styles.ActivePath} m-3`}
+          >
             <RiHeartsFill />
           </i>
           <strong>My Hearts </strong>
@@ -35,7 +38,9 @@ const Toolbar = () => {
         className={pathname === "/posts/create" ? styles.active : null}
       >
         <p>
-          <i className={`${styles.Icon} ${styles.CreatePostIcon} ${styles.ActivePath} m-3`}>
+          <i
+            className={`${styles.Icon} ${styles.CreatePostIcon} ${styles.ActivePath} m-3`}
+          >
             <MdOutlineLibraryAdd />
           </i>
           <strong>Create Post</strong>

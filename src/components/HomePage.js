@@ -6,7 +6,6 @@ import NavLink from "react-router-dom/NavLink";
 import { Container, Jumbotron } from "react-bootstrap";
 import styles from "../styles/HomePage.module.css";
 import appStyles from "../App.module.css";
-import btnStyles from "../styles/Button.module.css";
 import { CSSTransition } from "react-transition-group";
 const HomePage = () => {
   return (
@@ -83,8 +82,10 @@ const HomePage = () => {
               Created by Joe Playdon
             </p>
           </div>
-
           <div className="text-center pb-3">
+            <p className={`${styles.ContactIcons} text-white`}>
+              Connect with me:
+            </p>
             <a
               href="https://github.com/bodthegod"
               aria-label="View my repositories!"

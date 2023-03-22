@@ -109,7 +109,9 @@ function GeneralPostsPage({ message, filter = "" }) {
             <Container
               className={`${appStyles.Content} mb-3 mt-3 d-none d-lg-block`}
             >
-              <p className=" font-weight-bold ml-2">Search by Post Tags</p>
+              <p className=" font-weight-bold text-center">
+                Search by Post Tags
+              </p>
               <Badge
                 variant="primary"
                 pill
@@ -145,7 +147,7 @@ function GeneralPostsPage({ message, filter = "" }) {
               <Badge
                 variant="primary"
                 pill
-                className={`${styles.Tags}`}
+                className={`${styles.Tags} `}
                 onClick={() => setTags("Fitness")}
               >
                 Fitness

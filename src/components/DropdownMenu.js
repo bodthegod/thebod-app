@@ -32,7 +32,7 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
             onClick={handleDelete}
             aria-label="remove post"
           >
-            <i class="fas fa-eraser"/>
+            <i className="fas fa-eraser"/>
           </Dropdown.Item>
         </OverlayTrigger>
         <OverlayTrigger placement="top" overlay={<Tooltip>Edit</Tooltip>}>
@@ -41,7 +41,7 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
             onClick={handleEdit}
             aria-label="edit or change post"
           >
-            <i class="fas fa-cogs"/>
+            <i className="fas fa-cogs"/>
           </Dropdown.Item>
         </OverlayTrigger>
       </Dropdown.Menu>
@@ -65,7 +65,7 @@ export function ProfileEditDropdownMenu({ id }) {
             aria-label="edit profile"
             className={styles.DropdownItem}
           >
-            <i class="fas fa-cogs"/>
+            <i className="fas fa-cogs"/>
           </Dropdown.Item>
         </OverlayTrigger>
 
@@ -78,7 +78,7 @@ export function ProfileEditDropdownMenu({ id }) {
             aria-label="change password"
             className={styles.DropdownItem}
           >
-            <i class="fas fa-user-lock"/>
+            <i className="fas fa-user-lock"/>
           </Dropdown.Item>
         </OverlayTrigger>
       </Dropdown.Menu>

@@ -25,3 +25,7 @@
 .MyFeedIcon {
   color: rgba(18, 5, 199, 0.767);
 }
+
+.ActivePath a.active {
+  color: #00a8eb;
+}

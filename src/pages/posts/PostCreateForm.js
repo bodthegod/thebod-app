@@ -19,8 +19,10 @@ import { CSSTransition } from "react-transition-group";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({

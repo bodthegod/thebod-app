@@ -17,8 +17,11 @@ import { CSSTransition } from "react-transition-group";
 import { RiLockPasswordLine } from "react-icons/ri";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
+
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",
@@ -40,7 +43,7 @@ const LogInForm = () => {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
-      history.push("/");
+      history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -71,7 +74,11 @@ const LogInForm = () => {
                 />
               </Form.Group>
               {errors.username?.map((message, idx) => (
-                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="danger"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}
@@ -87,7 +94,11 @@ const LogInForm = () => {
                 />
               </Form.Group>
               {errors.password?.map((message, idx) => (
-                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="danger"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}
@@ -100,12 +111,15 @@ const LogInForm = () => {
             </Form>
           </Container>
           <Container className="mb-5">
-            <Link className={`${styles.Link} mt-4 font-weight-bold`} to="/signup">
+            <Link
+              className={`${styles.Link} mt-4 font-weight-bold`}
+              to="/signup"
+            >
               Don't have an account? Click here to sign up!
             </Link>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert variant="danger" className={styles.AlertStyles} key={idx}>
-                {message} 
+                {message}
               </Alert>
             ))}
           </Container>

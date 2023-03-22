@@ -16,8 +16,10 @@ import {
 import axios from "axios";
 import { CSSTransition } from "react-transition-group";
 import { TbUserPlus } from "react-icons/tb";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
+  useRedirect('loggedIn');
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -72,7 +74,11 @@ const SignUpForm = () => {
                 />
               </Form.Group>
               {errors.username?.map((message, idx) => (
-                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="danger"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}
@@ -89,7 +95,11 @@ const SignUpForm = () => {
                 />
               </Form.Group>
               {errors.password1?.map((message, idx) => (
-                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="danger"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}
@@ -105,7 +115,11 @@ const SignUpForm = () => {
                 />
               </Form.Group>
               {errors.password2?.map((message, idx) => (
-                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="danger"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}
@@ -116,7 +130,11 @@ const SignUpForm = () => {
                 Create account!
               </Button>
               {errors.non_field_errors?.map((message, idx) => (
-                <Alert variant="danger" className={styles.AlertStyles} key={idx}>
+                <Alert
+                  variant="danger"
+                  className={styles.AlertStyles}
+                  key={idx}
+                >
                   {message}
                 </Alert>
               ))}

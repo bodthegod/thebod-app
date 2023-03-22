@@ -51,13 +51,19 @@ const NavBar = () => {
       >
         <NavDropdown.Item className={styles.DropdownMenu}>
           <NavLink to={`/profiles/${currentUser?.profile_id}`}>
-            <AiOutlineUser className={`${styles.NavbarExpandedIcons} ${styles.ProfileIcon}`} size={25} />
+            <AiOutlineUser
+              className={`${styles.NavbarExpandedIcons} ${styles.ProfileIcon}`}
+              size={25}
+            />
             My Profile
           </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item className={styles.DropdownMenu}>
           <NavLink className={styles.LogoutIcon} to="/" onClick={handleLogOut}>
-            <AiOutlineLogout className={`${styles.NavbarExpandedIcons} ${styles.LogoutIcon}`} size={25} />
+            <AiOutlineLogout
+              className={`${styles.NavbarExpandedIcons} ${styles.LogoutIcon}`}
+              size={25}
+            />
             Log out
           </NavLink>
         </NavDropdown.Item>
@@ -73,7 +79,7 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/login"
       >
-        <i class="fa-solid fa-right-to-bracket"></i>
+        <i className="fa-solid fa-right-to-bracket"></i>
         <span>Log In</span>
       </NavLink>
       <NavLink
@@ -81,7 +87,7 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/signup"
       >
-        <i class="fa-solid fa-person-circle-plus"></i>
+        <i className="fa-solid fa-person-circle-plus"></i>
         <span>Sign Up</span>
       </NavLink>
     </>
@@ -116,7 +122,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i class="fa-solid fa-house-chimney-window"></i>
+              <i className="fa-solid fa-house-chimney-window"></i>
               <span>Home</span>
             </NavLink>
             {currentUser ? authIcons : unAuthIcons}

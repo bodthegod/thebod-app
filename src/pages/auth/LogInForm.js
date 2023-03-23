@@ -37,6 +37,7 @@ const LogInForm = () => {
   };
 
   const history = useHistory();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -45,6 +46,7 @@ const LogInForm = () => {
       setTokenTimestamp(data);
       history.push("/");
     } catch (err) {
+      
       if(err.response) {
         setErrors(err.response?.data);
       } else {
@@ -67,7 +69,7 @@ const LogInForm = () => {
             <h1 className={styles.Header}>
               Log In <RiLockPasswordLine />
             </h1>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
               <Form.Group controlId="username">
                 <Form.Label className="d-none">Username</Form.Label>
                 <Form.Control

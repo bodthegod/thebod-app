@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
-import Asset from "../../components/Asset";
-import appStyles from "../../App.module.css";
-import styles from "../../styles/ProfilePage.module.css";
-import PopularProfiles from "./PopularProfiles";
-import Toolbar from "../../components/Toolbar";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { fetchMoreData } from "../../utils/utils";
+import InfiniteScroll from "react-infinite-scroll-component";
 import {
   useProfileData,
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
-import Post from "../posts/Post";
+import { axiosReq } from "../../api/axiosDefaults";
+
+import appStyles from "../../App.module.css";
+import styles from "../../styles/ProfilePage.module.css";
+import CSSTransition from "react-transition-group/CSSTransition";
+
 import NoResultsFoundImage from "../../assets/no-result-found.jpg";
-import { CSSTransition } from "react-transition-group";
 import { ProfileEditDropdownMenu } from "../../components/DropdownMenu";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
+import Asset from "../../components/Asset";
+import PopularProfiles from "./PopularProfiles";
+import Toolbar from "../../components/Toolbar";
+import Post from "../posts/Post";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);

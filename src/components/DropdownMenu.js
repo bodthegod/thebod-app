@@ -1,10 +1,12 @@
 import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import { useHistory } from "react-router";
+
 import styles from "../styles/DropdownMenu.module.css";
+
+import Dropdown from "react-bootstrap/Dropdown";
 import { TbGridDots } from "react-icons/tb";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { useHistory } from "react-router";
 
 const DropdownSelect = React.forwardRef(({ onClick }, ref) => (
   <i

@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
-import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosRes } from "../../api/axiosDefaults";
+
 import appStyles from "../../App.module.css";
 import inputStyles from "../../styles/LogInSignUpForm.module.css";
 import alertStyles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { CSSTransition } from "react-transition-group";
+import CSSTransition from "react-transition-group/CSSTransition";
+
+import Row from "react-bootstrap/Row";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 const UserPasswordForm = () => {
   const history = useHistory();

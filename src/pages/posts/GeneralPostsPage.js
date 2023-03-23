@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Badge, Col, Container, Form, Row } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 import appStyles from "../../App.module.css";
 import styles from "../../styles/GeneralPostsPage.module.css";
+import CSSTransition from "react-transition-group/CSSTransition";
+import { CgSearch } from "react-icons/cg";
+
+import Badge from "react-bootstrap/Badge";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+
 import Asset from "../../components/Asset";
 import Toolbar from "../../components/Toolbar.js";
 import Post from "./Post";
 import NoResultsImage from "../../assets/no-result-found.jpg";
-import { CgSearch } from "react-icons/cg";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { fetchMoreData } from "../../utils/utils";
 
 function GeneralPostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });

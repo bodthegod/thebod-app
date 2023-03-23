@@ -1,19 +1,21 @@
-import styles from "../src/App.module.css";
-import NavBar from "./components/NavBar";
-import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
-import HomePage from "./components/HomePage";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 import "./api/axiosDefaults";
-import SignUpForm from "./pages/auth/SignUpForm";
+
+import styles from "../src/App.module.css";
+
+import Container from "react-bootstrap/Container";
+import NavBar from "./components/NavBar";
+import HomePage from "./components/HomePage";
 import LogInForm from "./pages/auth/LogInForm";
+import SignUpForm from "./pages/auth/SignUpForm";
+import ProfilePage from "./pages/profiles/ProfilePage";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
 import GeneralPostsPage from "./pages/posts/GeneralPostsPage";
-import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PostEditForm from "./pages/posts/PostEditForm";
-import ProfilePage from "./pages/profiles/ProfilePage";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import PageNotFound from "./components/PageNotFound";
 
 function App() {

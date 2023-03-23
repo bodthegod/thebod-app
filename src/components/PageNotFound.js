@@ -1,12 +1,14 @@
 import React from "react";
+
+import styles from "../styles/PageNotFound.module.css";
+import appStyles from "../App.module.css";
+import btnStyles from "../styles/HomePage.module.css";
+
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
-import styles from "../styles/PageNotFound.module.css";
-import appStyles from "../App.module.css";
-import btnStyles from "../styles/HomePage.module.css";
 import Link from "react-router-dom/Link";
 
 /*

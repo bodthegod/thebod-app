@@ -1,12 +1,14 @@
 import React from "react";
+import NavLink from "react-router-dom/NavLink";
+
+import styles from "../styles/HomePage.module.css";
+import appStyles from "../App.module.css";
+
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import NavLink from "react-router-dom/NavLink";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
-import styles from "../styles/HomePage.module.css";
-import appStyles from "../App.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
 
 const HomePage = () => {

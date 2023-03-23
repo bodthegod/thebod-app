@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
-import styles from "../../styles/LogInSignUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
-
-import {
-  Col,
-  Row,
-  Container,
-  Form,
-  Button,
-  Alert,
-  Image,
-} from "react-bootstrap";
-import { CSSTransition } from "react-transition-group";
-import { RiLockPasswordLine } from "react-icons/ri";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
+
+import styles from "../../styles/LogInSignUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import CSSTransition from "react-transition-group/CSSTransition";
+import { RiLockPasswordLine } from "react-icons/ri";
+
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();

@@ -1,14 +1,21 @@
 import React from "react";
-import { Badge, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import Avatar from "../../components/Avatar";
+import Link from "react-router-dom/Link";
+import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosRes } from "../../api/axiosDefaults";
+import { DropdownMenu } from "../../components/DropdownMenu";
+import Avatar from "../../components/Avatar";
+
+import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import styles from "../../styles/Post.module.css";
 import tagsStyles from "../../styles/GeneralPostsPage.module.css";
-import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
-import { axiosRes } from "../../api/axiosDefaults";
-import { CSSTransition } from "react-transition-group";
-import { DropdownMenu } from "../../components/DropdownMenu";
+import CSSTransition from "react-transition-group/CSSTransition";
+
+import Badge from "react-bootstrap/Badge";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 const Post = (props) => {
   const {

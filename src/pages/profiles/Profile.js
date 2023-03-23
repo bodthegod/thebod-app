@@ -4,8 +4,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 import Avatar from "../../components/Avatar";
 
-import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/CommentCreateEditForm.module.css";
+import styles from "../../styles/Profile.module.css";
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
 
 import Button from "react-bootstrap/Button";

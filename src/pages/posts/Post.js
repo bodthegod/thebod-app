@@ -40,7 +40,7 @@ const Post = (props) => {
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/posts/${id}/edit`);
+    history.push(`/posts/${id}/edit/`);
   };
 
   const handleDelete = async () => {
@@ -107,7 +107,7 @@ const Post = (props) => {
             </div>
           </Media>
         </Card.Body>
-        <Link to={`/posts/${id}`}>
+        <Link to={`/posts/${id}/`}>
           <Card.Img src={image} alt={title} />
         </Link>
         <Card.Body>
@@ -153,7 +153,7 @@ const Post = (props) => {
               </OverlayTrigger>
             )}
             {likes_total}
-            <Link to={`/posts/${id}`}>
+            <Link to={`/posts/${id}/`}>
               <i className={`${styles.Icon}`}>
                 <RiChat3Line />
               </i>

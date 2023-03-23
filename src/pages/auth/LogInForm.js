@@ -8,8 +8,8 @@ import { setTokenTimestamp } from "../../utils/utils";
 import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-import { RiLockPasswordLine } from "react-icons/ri";
 
+import { RiLockPasswordLine } from "react-icons/ri";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -40,7 +40,7 @@ const LogInForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/dj-rest-auth/login/", logInData);
+      const { data } = await axios.post("/dj-rest-auth/login", logInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
       history.push("/");

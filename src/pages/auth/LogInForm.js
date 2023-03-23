@@ -40,7 +40,7 @@ const LogInForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/dj-rest-auth/login", logInData);
+      const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
       history.push("/");

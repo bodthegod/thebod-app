@@ -90,27 +90,30 @@ function PostEditForm() {
     <div className="text-center">
       <Form.Group>
         <Form.Label>Edit your title:</Form.Label>
+        {errors.title?.map((message, idx) => (
+          <Alert variant="warning" className={styles.AlertStyles} key={idx}>
+            {message}
+          </Alert>
+        ))}
         <Form.Control
           type="text"
           name="title"
           className={`${formStyles.Form} ${inputStyles.Input}`}
           value={title}
           onChange={handleChange}
+          aria-label="title"
         />
       </Form.Group>
-      {errors.title?.map((message, idx) => (
-        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <Form.Group>
         <Form.Label>Choose your tag:</Form.Label>
         <Form.Control
           as="select"
+          name="tags"
           className={`${formStyles.Form}`}
           value={tags}
           onChange={handleChange}
+          aria-label="tags"
         >
           <option value="bodybuilding">BodyBuilding</option>
           <option value="running">Running</option>
@@ -122,11 +125,6 @@ function PostEditForm() {
           <option value="crossfit">CrossFit</option>
         </Form.Control>
       </Form.Group>
-      {errors.tags?.map((message, idx) => (
-        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <Form.Group>
         <Form.Label>Edit your description:</Form.Label>
@@ -137,6 +135,7 @@ function PostEditForm() {
           className={`${formStyles.Form} ${inputStyles.Input}`}
           value={content}
           onChange={handleChange}
+          aria-label="post content"
         />
       </Form.Group>
       {errors.content?.map((message, idx) => (
@@ -146,7 +145,7 @@ function PostEditForm() {
       ))}
 
       <Button className={btnStyles.Button} type="submit">
-        Edit Post
+        Save Edit
       </Button>
 
       <Button

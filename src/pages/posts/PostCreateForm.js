@@ -110,11 +110,6 @@ function PostCreateForm() {
           <option value="CrossFit">CrossFit</option>
         </Form.Control>
       </Form.Group>
-      {errors.tags?.map((message, idx) => (
-        <Alert variant="warning" className={styles.AlertStyles} key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <Form.Group>
         <Form.Label>Describe your post!</Form.Label>

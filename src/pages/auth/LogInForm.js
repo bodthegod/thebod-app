@@ -45,9 +45,15 @@ const LogInForm = () => {
       setTokenTimestamp(data);
       history.push("/");
     } catch (err) {
-      setErrors(err.response?.data);
+      if(err.response) {
+        setErrors(err.response?.data);
+      } else {
+        setErrors({"non_field_errors":[String(err)]})
+      }
     }
   };
+
+  
   return (
     <CSSTransition
       in={true}

@@ -20,7 +20,6 @@ import Image from "react-bootstrap/Image";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
-  useRedirect("loggedIn");
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",

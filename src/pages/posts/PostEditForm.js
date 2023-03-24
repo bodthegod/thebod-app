@@ -106,7 +106,12 @@ function PostEditForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Choose your tag:</Form.Label>
+        <Form.Label>Tags</Form.Label>
+        {errors.tags?.map((message, idx) => (
+          <Alert variant="warning" className={styles.AlertStyles} key={idx}>
+            {message}
+          </Alert>
+        ))}
         <Form.Control
           as="select"
           name="tags"
@@ -115,6 +120,7 @@ function PostEditForm() {
           onChange={handleChange}
           aria-label="tags"
         >
+          <option>Select your tag!</option>
           <option value="bodybuilding">BodyBuilding</option>
           <option value="running">Running</option>
           <option value="sports">Sports</option>

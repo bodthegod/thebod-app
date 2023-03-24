@@ -92,7 +92,12 @@ function PostCreateForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Choose your tag!</Form.Label>
+        <Form.Label>Tags</Form.Label>
+        {errors.tags?.map((message, idx) => (
+          <Alert variant="warning" className={styles.AlertStyles} key={idx}>
+            {message}
+          </Alert>
+        ))}
         <Form.Control
           as="select"
           name="tags"
@@ -100,6 +105,7 @@ function PostCreateForm() {
           value={tags}
           onChange={handleChange}
         >
+          <option>Select your tag!</option>
           <option value="Bodybuilding">BodyBuilding</option>
           <option value="Running">Running</option>
           <option value="Sports">Sports</option>

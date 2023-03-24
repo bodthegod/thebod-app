@@ -47,7 +47,9 @@ const Post = (props) => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
       history.push("/");
-    } catch (err) {}
+    } catch (err) {
+      return err;
+    }
   };
 
   const handleLike = async () => {
@@ -61,7 +63,9 @@ const Post = (props) => {
             : post;
         }),
       }));
-    } catch (err) {}
+    } catch (err) {
+      return err;
+    }
   };
 
   const handleUnlike = async () => {
@@ -75,7 +79,9 @@ const Post = (props) => {
             : post;
         }),
       }));
-    } catch (err) {}
+    } catch (err) {
+      return err;
+    }
   };
 
   return (
@@ -124,7 +130,7 @@ const Post = (props) => {
             {is_owner ? (
               <OverlayTrigger
                 placement="top"
-                overlay={<Tooltip>You can't heart this!</Tooltip>}
+                overlay={<Tooltip>You can&apos;t heart this!</Tooltip>}
               >
                 <i className={styles.Icon}>
                   <RiHeartsLine />

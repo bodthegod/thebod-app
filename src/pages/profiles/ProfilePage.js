@@ -49,7 +49,9 @@ function ProfilePage() {
         }));
         setProfilePosts(profilePosts);
         setHasLoaded(true);
-      } catch (err) {}
+      } catch (err) {
+        return err;
+      }
     };
     fetchData();
   }, [id, setProfileData]);
@@ -66,7 +68,7 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={4}>
-          <h3 className="mt-2 mb-4">{profile?.owner}'s profile</h3>
+          <h3 className="mt-2 mb-4">{profile?.owner}&apos;s profile</h3>
           <p className={styles.UserSocialNumbers}>
             Posts
             <span>{profile?.posts_total}</span>
@@ -113,14 +115,15 @@ function ProfilePage() {
       </p>
       {profilePosts.results.length ? (
         <InfiniteScroll
-          children={profilePosts.results.map((post) => (
-            <Post key={post.id} {...post} setPosts={setProfilePosts} />
-          ))}
           dataLength={profilePosts.results.length}
           loader={<Asset spinner />}
           hasMore={!!profilePosts.next}
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
-        />
+        >
+          {profilePosts.results.map((post) => (
+            <Post key={post.id} {...post} setPosts={setProfilePosts} />
+          ))}
+        </InfiniteScroll>
       ) : (
         <Asset
           src={NoResultsFoundImage}

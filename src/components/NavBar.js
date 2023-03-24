@@ -29,7 +29,9 @@ const NavBar = () => {
       setExpanded(false);
       setCurrentUser(null);
       removeTokenTimestamp();
-    } catch (err) {}
+    } catch (err) {
+      return err;
+    }
   };
 
   const createPostIcon = (

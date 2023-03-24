@@ -42,7 +42,9 @@ function PostEditForm() {
         is_owner
           ? setPostData({ title, tags, content, image })
           : history.push("/");
-      } catch (err) {}
+      } catch (err) {
+        return err;
+      }
     };
     handleMount();
   }, [id, history]);

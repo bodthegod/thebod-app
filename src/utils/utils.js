@@ -13,7 +13,9 @@ export const fetchMoreData = async (resource, setResource) => {
           : [...acc, cur];
       }, prevResource.results),
     }));
-  } catch (err) {}
+  } catch (err) {
+    return err;
+  }
 };
 
 export const unfollowHelper = (profile, clickedProfile) => {
@@ -39,7 +41,6 @@ export const followHelper = (profile, clickedProfile, following_id) => {
     ? { ...profile, following_total: profile.following_total + 1 }
     : profile;
 };
-
 
 /*
   Sets token timestamp in local storage

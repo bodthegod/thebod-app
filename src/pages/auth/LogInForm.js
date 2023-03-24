@@ -54,7 +54,6 @@ const LogInForm = () => {
     return false;
   };
 
-  
   return (
     <CSSTransition
       in={true}
@@ -122,7 +121,7 @@ const LogInForm = () => {
               className={`${styles.Link} mt-4 font-weight-bold`}
               to="/signup"
             >
-              Don't have an account? Click here to sign up!
+              Don&apos;t have an account? Click here to sign up!
             </Link>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert variant="danger" className={styles.AlertStyles} key={idx}>

@@ -3,6 +3,12 @@ import styles from "../styles/Asset.module.css";
 
 import HashLoader from "react-spinners/HashLoader";
 
+/*
+Asset component that takes different props
+and changes asset displayed if specified
+prop is passed
+*/
+
 const Asset = ({ spinner, src, message }) => {
   return (
     <div className={`${styles.Asset} p-4`}>

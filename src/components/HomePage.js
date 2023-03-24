@@ -56,8 +56,8 @@ const HomePage = () => {
               <div className="p-4 ">
                 <h2 className="text-center">Inspiration</h2>
                 <p className="mt-4">
-                  Get inspired by others' journeys and share your own to inspire
-                  others.
+                  Get inspired by others&apos; journeys and share your own to
+                  inspire others.
                 </p>
               </div>
             </Col>

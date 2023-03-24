@@ -36,7 +36,9 @@ function PostPage() {
         ]);
         setPost({ results: [post] });
         setComments(comments);
-      } catch (err) {}
+      } catch (err) {
+        return err;
+      }
     };
 
     handleMount();
@@ -76,7 +78,12 @@ function PostPage() {
               ) : null}
               {comments.results.length ? (
                 <InfiniteScroll
-                  children={comments.results.map((comment) => (
+                  dataLength={comments.results.length}
+                  loader={<Asset spinner />}
+                  hasMore={!!comments.next}
+                  next={() => fetchMoreData(comments, setComments)}
+                >
+                  {comments.results.map((comment) => (
                     <Comment
                       key={comment.id}
                       {...comment}
@@ -84,14 +91,10 @@ function PostPage() {
                       setComments={setComments}
                     />
                   ))}
-                  dataLength={comments.results.length}
-                  loader={<Asset spinner />}
-                  hasMore={!!comments.next}
-                  next={() => fetchMoreData(comments, setComments)}
-                />
+                </InfiniteScroll>
               ) : currentUser ? (
                 <p className={`${styles.NoCommentsMsg} text-center`}>
-                  It looks like there's no comments yet, start the conversation?
+                  It looks like there&apos;s no comments yet, start the conversation?
                 </p>
               ) : (
                 <p className={styles.NoCommentsMsg}>

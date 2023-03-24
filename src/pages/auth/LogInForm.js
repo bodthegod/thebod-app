@@ -46,7 +46,7 @@ const LogInForm = () => {
         );
         setCurrentUser(data.user);
         setTokenTimestamp(data);
-        return history.push("/")
+        history.push("/")
       } catch (err) {
       if (err.response) {
         setErrors(err.response?.data);
@@ -55,6 +55,7 @@ const LogInForm = () => {
       }
       return err
     }
+    return false
   };
 
   

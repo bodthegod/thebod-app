@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { useRedirect } from "../../hooks/useRedirect";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
@@ -20,6 +21,7 @@ import Image from "react-bootstrap/Image";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",

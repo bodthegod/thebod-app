@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import { useRedirect } from "../../hooks/useRedirect";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
 
 import styles from "../../styles/LogInSignUpForm.module.css";

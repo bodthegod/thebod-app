@@ -1,3 +1,40 @@
+ *   ### Wireframes
+        
+    -   I have used [Balsamiq Wireframes](https://balsamiq.com/) as my desired wireframing tool for my website, as it is very easy to use. However, due to these being wireframes, the final image of the website may be depicted differently yet these are base guidelines of my website, and the image I would like to achieve. I have made wireframes for both mobile and desktop views of the website.
+
+    -   Home Page Desktop Wireframe - [View](/docs/wireframes/thebod-home-page.png)
+
+    -   Home Page Mobile Wireframe - [View](/docs/wireframes/thebod-homepage-mobile.png)
+    -   Login Page Desktop Wireframe - [View](/docs/wireframes/thebod-login-page.png)
+
+    -   Login Page Mobile Wireframe - [View](/docs/wireframes/thebod-mobile-login.png)
+
+    -   Signup Page Desktop Wireframe - [View](/docs/wireframes/thebod-signup-desktop.png)
+
+    -   Signup Page Mobile Wireframe - [View](/docs/wireframes/thebod-signup-mobile.png)
+
+    -   Home Feed Page Desktop Wireframe - [View](/docs/wireframes/thebod-blog-home-feed.png)
+
+    -   Home Feed Page Mobile Wireframe - [View](/docs/wireframes/thebod-home-mobile-home-feed.png)
+
+    -   Post Detail Page Desktop Wireframe - [View](/docs/wireframes/thebod-blog-post-detail.png)
+
+    -   Post Detail Page Mobile Wireframe - [View](/docs/wireframes/thebod-home-mobile-post-detail%20.png)
+
+    -   Create Post Page Desktop Wireframe - [View](/docs/wireframes/thebod-blog-create-post.png)
+
+    -   Create Post Page Mobile Wireframe - [View](/docs/wireframes//thebod-mobile-post-create.png)
+
+    -   Profile Detail Page Desktop Wireframe - [View](/docs/wireframes/thebod-blog-profile-detail.png)
+
+    -   Profile Detail Page Mobile Wireframe - [View](/docs/wireframes/thebod-profile-detail-mobile.png)
+
+    -   Profile Edit Page Desktop Wireframe - [View](/docs/wireframes/thebod-blog-edit-profile.png)
+
+    -   Profile Edit Page Mobile Wireframe - [View](/docs/wireframes/thebod-profile-edit-mobile.png)
+
+    -   Profile Password Change Page Mobile Wireframe - [View](/docs/wireframes/thebod-passwordchange-mobile.png)
+
 https://imagecolorpicker.com/en used colour grabber for favicon colours and logo
 
 https://formito.com/tools/favicon used this software to create favicon

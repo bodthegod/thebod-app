@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useRedirect } from "../../hooks/useRedirect";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
@@ -20,8 +19,6 @@ import Image from "react-bootstrap/Image";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
-  alert("mount loginform")
-  useRedirect("loggedIn");
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",

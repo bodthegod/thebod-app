@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import "./api/axiosDefaults";
@@ -27,7 +28,7 @@ function App() {
       <>
         <Route
           exact
-          path="/"
+          path="/all-posts"
           render={() => (
             <GeneralPostsPage message="No results found, try another keyword or tag?" />
           )}
@@ -74,18 +75,18 @@ function App() {
   const loggedOutRoutes = () => {
     return (
       <>
-        <Route exact path="/" render={() => <HomePage />} />
         <Route exact path="/login" render={() => <LogInForm />} />
         <Route exact path="/signup" render={() => <SignUpForm />} />
       </>
     );
   };
-  
+
   return (
     <div className={`${styles.App} psychic`}>
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
+          <Route exact path="/" render={() => <HomePage />} />
           {!currentUser ? loggedOutRoutes() : loggedInRoutes()}
           <Route render={() => <PageNotFound />} />
         </Switch>

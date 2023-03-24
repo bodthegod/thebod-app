@@ -30,7 +30,7 @@ function App() {
             <Route exact path="/" render={() => <HomePage />} />
             <Route exact path="/login" render={() => <LogInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />
-            <Route render={() => <HomePage />} />
+            <Route render={() => <PageNotFound />} />
           </Switch>
         ) : (
           <Switch>

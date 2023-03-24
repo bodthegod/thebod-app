@@ -21,72 +21,74 @@ import PageNotFound from "./components/PageNotFound";
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+
+  const loggedInRoutes = () => {
+    return (
+      <>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <GeneralPostsPage message="No results found, try another keyword or tag?" />
+          )}
+        />
+        <Route
+          exact
+          path="/feed"
+          render={() => (
+            <GeneralPostsPage
+              message="No results found, try another keyword or follow a blogger."
+              filter={`owner__followed__owner__profile=${profile_id}&`}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/liked"
+          render={() => (
+            <GeneralPostsPage
+              message="No results found, try another keyword or like a post."
+              filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+            />
+          )}
+        />
+
+        <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+        <Route exact path="/posts/:id" render={() => <PostPage />} />
+        <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+        <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+        <Route
+          exact
+          path="/profiles/:id/edit/password"
+          render={() => <UserPasswordForm />}
+        />
+        <Route
+          exact
+          path="/profiles/:id/edit"
+          render={() => <ProfileEditForm />}
+        />
+      </>
+    );
+  };
+
+  const loggedOutRoutes = () => {
+    return (
+      <>
+        <Route exact path="/" render={() => <HomePage />} />
+        <Route exact path="/login" render={() => <LogInForm />} />
+        <Route exact path="/signup" render={() => <SignUpForm />} />
+      </>
+    );
+  };
+  
   return (
     <div className={`${styles.App} psychic`}>
       <NavBar />
       <Container className={styles.Main}>
-        {!currentUser ? (
-          <Switch>
-            <Route exact path="/" render={() => <HomePage />} />
-            <Route exact path="/login" render={() => <LogInForm />} />
-            <Route exact path="/signup" render={() => <SignUpForm />} />
-            <Route render={() => <PageNotFound />} />
-          </Switch>
-        ) : (
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <GeneralPostsPage message="No results found, try another keyword or tag?" />
-              )}
-            />
-            <Route
-              exact
-              path="/feed"
-              render={() => (
-                <GeneralPostsPage
-                  message="No results found, try another keyword or follow a blogger."
-                  filter={`owner__followed__owner__profile=${profile_id}&`}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/liked"
-              render={() => (
-                <GeneralPostsPage
-                  message="No results found, try another keyword or like a post."
-                  filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-                />
-              )}
-            />
-
-            <Route
-              exact
-              path="/posts/create"
-              render={() => <PostCreateForm />}
-            />
-            <Route exact path="/posts/:id" render={() => <PostPage />} />
-            <Route
-              exact
-              path="/posts/:id/edit"
-              render={() => <PostEditForm />}
-            />
-            <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-            <Route
-              exact
-              path="/profiles/:id/edit/password"
-              render={() => <UserPasswordForm />}
-            />
-            <Route
-              exact
-              path="/profiles/:id/edit"
-              render={() => <ProfileEditForm />}
-            />
-            <Route render={() => <PageNotFound />} />
-          </Switch>
-        )}
+        <Switch>
+          {!currentUser ? loggedOutRoutes() : loggedInRoutes()}
+          <Route render={() => <PageNotFound />} />
+        </Switch>
       </Container>
     </div>
   );

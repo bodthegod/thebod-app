@@ -115,7 +115,7 @@ const LogInForm = () => {
               ))}
               <Button
                 className={` ${btnStyles.Button} ${styles.LogInSignUpButton}`}
-                type="submit"
+                type="button"
               >
                 Log In!
               </Button>

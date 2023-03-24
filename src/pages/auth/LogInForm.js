@@ -40,17 +40,20 @@ const LogInForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/dj-rest-auth/login/", logInData);
-      setCurrentUser(data.user);
-      setTokenTimestamp(data);
-      history.push("/");
-    } catch (err) {
-      
-      if(err.response) {
+      const { data } = await axios.post(
+        "/dj-rest-auth/login/",
+        logInData
+        );
+        setCurrentUser(data.user);
+        setTokenTimestamp(data);
+        return history.push("/")
+      } catch (err) {
+      if (err.response) {
         setErrors(err.response?.data);
       } else {
-        setErrors({"non_field_errors":[String(err)]})
+        setErrors({ non_field_errors: [String(err)] });
       }
+      return err
     }
   };
 

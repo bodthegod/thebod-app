@@ -20,6 +20,7 @@ import Image from "react-bootstrap/Image";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+  alert("mount loginform")
   useRedirect("loggedIn");
   const [logInData, setLogInData] = useState({
     username: "",
@@ -37,13 +38,14 @@ const LogInForm = () => {
   };
 
   const history = useHistory();
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
       setTokenTimestamp(data);
+      alert("about the push to all-posts")
       history.push("/all-posts")
     } catch (err) {
       if (err.response) {
@@ -53,7 +55,7 @@ const LogInForm = () => {
       }
       return err;
     }
-    return false
+    return false;
   };
 
   

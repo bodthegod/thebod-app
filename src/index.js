@@ -6,14 +6,17 @@ import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { CookiesProvider } from "react-cookie";
 
 ReactDOM.render(
   <Router>
-    <CurrentUserProvider>
-      <ProfileDataProvider>
-        <App />
-      </ProfileDataProvider>
-    </CurrentUserProvider>
+    <CookiesProvider>
+      <CurrentUserProvider>
+        <ProfileDataProvider>
+          <App />
+        </ProfileDataProvider>
+      </CurrentUserProvider>
+    </CookiesProvider>
   </Router>,
   document.getElementById("root")
 );

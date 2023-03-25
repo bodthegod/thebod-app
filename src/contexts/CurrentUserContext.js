@@ -61,13 +61,13 @@ export const CurrentUserProvider = ({ children }) => {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
-            setCurrentUser((prevCurrentUser) => {
+            /* setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
                 history.push("/login");
               }
               return null;
             });
-            removeTokenTimestamp();
+            removeTokenTimestamp(); */
           }
           return axios(err.config);
         }

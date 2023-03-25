@@ -2,10 +2,9 @@ import React from "react";
 import Link from "react-router-dom/Link";
 import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { axiosRes } from "../../api/axiosDefaults";
 import { DropdownMenu } from "../../components/DropdownMenu";
 import Avatar from "../../components/Avatar";
-
+import axios from "axios";
 import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import styles from "../../styles/Post.module.css";
 import tagsStyles from "../../styles/GeneralPostsPage.module.css";
@@ -45,7 +44,7 @@ const Post = (props) => {
 
   const handleDelete = async () => {
     try {
-      await axiosRes.delete(`/posts/${id}/`);
+      await axios.delete(`/posts/${id}/`);
       history.push("/");
     } catch (err) {
       return err;
@@ -54,7 +53,7 @@ const Post = (props) => {
 
   const handleLike = async () => {
     try {
-      const { data } = await axiosRes.post("/likes/", { post: id });
+      const { data } = await axios.post("/likes/", { post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -70,7 +69,7 @@ const Post = (props) => {
 
   const handleUnlike = async () => {
     try {
-      await axiosRes.delete(`/likes/${like_id}/`);
+      await axios.delete(`/likes/${like_id}/`);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {

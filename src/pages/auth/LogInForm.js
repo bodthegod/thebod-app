@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import { setTokenTimestamp } from "../../utils/utils";
 
 import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -16,6 +15,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
+import useCookies from "react-cookie/cjs/useCookies";
+import jwtDecode from "jwt-decode";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -24,7 +25,7 @@ const LogInForm = () => {
     password: "",
   });
   const { username, password } = logInData;
-
+  const [, setCookie] = useCookies(['refreshTokenTimestamp']);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -36,12 +37,18 @@ const LogInForm = () => {
 
   const history = useHistory();
 
+  const setAuthToken = (data) => {
+      const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+      setCookie("refreshTokenTimestamp", refreshTokenTimestamp)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", logInData);
       setCurrentUser(data.user);
-      setTokenTimestamp(data);
+      setAuthToken(data);
+
       history.push("/")
     } catch (err) {
       if (err.response) {

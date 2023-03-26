@@ -129,6 +129,7 @@ const Post = (props) => {
             {is_owner ? (
               <OverlayTrigger
                 placement="top"
+                aria-label="You cant heart this"
                 overlay={<Tooltip>You can&apos;t heart this!</Tooltip>}
               >
                 <i className={styles.Icon}>
@@ -136,13 +137,13 @@ const Post = (props) => {
                 </i>
               </OverlayTrigger>
             ) : like_id ? (
-              <span onClick={handleUnlike}>
+              <span onClick={handleUnlike} aria-label="Unlike Post">
                 <i className={styles.LikedIcon}>
                   <RiHeartsFill />
                 </i>
               </span>
             ) : currentUser ? (
-              <span onClick={handleLike}>
+              <span onClick={handleLike} aria-label="Like Post">
                 <i className={styles.Icon}>
                   <RiHeartsLine />
                 </i>
@@ -150,6 +151,7 @@ const Post = (props) => {
             ) : (
               <OverlayTrigger
                 placement="top"
+                aria-label="Log in to heart this post"
                 overlay={<Tooltip>Log in to heart this post!</Tooltip>}
               >
                 <i className={styles.Icon}>
@@ -158,7 +160,7 @@ const Post = (props) => {
               </OverlayTrigger>
             )}
             {likes_total}
-            <Link to={`/posts/${id}/`}>
+            <Link aria-label="comments total" to={`/posts/${id}/`}>
               <i className={`${styles.Icon}`}>
                 <RiChat3Line />
               </i>

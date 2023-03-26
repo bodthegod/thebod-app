@@ -106,7 +106,7 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <NavLink to="/">
+        <NavLink to="/" aria-label="thebod home navbar title">
           <Navbar.Brand>
             <span>
               <strong>thebod</strong>

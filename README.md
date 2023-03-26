@@ -212,6 +212,32 @@ Here you can see that I have validated every single page of my JSX code after fi
 <details><summary>Eslint validation for all files</summary> 
 <img src="docs/validation/eslint-validation.PNG"> 
 </details> 
+
+### Lighthouse Report 
+
+Lighthouse was used to test the performance, accessibility, best practice and SEO of the site. The validation was done for both desktop & mobile.  
+
+#### Desktop Report 
+
+<details><summary>Home page</summary> 
+<img src="docs/validation/lighthouse-home-desktop.PNG "> 
+</details> 
+
+<details><summary>General Posts page</summary> 
+<img src="docs/validation/lighthouse-posts-desktop.PNG"> 
+</details> 
+
+#### Mobile Report
+
+<details><summary>Home page</summary> 
+<img src="docs/validation/lighthouse-home-mobile.PNG"> 
+</details> 
+
+<details><summary>General Posts page</summary> 
+<img src="docs/validation/lighthouse-posts-mobile.PNG "> 
+</details> 
+
+
 ### Credits
 
 https://imagecolorpicker.com/en used colour grabber for favicon colours and logo

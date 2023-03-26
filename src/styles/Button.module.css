@@ -22,7 +22,7 @@
 .Button:active:not(:disabled),
 .Button:focus:not(:disabled) {
   background-color: #9247cf;
-  border-color: #9247cf;
+  border-color: #9d4edd;
   transform: translateY(1px);
   outline: none;
 }
@@ -52,16 +52,15 @@
   color: #ffffff;
 }
 .CancelButton:active:focus {
-  border-color: #6d2319;
+  border-color: #a32f1f;
   transition: color, fill ease-in-out 0.3s;
 }
 .CancelButton:not(:disabled):not(.disabled):active {
   background-color: #6d2319;
   transform: translateY(1px);
-  border-color: #6d2319;
+  border-color: #a32f1f;
 }
 .CancelButton:focus {
   background-color: #6d2319;
-  border-color: #6d2319;
-  box-shadow: none Imp !important;
+  border-color: #a32f1f;
 }

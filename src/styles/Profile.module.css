@@ -40,7 +40,6 @@
 .FollowButton:focus {
   background-color: #542877;
   border-color: #9247cf;
-  box-shadow: none Imp !important;
 }
 .UnfollowButton {
   align-self: center;
@@ -81,7 +80,6 @@
 .UnfollowButton:focus {
   background-color: #942525;
   border-color: #bb3030;
-  box-shadow: none Imp !important;
 }
 
 @keyframes btngentleshake {

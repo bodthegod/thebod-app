@@ -128,6 +128,77 @@ For my fonts within my website, I used Google Fonts- as my main font, I decided 
   -   Profile Edit Page Mobile Wireframe - [View](/docs/wireframes/thebod-profile-edit-mobile.png)
   -   Profile Password Change Page Mobile Wireframe - [View](/docs/wireframes/thebod-passwordchange-mobile.png)
 
+### CSS
+
+I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. All of my CSS modules that were imported within my js files were validated.
+
+<details><summary>App.module.css</summary> 
+<img src="docs/validation/appcss-validation.PNG "> 
+</details> 
+
+
+<details><summary>Index.css</summary> 
+<img src="docs/validation/indexcss-validation.PNG "> 
+</details> 
+
+<details><summary>Asset.module.css</summary> 
+<img src="docs/validation/assetcss-validation.PNG "> 
+</details> 
+
+<details><summary>Avatar.module.css</summary> 
+<img src="docs/validation/avatarcss-validation.PNG "> 
+</details> 
+<details><summary>Button.module.css</summary> 
+<img src="docs/validation/buttoncss-validation.PNG "> 
+</details> 
+<details><summary>Comment.module.css</summary> 
+<img src="docs/validation/commentcss-validation.PNG"> 
+</details> 
+<details><summary>CommentCreateEditForm.module.css</summary> 
+<img src="docs/validation/commentcreateeditcss-validation.PNG"> 
+</details> 
+<details><summary>DropdownMenu.module.css</summary> 
+<img src="docs/validation/dropdowncss-validation.PNG"> 
+</details> 
+<details><summary>GeneralPostsPage.module.css</summary> 
+<img src="docs/validation/generalpostspagecss-validation.PNG"> 
+</details> 
+<details><summary>HomePage.module.css</summary> 
+<img src="docs/validation/homepagecss-validation.PNG"> 
+</details> 
+<details><summary>LogInSignUpForm.module.css</summary> 
+<img src="docs/validation/loginsignupcss-validation.PNG"> 
+</details> 
+<details><summary>NavBar.module.css</summary> 
+<img src="docs/validation/navbarcss-validation.PNG"> 
+</details> 
+<details><summary>PageNotFound.module.css</summary> 
+<img src="docs/validation/pagenotfoundcss-validation.PNG"> 
+</details> 
+<details><summary>PopularProfiles.module.css</summary> 
+<img src="docs/validation/popularprofilescss-validation.PNG"> 
+</details> 
+<details><summary>Post.module.css</summary> 
+<img src="docs/validation/postcss-validation.PNG"> 
+</details> 
+<details><summary>PostCreateEditForm.module.css</summary> 
+<img src="docs/validation/postcreateeditformcss-validation.PNG"> 
+</details> 
+<details><summary>Profile.module.css</summary> 
+<img src="docs/validation//profilecss-validation.PNG"> 
+</details> 
+<details><summary>ProfilePage.module.css</summary> 
+<img src="docs/validation/profilepagecss-validation.PNG"> 
+</details> 
+<details><summary>ScrollBar.module.css</summary> 
+<img src="docs/validation/scrollbarcss-validation.PNG"> 
+</details> 
+<details><summary>ScrollToTopButton.module.css</summary> 
+<img src="docs/validation/scrolltotopcss-validation.PNG"> 
+</details> 
+<details><summary>Toolbar.module.css</summary> 
+<img src="docs/validation/toolbarcss-validation.PNG"> 
+</details> 
 
 ### Credits
 

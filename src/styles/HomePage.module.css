@@ -42,7 +42,6 @@
 .HomeButton:focus {
   background-color: #9247cf;
   border-color: #9247cf;
-  box-shadow: none Imp !important;
 }
 .ContactIcons {
   animation: bounce 2s ease-in-out infinite;

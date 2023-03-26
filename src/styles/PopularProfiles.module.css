@@ -21,7 +21,6 @@
   }
   .CrownIcon {
     fill: rgb(236, 201, 1);
-    box-shadow: 10px black;
   }
 
   @media (max-width: 767px) {

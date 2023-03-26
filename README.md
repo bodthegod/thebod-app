@@ -200,6 +200,18 @@ I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. 
 <img src="docs/validation/toolbarcss-validation.PNG"> 
 </details> 
 
+### JSX
+I have used ESLint to validate my JSX code.
+Initially, I had linting errors such as:
+
+- An error with apostrophes, and I had to replace them with `&apos;`.
+- Empty block statements from where I removed my `console.log()`s. I fixed this by adding return statements to return the errors.
+- Missing imports of `React`, this I fixed by importing `React` in the appropriate files.
+Here you can see that I have validated every single page of my JSX code after fixing these issues, and it returned no errors.
+
+<details><summary>Eslint validation for all files</summary> 
+<img src="docs/validation/eslint-validation.PNG"> 
+</details> 
 ### Credits
 
 https://imagecolorpicker.com/en used colour grabber for favicon colours and logo

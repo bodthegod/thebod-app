@@ -211,6 +211,50 @@ In order to get my project to function the way I intended, I created many differ
 - `<ScrollToTopButton />` - A reusable component that displays a scroll to top button on the bottom right of the screen if the page is scrolled to a certain point. This allows good user flow of a user to access their toolbar in order to utilse the search functionality and tags at the top of the page.
 
 - `<Toolbar />` - A reusable component that displays icons to allow a user to create a post, view their hearted posts and show their feed (the posts that have been posted by users they follow). This component is reused throughout the majority of my app.
+## Validation
+
+### HTML
+I used the W3C Markup Validation Service to validate my HTML code. As you can see, no errors were found within my HTML.
+
+
+<details><summary>Home page (Logged Out)</summary> 
+<img src="docs/validation/homehtml-validation.PNG"> 
+</details> 
+<details><summary>Login Page</summary> 
+<img src="docs/validation/loginhtml-validation.PNG"> 
+</details> 
+<details><summary>Sign Up Page</summary> 
+<img src="docs/validation/signuphtml-validation.PNG"> 
+</details> 
+<details><summary>Posts Page</summary> 
+<img src="docs/validation/postshtml-validation.PNG"> 
+</details> 
+<details><summary>My Feed Page</summary> 
+<img src="docs/validation/feedhtml-validation.PNG"> 
+</details> 
+<details><summary>Hearted Posts Page</summary> 
+<img src="docs/validation/likedhtml-validation.PNG"> 
+</details> 
+<details><summary>Create Post Page</summary> 
+<img src="docs/validation/createposthtml-validation.PNG"> 
+</details> 
+<details><summary>Edit Post Page</summary> 
+<img src="docs/validation/editposthtml-validation.PNG"> 
+</details> 
+<details><summary>Profiles Page</summary> 
+<img src="docs/validation/profileshtml-validation.PNG"> 
+</details> 
+<details><summary>Edit Profile Page</summary> 
+<img src="docs/validation/editprofilehtml-validation.PNG"> 
+</details> 
+<details><summary>Edit Password Page</summary> 
+<img src="docs/validation/editpasswordhtml-validation.PNG"> 
+</details> 
+<details><summary>404 Page Not Found Page</summary> 
+<img src="docs/validation/404html-validation.PNG"> 
+</details> 
+
+
 ### CSS
 
 I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. All of my CSS modules that were imported within my js files were validated.

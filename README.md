@@ -171,6 +171,46 @@ For my fonts within my website, I used Google Fonts- as my main font, I decided 
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS
 
 ## Front-End
+
+### React
+
+React is a popular and widely-used JavaScript library for building user interfaces. Developed by Facebook, React allows developers to create reusable UI components and manage the state of those components, making it easy to build complex, dynamic, and interactive web applications. React utilizes a virtual DOM, which allows for efficient updates and rendering of components, resulting in fast and responsive applications. With a large and active community, a vast ecosystem of supporting tools and libraries, and a focus on declarative and component-based programming, React has become one of the most popular choices for building modern web applications.
+
+I have used React within building my application for these reasons:
+1. Reusability: React's component-based architecture makes it easy to reuse code, allowing you to save time and effort when building your application.
+
+2. Performance: React's use of a virtual DOM allows for fast and efficient updates and rendering of components, resulting in a highly performant user interface.
+
+3. Large and Active Community: React has a large and active community, with a vast ecosystem of supporting tools and libraries, which makes it easier to find solutions to problems and stay up-to-date on the latest developments.
+
+4. Declarative Programming: React allows for declarative programming, which makes it easier to understand and reason about your code, and reduces the likelihood of bugs and errors.
+
+5. Scalability: React is highly scalable, making it well-suited for applications of all sizes, from small, simple projects to large, complex applications.
+
+This project allowed for me to utilize the usefulness of react, due to many different components needing to be rendered on the page at once. 
+
+
+In order to get my project to function the way I intended, I created many different components to be reused across my app. 
+
+- `<Asset />` - This was my asset component, which changed the asset displayed depending on the props I had provided it. These props were:
+  - a loading spinner icon from react-spinners for when content is loading
+  - an image with a src attribute
+  - a message rendered in a paragraph tag
+
+
+- `<Avatar />` - Another reusable component, which was used to render the avatar profile picture for a user. Props inside this component allowed for the src attribute to be changed (for example a user changes their avatar). This component was rendered in many different pages (Post, Profile page) and also the `<NavBar/>` component.
+
+- `<DropdownMenu />` - A reusable component that renders the dropdown menu- allowing a user to edit or remove their own content. This can be seen on many pages, for example the post page (own post editing), profile page (editing own profile data) and comments editing.
+
+- `<NavBar />` - A reusable component that is rendered on every page. The content within the navbar changes depending on the authentication status of a user (if not logged in, display icons for login/signup). When a user is logged in, they are shown the avatar component and a dropdown menu allowing them to logout or access their profile.
+
+- `<HomePage />` - A unique component that renders the homepage for users that are not logged in, displaying login/signup buttons for a user.
+
+- `<PageNotFound />` - A unique component that renders the page not found image and message if a 404 error is hit. This page displays a "Go Back" button which uses `history.goBack()` to take the user back to the page they were on before the error.
+
+- `<ScrollToTopButton />` - A reusable component that displays a scroll to top button on the bottom right of the screen if the page is scrolled to a certain point. This allows good user flow of a user to access their toolbar in order to utilse the search functionality and tags at the top of the page.
+
+- `<Toolbar />` - A reusable component that displays icons to allow a user to create a post, view their hearted posts and show their feed (the posts that have been posted by users they follow). This component is reused throughout the majority of my app.
 ### CSS
 
 I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. All of my CSS modules that were imported within my js files were validated.

@@ -147,6 +147,30 @@ For my fonts within my website, I used Google Fonts- as my main font, I decided 
 - [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - React Infinite Scroll was a very important feature of my website as the aim was to keep the user engaged. Justification: I used this component to load all content (posts & comments) automatically as the user scrolls towards the bottom of the page, which meant that the content was never taken away from the user.
 - [Popper](https://popper.js.org/) - this is a 3rd party library used by React-Bootstrap. Justification: Popper was simply used to position the dropdown menu elements to fixed on screen.
 
+### Tools & Programs
+
+- [Deviceframes](https://deviceframes.com/) was used to create the design mockups at the top of this README
+- [Balsamiq](https://balsamiq.com/) to make my wireframes for different screens
+- [Cloudinary](https://cloudinary.com/) to store static files
+- [Coolors](https://coolors.co/?home) was used to create the color scheme palette
+- [Formito](https://formito.com/tools/favicon) for making my website's favicon
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) was used for debugging of the code and checking site for responsiveness
+- [Google Fonts](https://fonts.google.com/) - for my Varela Rounded font
+- [GitHub](https://github.com/) was used as a remote repository to store project code
+- [Image Colour Picker](https://imagecolorpicker.com/en) - used colour grabber for favicon colours and logo
+- [Image Compressor Picker](https://imagecompressor.com/) - used to compress all images on my site to keep the website higher on performance
+- [Git](https://git-scm.com/) was used to commit and push my repository changes to github
+- [Font Awesome](https://fontawesome.com/) - icons from Font Awesome were used on my website
+- [React Icons](https://react-icons.github.io/react-icons/search) - icons from react-icons were used on my website
+- [React Spinners](https://www.davidhu.io/react-spinners/) - spinner came from this website and I changed the coloir
+- [Visual Studio Code](https://code.visualstudio.com/) - Was my chosen workspace to code this project
+- [Heroku](https://dashboard.heroku.com/apps) was used to deploy my code live
+- [ESLint](https://eslint.org/) used to validate JSX code
+- [WC3 Validator](https://validator.w3.org/) was used to validate my HTML
+- [Lighthouse Tools](https://developers.google.com/web/tools/lighthouse/) used to validate performance, accessibility, best practices and SEO of my website
+- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS
+
+## Front-End
 ### CSS
 
 I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. All of my CSS modules that were imported within my js files were validated.

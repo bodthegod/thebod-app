@@ -364,6 +364,398 @@ Lighthouse was used to test the performance, accessibility, best practice and SE
 <img src="docs/validation/lighthouse-posts-mobile.PNG "> 
 </details> 
 
+## Testing
+ 
+### Manual testing of user stories
+
+1. As a user I can view the home page so that I can understand the use and purpose of the blog site.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Go to https://thebod-blog.herokuapp.com/ | Home Page shows purpose of site and what it can be used for | Works as expected |
+ 
+<details><summary>User Story Test Screenshot</summary>
+<img src="docs/testing/user-story-1.PNG">
+</details>
+
+2.  As a user I can view the navigation bar at all times so that I have easy access to switch to any page for good user experience.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View any page of website using nav links and toolbar | Navbar and toolbar shows different navigation links | Works as expected |
+ 
+<details><summary>User Story Test Screenshot</summary>
+<img src="docs/testing/user-story-2-a.PNG">
+<img src="docs/testing/user-story-2-b.PNG">
+<img src="docs/testing/user-story-2-c.PNG">
+<img src="docs/testing/user-story-2-d.PNG">
+</details>
+
+3.  As a previous or new user I can view the log in and sign up buttons so that I can log into an account or create an account.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View login and signup buttons to create an account or log in | Navbar shows different login/signup links and so does home page | Works as expected |
+ 
+<details><summary>User Story Test Screenshot</summary>
+<img src="docs/testing/user-story-3.PNG">
+</details>
+
+4.  As a new or existing user I can create an account so that I can access all login required features to the website.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Create an account in signup form | Site allows me to create an account using the signup form and I am logged in | Works as expected |
+ 
+<details><summary>User Story Test Screenshot</summary>
+<img src="docs/testing/user-story-4-a.PNG">
+<img src="docs/testing/user-story-4-b.PNG">
+<img src="docs/testing/user-story-4-c.PNG">
+</details>
+
+5.  As a previous user I can log into my account so that I can access all features for a logged in user.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Log in to account using log in form | Site allows me to log into an account if I have signed up up previously | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-4-b.PNG">
+<img src="docs/testing/user-story-4-c.PNG">
+</details>
+
+6.  As a user I can remain logged in when changing pages so that I can use the app as I please until I log out.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Stay logged in when changing pages by clicking onto different sections of site | Site keeps me logged in using authentication tokens assigned to my browser | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-5.PNG">
+<img src="docs/testing/user-story-4-c.PNG">
+</details>
+
+7.  As a user I can post content on the website so that I can keep my following users up to date on my fitness goals, and upload images.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Create a post with a chosen tag using create post button | Site should allow for a post to be created and uploaded to the home page with a description | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-7-a.PNG">
+<img src="docs/testing/user-story-7-b.PNG">
+</details>
+
+8.  As a user I can view the tags related to a post so that I can see how relevant the content is to me as a user.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View a tag on a post by looking on any posts page | Site should allow for me to view the tags on any post under the content | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-8.PNG">
+</details>
+
+9.  As a user I can like or unlike a post so that I can show my opinion on somebody else's content, to give feedback.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click the heart icon under another person's post | The hearts number should go up, and the heart icon should go red | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-9-a.PNG">
+<img src="docs/testing/user-story-9-b.PNG">
+</details>
+
+10. As a user I can view any other user's specific posts so that I can see all the latest activity on their posts, and see all previous posts they have made.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on a person's profile image to view their profile and posts | If I click a profile image, it should take me to a user's profile containing all their posts | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-10.PNG">
+</details>
+
+11. As a user I can view the date a post was uploaded on so that I can know how time relevant the post is, and if it is worth viewing.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View a post from any page | If I view any page, the date it was posted should be shown in the post content | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-11.PNG">
+</details>
+
+12. As a user I can view more information on a specific post so that I can see the entirety of the content related to the post they have made.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click a post, view post description, tags and comments | If I view any page, the date it was posted should be shown in the post content | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-12.PNG">
+</details>
+
+13. As a user I can view posts that are associated with tags so that I can search for more specific results catered to me.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can filter posts by tags by clicking on the tags section on the right | If I click the tags filter, it should show me ONLY the posts that are associated with that tag | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-13.PNG">
+</details>
+
+13. As a user I can view posts that are associated with tags so that I can search for more specific results catered to me.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can filter posts by tags by clicking on the tags section on the right | If I click the tags filter, it should show me ONLY the posts that are associated with that tag | Works as expected |
+
+14. As a user I can comment on a post so that I can show my feedback and share my opinion.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can click on the comments section, type a comment and click post and it will show in the comments section | When I type a comment and post it, it stays in the comment section | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-14.PNG">
+</details>
+
+15. As a user I can see when a comment was posted so that I know if it is a new or old comment.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can view the time a comment was posted by looking in the comments section | The comment should be displayed with "time": ago | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-15.PNG">
+</details>
+
+16. As a user I can edit my comments so that I can change any of my comments and the text inside of them.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can click on the edit dots, and click edit comment if I own it | The comment should allow the owner to edit it and update the content | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-16-a.PNG">
+<img src="docs/testing/user-story-16-b.PNG">
+<img src="docs/testing/user-story-16-c.PNG">
+</details>
+
+17. As a user I can click the delete comment button so that I can remove any comments I have made if I choose to.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can click on the edit dots, and click delete comment if I own it | The comment should allow the owner to delete it and it disappears | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-17-a.PNG">
+<img src="docs/testing/user-story-17-b.PNG">
+</details>
+
+18. As a user I can edit my posts so that I can change the content in my post if I choose to.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can click on the edit post dots, and click edit post if I own it | The post should allow the user to edit it and show an edit form if they own the post | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-18-a.PNG">
+<img src="docs/testing/user-story-18-b.PNG">
+<img src="docs/testing/user-story-18-c.PNG">
+<img src="docs/testing/user-story-18-d.PNG">
+</details>
+
+19. As a user I can view the most recent posts so that I can view the newest and therefor most date relevant content on my feed.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can view the most recent posts in order from newest first at the top | Posts should be displayed newest first | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-19.PNG">
+</details>
+
+20. As a user I can infinitely scroll the website so that I can easily view all posts on the site without interruption.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I can keep scrolling past 10 posts to view more content | If I scroll, scrolling should never be interrupted unless there is no content left to view | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-20.PNG">
+</details>
+
+21. As a user I can view the posts that I have previously liked so that I can freely view the content that I like or find informative.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click "my hearted posts" and user should be displayed with all posts they have hearted | All posts that have been liked by the user should be shown in this section | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-21.PNG">
+</details>
+
+22. As a user I can view a list of all relevant posts so that I can see content that has been uploaded by the users I follow.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click "my feed" and user should be displayed with all posts that are from a followed user | All posts from followed users should be shown in this section | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-22.PNG">
+</details>
+
+23. As a user I can use the search bar so that I can filter the content I want to see.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click search bar, search for content and related content should be displayed | All posts that have relative usernames and titles should be displayed | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-23.PNG">
+</details>
+
+24. As a user I can view posts that are associated with tags so that I can search for more specific results catered to me.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click tags | All posts with the same tags as the ones clicked should be shown | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-24.PNG">
+</details>
+
+25. As a user I can upload a profile picture so that I can style my profile to make me recognisable.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click edit profile, click edit picture and save | Profile picture should be editable and change the user's image | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-25-a.png">
+<img src="docs/testing/user-story-25-b.png">
+<img src="docs/testing/user-story-25-c.png">
+</details>
+
+26. As a user I can view other user's profile pictures so that I can identify the user by their image.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View other user's profile picture on any page | Profile pictures should be displayed on all pages where user has posted content | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-26.png">
+</details>
+
+27. As a user I can update my profile picture so that I can decide to change my picture if I choose to.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click edit profile, click edit picture and save | Profile picture should be updated to whatever file is chosen | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-25-a.png">
+<img src="docs/testing/user-story-25-b.png">
+<img src="docs/testing/user-story-25-c.png">
+</details>
+
+28. As a user I can update my profile bio so that I can write a little about myself and personalise my own profile.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click edit profile, type bio and save | Bio should be updated and shown in user's profile section | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-28.png">
+<img src="docs/testing/user-story-28-b.png">
+<img src="docs/testing/user-story-28-c.png">
+</details>
+
+29. As a user I can change my password so that I can keep my profile secure.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click edit password, type password and save | Password should be changed for user | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-29-a.png">
+<img src="docs/testing/user-story-29-b.png">
+</details>
+
+30. As a user I can view any other user's specific posts so that I can see all the latest activity on their posts, and see all previous posts they have made.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on profile, all posts from that profile will be displayed. | A list of all posts from a user should be displayed in their profile, along with a number of their total posts | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-30.PNG">
+</details>
+
+31. As a user I can view other profiles so that I can stay up to date on their following, followed and posts.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Click on profile. | A number of posts, followers and following should be displayed on a user profile | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-31.PNG">
+</details>
+
+32. As a user I can view a profile picture and a name so that I can check a user's profile page.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View a profile from any post that has been made, comments etc. | Profile pictures should be displayed alongside any of the user's content | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-32.PNG">
+</details>
+
+33. As a user I can view the most popular profiles so that I can see who the most followed users on the site are.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View all popular profiles in the 'Most Followed' section | Profiles with most followers should be displayed at the top of the most followed list | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-33.PNG">
+</details>
+
+34. As a user I can use the follow and unfollow buttons on a user so that I can choose what content I want to see on my feed, and filter the content.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+View follow and unfollow button in most followed profiles section and profile | Button can be clicked and unclicked to allow a user to follow and unfollow a profile | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-34.PNG">
+</details>
+
+35. As a site owner I want my blog app to be responsive so that my users can view the website on any device they choose with any screen size.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Website is mobile responsive | Site can be accessed on different screen sizes and functions as expected | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-35.PNG">
+</details>
+
+36. As a site owner I want my blog app to be responsive so that my users can view the website on any device they choose with any screen size.
+
+**Action** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+No results page shows when an incorrect URL is typed | No results graphic and go back button is displayed when a user incorrectly navigates to an incorrect URL | Works as expected |
+ 
+<details><summary>User Story Test Screenshots</summary>
+<img src="docs/testing/user-story-36.PNG">
+</details>
+
 
 ### Credits
 

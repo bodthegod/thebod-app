@@ -128,6 +128,25 @@ For my fonts within my website, I used Google Fonts- as my main font, I decided 
   -   Profile Edit Page Mobile Wireframe - [View](/docs/wireframes/thebod-profile-edit-mobile.png)
   -   Profile Password Change Page Mobile Wireframe - [View](/docs/wireframes/thebod-passwordchange-mobile.png)
 
+## Technologies Used
+
+### Languages
+
+- HTML
+- CSS
+- Javascript
+- React 17.0.2
+
+### Libraries, frameworks and dependencies
+
+- [Axios](https://axios-http.com/docs/intro) - Axios was used for promise-based HTTP requests. Justification: I have used Axios within my front end to send different types of requests to my API to send and retrieve data for the user to view. This prevented me from getting Cross-origin resource sharing errors (enabled the browser to have controlled access to the data in my api domain).
+- [JWT](https://jwt.io/) - this is a library that I used to decode JSON Web tokens. Justification: I used JWT to prevent unauthenticated user from making extra network requests to refresh their access token. This allowed me to set and remove authentication tokens to allow the site to know the login status of a user (if logged out, no authentication token is set within cookies).
+- [React 17](https://17.reactjs.org/) - JavaScript library for building user interfaces. Justification: This allowed for multiple encapsulated components to be used that manage their own state. React is extremely useful for this reason, and it also updates the data when data changes.
+- [React-Bootstrap 1.6.3](https://react-bootstrap-v4.netlify.app/) - React bootstrap was used to import many different components on my website that are mobile responsive, and have preset classes and styles. Justification: This allowed for a faster building process of the features within my website, as I could have a functional based thought process behind the features, worrying less about html styling.
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - This was used for dynamic routing. Justification: This was extremely useful as it allowed me to set what content the user views based upon the URL they are visiting. This allowed me to build all pages of my site, and the functional route paths.
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - React Infinite Scroll was a very important feature of my website as the aim was to keep the user engaged. Justification: I used this component to load all content (posts & comments) automatically as the user scrolls towards the bottom of the page, which meant that the content was never taken away from the user.
+- [Popper](https://popper.js.org/) - this is a 3rd party library used by React-Bootstrap. Justification: Popper was simply used to position the dropdown menu elements to fixed on screen.
+
 ### CSS
 
 I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. All of my CSS modules that were imported within my js files were validated.

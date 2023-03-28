@@ -15,6 +15,7 @@ import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import { axiosReq } from "../../api/axiosDefaults";
 
 const Post = (props) => {
   const {
@@ -33,7 +34,6 @@ const Post = (props) => {
     postPage,
     setPosts,
   } = props;
-
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
@@ -53,7 +53,7 @@ const Post = (props) => {
 
   const handleLike = async () => {
     try {
-      const { data } = await axios.post("/likes/", { post: id });
+      const { data } = await axiosReq.post("/likes/", { post: id, profile_id: profile_id });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {

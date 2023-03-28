@@ -2,6 +2,7 @@ import React from "react";
 import NavLink from "react-router-dom/NavLink";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
+import { useCookies } from "react-cookie";
 import {
   useCurrentUser,
   useSetCurrentUser,
@@ -20,12 +21,14 @@ import Nav from "react-bootstrap/Nav";
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-
+  const [, , removeCookie] = useCookies(["refreshTokenTimestamp"]);
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleLogOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
+      removeCookie("refreshTokenTimestamp");
+      removeCookie("profile_id");
       setExpanded(false);
       setCurrentUser(null);
       removeTokenTimestamp();

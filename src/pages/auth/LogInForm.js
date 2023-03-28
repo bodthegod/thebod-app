@@ -40,6 +40,7 @@ const LogInForm = () => {
   const setAuthToken = (data) => {
       const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
       setCookie("refreshTokenTimestamp", refreshTokenTimestamp)
+      setCookie("profile_id", data?.user.profile_id)
   }
 
   const handleSubmit = async (e) => {

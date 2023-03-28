@@ -1,12 +1,47 @@
-#thebod blog
-**Created by Joe Playdon**
-[View Live Website](https://thebod-blog.herokuapp.com/)
+<h1 align="center">"thebod" Fitness and Wellbeing Blog - Project Portfolio 5</h1>
+ 
+![GitHub contributors](https://img.shields.io/github/contributors/bodthegod/thebod-app?color=green&style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/bodthegod/thebod-app?color=orange&style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/bodthegod/thebod-app?color=brown&style=for-the-badge)
+
+## - By Joe Playdon
+
+### [View Live Website](https://thebod-blog.herokuapp.com/) #
+
+![ImageFrames of website](./docs/readme/amiresponsive-readme-ss.PNG)
+
+## Table of Contents
+  - [About](#about)
+  - [Project Goals](#project-goals)
+  - [User Stories](#user-stories)
+  - [Design Choices](#design-choices)
+    - [Colour Scheme](#colour-scheme)
+    - [Fonts](#fonts)
+    - [Wireframes](#wireframes)
+  - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Libraries, frameworks and dependencies](#libraries-frameworks-and-dependencies)
+    - [Tools & Programs](#tools--programs)
+  - [Front-End](#front-end)
+  - [Back-End API](#back-end-api)
+  - [Features](#application-features-and-screenshots)
+  - [Future features / improvements](#future-features--improvements)
+  - [Validation](#validation)
+  - [Testing](#testing)
+    - [Manual testing of user stories](#manual-testing-of-user-stories)
+    - [Performing tests on various devices](#performing-tests)
+    - [Browser compatibility](#browers-that-ive-tested-on)
+  - [Bugs](#bugs)
+  - [Configuring of App](#configuring-this-app)
+  - [Credits](#credits)
+
 
 ## About
 
 "thebod" is a fitness blog website where users can share images and posts about anything gym related, to keep themselves and users motivated and inspired.
 Every user that creates an account can have access to view all posts that have been made- and are able to like the posts that they like, and follow the users that they want to see more posts from (these display in the users feed).
 This blog is for all fitness lovers, amateur or expert- to share their healthy and friendly advice with other users. 
+
 
 ## Project Goals
 
@@ -23,6 +58,7 @@ Required functions that my website needed:
 - Like filtering by viewing all previously liked posts
 - Feed filtering by viewing all followed user's posts
 - Mobile responsiveness for website to be fully functionable and accesable on different screen sizes
+
 
 ## User Stories
 
@@ -86,12 +122,11 @@ Required functions that my website needed:
 36. As a user I can view a no results found error page so that I know the page I am on has no content
 
 
-
 ## Design Choices
 
 ### Colour Scheme
 
-My colour scheme that I decided to use within my app was aimed to be a fun and interactive website to use and look at. The purple background colour (#9247cf) that I chose to use was both abstract and modern but fun to look at- and the goal of my blog was to make sure the journey a user goes through is visually appealing. Firstly, I designed the purple background to work hand in hand with the infinite scrolling functionality due to the fact that the longer the page gets, the background gradients to a lighter colour, keeping the user experience interesting as they scroll further. I kept this purple theme throughout the use of all icons on hover, including the placeholder profile picture a user is assigned on creation of account. The foreground colours are mostly white to allow for a clear depiction of all information displayed to a user when navigating the website (posts, profiles, login/signup pages). Styling this page was one of my favourite parts of creating this project- as it allowed me to explore my creative side.
+My colour scheme that I decided to use within my app was aimed to fun and interactive   to use and look at. The purple background colour (#9247cf) that I chose to use was both abstract and modern but fun to look at- and the goal of my blog was to make sure the journey a user goes through is visually appealing. Firstly, I designed the purple background to work hand in hand with the infinite scrolling functionality due to the fact that the longer the page gets, the background gradients to a lighter colour, keeping the user experience interesting as they scroll further. I kept this purple theme throughout the use of all icons on hover, including the placeholder profile picture a user is assigned on creation of account. The foreground colours are mostly white to allow for a clear depiction of all information displayed to a user when navigating the website (posts, profiles, login/signup pages). Styling this page was one of my favourite parts of creating this project- as it allowed me to explore my creative side.
 
 Furthermore, I kept the toolbar icon colour scheme consistent using a teal colour for the "create post" icon (#51a7a7), a red for the "liked posts"/ "my hearts" icon (#e52828) and finally a dark blue colour (#493fd4) for the "my feed" icon. I wanted these icons to have specific colours for a user to easily identify what they want to do and have an intuitive experience on my site.
 
@@ -100,8 +135,6 @@ Furthermore, I kept the toolbar icon colour scheme consistent using a teal colou
 ### Fonts
 
 For my fonts within my website, I used Google Fonts- as my main font, I decided to use Varela Round as it is very easy to look at and fits the fun style of my website. I wanted a font that wasn't too formal nor informal and Varela fit the style. Sans Serif was the fallback font- due to the fact that the website needed consistent styling and sans also fits the style in case fallback is needed.
-
-   
 
 ### Wireframes
         
@@ -132,10 +165,10 @@ For my fonts within my website, I used Google Fonts- as my main font, I decided 
 
 ### Languages
 
+- React 17.0.2
+- Javascript
 - HTML
 - CSS
-- Javascript
-- React 17.0.2
 
 ### Libraries, frameworks and dependencies
 
@@ -144,12 +177,13 @@ For my fonts within my website, I used Google Fonts- as my main font, I decided 
 - [React 17](https://17.reactjs.org/) - JavaScript library for building user interfaces. Justification: This allowed for multiple encapsulated components to be used that manage their own state. React is extremely useful for this reason, and it also updates the data when data changes.
 - [React-Bootstrap 1.6.3](https://react-bootstrap-v4.netlify.app/) - React bootstrap was used to import many different components on my website that are mobile responsive, and have preset classes and styles. Justification: This allowed for a faster building process of the features within my website, as I could have a functional based thought process behind the features, worrying less about html styling.
 - [React Router](https://v5.reactrouter.com/web/guides/quick-start) - This was used for dynamic routing. Justification: This was extremely useful as it allowed me to set what content the user views based upon the URL they are visiting. This allowed me to build all pages of my site, and the functional route paths.
+- [React Transitions](https://reactcommunity.org/react-transition-group/css-transition) - This was used for the CSS transitions I have used within the fade in of the components on my website. These components fade in and make my website have the fun look that I desired.
 - [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - React Infinite Scroll was a very important feature of my website as the aim was to keep the user engaged. Justification: I used this component to load all content (posts & comments) automatically as the user scrolls towards the bottom of the page, which meant that the content was never taken away from the user.
 - [Popper](https://popper.js.org/) - this is a 3rd party library used by React-Bootstrap. Justification: Popper was simply used to position the dropdown menu elements to fixed on screen.
 
 ### Tools & Programs
 
-- [Deviceframes](https://deviceframes.com/) was used to create the design mockups at the top of this README
+- [Amiresponsive](https://ui.dev/amiresponsive?url=https://thebod-blog.herokuapp.com/) was used to create the design mockups at the top of this README
 - [Balsamiq](https://balsamiq.com/) to make my wireframes for different screens
 - [Cloudinary](https://cloudinary.com/) to store static files
 - [Coolors](https://coolors.co/?home) was used to create the color scheme palette
@@ -196,7 +230,6 @@ In order to get my project to function the way I intended, I created many differ
   - a loading spinner icon from react-spinners for when content is loading
   - an image with a src attribute
   - a message rendered in a paragraph tag
-
 
 - `<Avatar />` - Another reusable component, which was used to render the avatar profile picture for a user. Props inside this component allowed for the src attribute to be changed (for example a user changes their avatar). This component was rendered in many different pages (Post, Profile page) and also the `<NavBar/>` component.
 
@@ -492,7 +525,6 @@ I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. 
 <img src="docs/validation/appcss-validation.PNG "> 
 </details> 
 
-
 <details><summary>Index.css</summary> 
 <img src="docs/validation/indexcss-validation.PNG "> 
 </details> 
@@ -504,54 +536,71 @@ I used the W3C Jigsaw CSS Validation Service to validate the CSS of my website. 
 <details><summary>Avatar.module.css</summary> 
 <img src="docs/validation/avatarcss-validation.PNG "> 
 </details> 
+
 <details><summary>Button.module.css</summary> 
 <img src="docs/validation/buttoncss-validation.PNG "> 
 </details> 
+
 <details><summary>Comment.module.css</summary> 
 <img src="docs/validation/commentcss-validation.PNG"> 
 </details> 
+
 <details><summary>CommentCreateEditForm.module.css</summary> 
 <img src="docs/validation/commentcreateeditcss-validation.PNG"> 
 </details> 
+
 <details><summary>DropdownMenu.module.css</summary> 
 <img src="docs/validation/dropdowncss-validation.PNG"> 
 </details> 
+
 <details><summary>GeneralPostsPage.module.css</summary> 
 <img src="docs/validation/generalpostspagecss-validation.PNG"> 
 </details> 
+
 <details><summary>HomePage.module.css</summary> 
 <img src="docs/validation/homepagecss-validation.PNG"> 
 </details> 
+
 <details><summary>LogInSignUpForm.module.css</summary> 
 <img src="docs/validation/loginsignupcss-validation.PNG"> 
 </details> 
+
 <details><summary>NavBar.module.css</summary> 
 <img src="docs/validation/navbarcss-validation.PNG"> 
-</details> 
+</details>
+
 <details><summary>PageNotFound.module.css</summary> 
 <img src="docs/validation/pagenotfoundcss-validation.PNG"> 
 </details> 
+
 <details><summary>PopularProfiles.module.css</summary> 
 <img src="docs/validation/popularprofilescss-validation.PNG"> 
 </details> 
+
 <details><summary>Post.module.css</summary> 
 <img src="docs/validation/postcss-validation.PNG"> 
 </details> 
+
 <details><summary>PostCreateEditForm.module.css</summary> 
 <img src="docs/validation/postcreateeditformcss-validation.PNG"> 
-</details> 
+</details>
+
 <details><summary>Profile.module.css</summary> 
 <img src="docs/validation//profilecss-validation.PNG"> 
 </details> 
+
 <details><summary>ProfilePage.module.css</summary> 
 <img src="docs/validation/profilepagecss-validation.PNG"> 
 </details> 
+
 <details><summary>ScrollBar.module.css</summary> 
 <img src="docs/validation/scrollbarcss-validation.PNG"> 
 </details> 
+
 <details><summary>ScrollToTopButton.module.css</summary> 
 <img src="docs/validation/scrolltotopcss-validation.PNG"> 
 </details> 
+
 <details><summary>Toolbar.module.css</summary> 
 <img src="docs/validation/toolbarcss-validation.PNG"> 
 </details> 
@@ -985,28 +1034,123 @@ No results page shows when an incorrect URL is typed | No results graphic and go
 <img src="docs/testing/user-story-36.PNG">
 </details>
 
+### Performing Tests
 
-### Credits
+I built and tested this website using Google Chrome Developer tools- which allowed me to test specific breakpoints for different screen sizes.
 
-https://imagecolorpicker.com/en used colour grabber for favicon colours and logo
+I tested this website using:
+- Samsung Galaxy A54 (mobile)
+- My Windows PC (desktop)
+- Lenovo M10 (tablet)
+- IPhone 11 Pro (mobile)
+- IPad Mini (tablet)
 
-https://formito.com/tools/favicon used this software to create favicon
-https://www.adobe.com/express/create/logo this software to create logo
-https://www.flaticon.com/free-icon/upload_8045653?term=upload&page=1&position=91&origin=tag&related_id=8045653 For icon upload image
-https://www.flaticon.com/free-icon/arrow_9283463?term=upload&page=5&position=40&origin=tag&related_id=9283463
-https://www.davidhu.io/react-spinners/ for spinners
-https://unused-css.com/blog/css-shake-animation/ shake animation
-https://cdn.dribbble.com/users/1242216/screenshots/9326781/media/https://dribbble.com/shots/9326781-No-Results-Found-Illustration no results found search image
-https://getcssscan.com/css-box-shadow-examples for box shadow
-https://bgjar.com/wave-line for background wave line
+### Browers that I've tested on
 
-Known Bugs: A major bug I have experienced is the authentication tokens giving a 401 error on mobile, but not on desktop. This bug is very confusing and I have worked relentlessly at attempting to fix it with no avail. When a user attempts to log on my website using IOS, they are presented with an invalid refresh token and redirected back to the login page- which is incredibly confusing due to the full functionality on desktop devices. On desktop, login is authorised and the user is assigned a refresh token.
+Testing has been carried out on the following browsers:
+- Googe Chrome
+- Firefox
+- Microsoft Edge
+- IOS
 
-I have searched for a fix and due to time constraints could not replicate a full fix without ios developer tools. Due to the nature of this bug being only on mobile, when accessing the app from my phone I could not debug the source of the issue from the console- and when viewing the logs from the deployed API to see what requests were being posted, it would result in a 401 unauthorised error. When attempting to replicate this bug on desktop, it would post a 200 OK message with the same code. Due to this, I thought it could have been a possible bug with the packages I had installed, or the token refresh logic.
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| Dropdown menu overlaying post image | Edited margin-bottom of element to -12px |
+| Console warning: Please use ```require("react-router-dom").NavLink``` instead of ```require("react-router-dom/NavLink")```. Support for the latter will be removed in the next major release. | Changed NavLink from "react-router-dom/NavLink"; to import { NavLink } from "react-router-dom", error displays due to version of `react-router-dom` however does not affect project as version will not change|
+| Lighthouse Validation saying contrast of unfollow button wasn't high enough | Changed unfollow button colour for better visual cues|
+
+- Bug fix: I had a bug where the navbar profile picture would show, however for an unknown reason the profile pictures that were not specified by the UseCurrentUser() method would not display when tied to the post list and detail views. To fix this, there was lots of trial and error- however I finally discovered that it was down to a very minute detail within the PostSerializer.py file within my API. `profile_image = serializers.ReadOnlyField(source='owner.profile.image.id')`. After understanding this issue, I had realised the final `.id` should have been `.url`- and this fixed the bug once I had committed my changes to my API and pushed them to the deployed project.
+
+- Bug fix: I manually tested every function of my website, however cross tab errors were apparent in the form of user authentication when logged out in one tab, yet accessible in another. In order to fix this, I created a function to log out a user when they make a 401 Unauthorised request to the API. Before this fix, this bug could be replicated by logging in on two different accounts on two tabs (user is assigned two authentication cookies), then one of the tabs logs out and into another account and finally when accessing the previous browser which already had a token assigned, this gave cross tab authentication to the currently logged in user- allowing them to like their own post. 
+
+To prevent this bug, I created a function to clear cookies on log out- and if there are no cookies assigned to the browser on data response or request: log out the user. Working around this bug was challenging as it was hard to replicate.
+
+It also must be known that I have added a custom error display only for users that are on connections that are not secure (Secure Sockets Layer disabled). SSL (Secure Sockets Layer) is a security protocol that is used to encrypt data that is transmitted over the internet. SSL works by establishing a secure connection between a web server and a client (such as a web browser), ensuring that any data that is transmitted between the two is encrypted and therefore protected from interception by unauthorized parties.
+
+If a user tries to access the website on a non `https://` URL, login functionality will not work as I have created error handling to prevent incorrect routes as no cookies can be applied to any unsecure link.
+
+I created this error handling function to prevent a bug that presented the user with a blank white screen due to a CORS error- as the user would request data from an unencrypted link. CORS is a security mechanism that helps prevent malicious attacks and controls access to resources across different domains on the internet. It is an important tool for any developer to ensure the security and integrity of their applications and websites.
+
+## Known Bugs
+
+- These are bugs that I have troubleshooted and due to time constraints was unable to fix.
+
+Known Bugs: A major bug I had experienced is the authentication tokens giving a 401 error on mobile, but not on desktop. This bug was very confusing and I had worked relentlessly at attempting to fix it with no avail. When a user attempts to log on my website using IOS, they are presented with an invalid refresh token and redirected back to the login page- which is incredibly confusing due to the full functionality on desktop devices. On desktop, login is authorised and the user is assigned a refresh token.
+
+I had searched for a fix and due to time constraints could not replicate a full fix without ios developer tools. Due to the nature of this bug being only on IOS devices, when accessing the app from an IPhone, I could not debug the source of the issue from the console- and when viewing the logs from the deployed API to see what requests were being posted, it would result in a 401 unauthorised error. When attempting to replicate this bug on desktop, it would post a 200 OK message with the same code. Due to this, I thought it could have been a possible bug with the packages I had installed, or the token refresh logic.
 
 In an attempt to fix this bug, initially I had discovered that `localStorage()` does not function correctly when working on IOS, and this allowed me to understand the root of the issue more thoroughly. Due to `localStorage()` not assigning the refresh token to the user on login, the catch block would hit and my user would be redirected back to the login screen, hence the infinite loop of 401 Unauthorised errors.
 
 Firstly, I attempted to use [react-device-detect](https://www.npmjs.com/package/react-device-detect) to assign cookies on only IOS, due to the lack of functionality of localStorage- however this presented more bugs and did not function the way I intended it to. Moreover, after many hours of trial and error to fix this bug that only happened on IOS devices, I searched up on forums of ways around using `localStorage()`, giving me the idea to store the user's refresh token as a cookie on both IOS and mobile using [react-cookie](https://www.npmjs.com/package/react-cookie). Due to using this solution, the functionality worked correctly on mobile, and login functionality worked on IOS devices.
 
-Fixing this bug was very time consuming, as I could not run the changes on localhost to test for IOS functionality- meaning I had to redeploy my respository through Heroku to detect the bugs and changes for mobile.
-Bug fix: I had a bug where the navbar profile picture would show, however for an unknown reason the profile pictures that were not specified by the UseCurrentUser() method would not display when tied to the post list and detail views. To fix this, there was lots of trial and error- however I finally discovered that it was down to a very minute detail within the PostSerializer.py file within my API. `profile_image = serializers.ReadOnlyField(source='owner.profile.image.id')`. After understanding this issue, I had realised the final .id should have been .url- and this fixed the bug once I had committed my changes to my API and pushed them to the deployed project.
+Due to the workaround I created, this meant that other bugs arose however now login functionality worked on IOS, however other functions did not. On desktop and android devices, my website is fully functional and up to standard. 
+
+I am aware of the issues that arise on IOS devices however due to the lack of `localStorage()` functionality it was very hard to find a workaround. Fixing this bug was very time consuming, as I could not run the changes on localhost to test for IOS functionality- meaning I had to redeploy my respository through Heroku to detect the bugs and changes for IOS.
+
+## Configuring this App
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/bodthegod/thebod-app)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/bodthegod/thebod-app)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/bodthegod/thebod-app
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/bodthegod/thebod-app
+> Cloning into `thebod-app-clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+## Credits
+
+### Image Credits
+
+- Icon upload image from [here](https://www.flaticon.com/free-icon/upload_8045653?term=upload&page=1&position=91&origin=tag&related_id=8045653)
+- No results found search image (edited) [here](https://dribbble.com/shots/9326781-No-Results-Found-Illustration)
+- Login/Signup for images (edited) [here](https://www.freepik.com/free-vector/virtual-gym-from-home-concept_7775281.htm#query=fitness%20cartoon%20sign%20up&position=18&from_view=search&track=ais) 
+- The images that have been posted as placeholder example posts are not my images. Since these are example images they were used for testing, and I found these from google. As this project is a non-profit, education application and there are alot of images, I could not find credits for all- however never use an image without credit or permission if you are creating a profit based project.
+
+### Style Credits and Inspirations
+
+- Icon shake animations (edited) [here](https://unused-css.com/blog/css-shake-animation/) 
+- Box shadow inspirations [here](https://getcssscan.com/css-box-shadow-examples)
+- Home page blog background [here](https://bgjar.com/wave-line)
+- CSS Animations inspiration [here](https://blog.hubspot.com/website/css-animation-examples)
+- Inspiration of bounce animations [here](https://stackoverflow.com/questions/29005916/make-button-bounce-with-css3)
+- 404 Page not found image [here](https://www.freepik.com/free-vector/error-404-concept-landing-page_5156008.htm#page=2&query=page%20not%20found&position=44&from_view=search&track=ais)
+
+
+### Code Inspirations
+
+This project was inspired by the ['Moments'](https://github.com/Code-Institute-Solutions/moments) social media website which was my final walk-through project with Code Institute. I have created my own styles, animations and functionalities, as to which a user can search my tags that are assigned to any created post by a user. This website could be built apon further as seen in the 'improvements' section.
+
+### Project Acknowledgements
+
+Building this project was fun, interesting and an enjoyable learning experience throughout the entire process. I cannot wait to build more- my major thanks go out to:
+- Mo, my mentor throughout this project who gave me brilliant guidance, insights, support and encouragement throughout every step of this project.
+
+

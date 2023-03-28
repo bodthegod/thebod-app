@@ -1,5 +1,5 @@
 import React from "react";
-import NavLink from "react-router-dom/NavLink";
+import { NavLink } from "react-router-dom"
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
 import { useCookies } from "react-cookie";

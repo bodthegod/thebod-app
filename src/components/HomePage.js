@@ -1,6 +1,6 @@
 import React from "react";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
-import NavLink from "react-router-dom/NavLink";
+import { NavLink } from "react-router-dom"
 
 import styles from "../styles/HomePage.module.css";
 import appStyles from "../App.module.css";

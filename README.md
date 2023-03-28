@@ -211,6 +211,235 @@ In order to get my project to function the way I intended, I created many differ
 - `<ScrollToTopButton />` - A reusable component that displays a scroll to top button on the bottom right of the screen if the page is scrolled to a certain point. This allows good user flow of a user to access their toolbar in order to utilse the search functionality and tags at the top of the page.
 
 - `<Toolbar />` - A reusable component that displays icons to allow a user to create a post, view their hearted posts and show their feed (the posts that have been posted by users they follow). This component is reused throughout the majority of my app.
+
+## Back-End API
+
+### Django REST Framework
+
+The backend API for this Front-End application was built with the Django REST Framework. Details about my backend repository can be viewed [here](https://github.com/bodthegod/thebod-drf-api)
+
+# Application Features and Screenshots
+### Home Page (Logged Out)
+- Brief description of website's purpose, links to log in and sign up forms
+- NavBar links to log in and sign up forms
+- Contains social links at bottom which open in new tab
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/home-loggedout-feature.PNG">
+</details>
+
+### NavBar
+- Displayed on all pages
+- If user is logged out - users are displayed "Home", "Log In", "Sign Up" Buttons
+- If user is logged in - users are displayed "Home", "Profile Name" Buttons. If profile is clicked then a dropdown menu appears with options to see "My Profile" or "Log out"
+- "thebod" title is always displayed and takes you back to the home page on click
+- Changes on mobile screens to allow a dropdown menu with all options inside
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/navbar-loggedin-feature.PNG">
+<img src="./docs/features/navbar-loggedout-feature.PNG">
+</details>
+
+### Sign Up Form
+- Allows new users to create an account by entering details in form
+- The user must provide a valid username (not taken), password and confirm password
+- Usernames are unique and two with the same name cannot be created
+- User is redirected to login page once signup form is completed
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/signup-feature.PNG">
+</details>
+
+### Log In Form
+- Previous users with created accounts can use this form to log in using their credentials
+- The account must be valid, and existing
+- The password must be the correct password for the username
+- Error messages are displayed if incorrect information
+- Logged in user is redirected to general posts page
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/login-feature.PNG">
+</details>
+
+### Post Creation and Edit Form
+- This form holds an image, title, tags selection and content input area
+- You do not have to add text content
+- Images and posts can be created and added to your feed to share your fitness advice
+- Due to tags, this specifies content for a user easier
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/post-create-feature.PNG">
+<img src="./docs/features/post-edit-feature.PNG">
+</details>
+
+### General Posts Page
+- Due to login status, this is the home page for logged in users
+- This page contains:
+  - Toolbar containing my hearts, my feed and create post
+  - Most Followed Users
+  - Tags selection on the right
+- This page contains all created posts, filtered by created date (most recent)
+- When a user has not specified a search, page shows all posts
+- Search bar can be used to specify content seen
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/generalpostspage-feature.PNG">
+</details>
+
+### Post Page
+- This contains specific details tied to a single post (title, image, content and tags)
+- This page contains:
+  - Number of likes and like button for user like functionality
+  - Number of comments and comment button to allow the user to comment
+  - Comment section to display all comments on a post
+  
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/postpage-feature.PNG">
+</details>
+
+### Comments Section
+- This allows users to leave comments on a post
+- This page contains:
+  - Day and hours commented 
+  - If user owns the comment, they are able to edit or remove the comment
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/comments-feature.PNG">
+</details>
+
+### Hearts
+- This allows users to leave a heart on a post
+- If hearted, heart icon goes full instead of outline and red
+- A user cannot heart the post that they have created
+- A user can view all the posts they have hearted before using the "my hearts" section
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/hearts-feature.PNG">
+</details>
+
+### Profile Page
+- Contains user profile information
+- Shows how many posts the user has created, followers and following
+- Contains a dropdown menu to edit the profile and change profile password
+- If a user has added a bio, this is displayed here
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/profilepage-feature.PNG">
+</details>
+
+### Profile Picture
+- User is assigned default profile picture when creating a new profile
+- This is reused throughout the website (displayed on a comment, navbar, profile, post, most followed)
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/profilepicture-feature.PNG">
+</details>
+
+### User Password Edit/Change Form
+- User can edit their password and save it to reflect changes
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/passwordchange-feature.PNG">
+</details>
+
+### Infinite Scroll
+- Displays all posts that have been posted on the site, allowing for uninterrupted content stream for user
+- Comments are rendered infintely, and so are posts
+- Displays spinner when posts are loading
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/infinitescroll-feature.PNG">
+</details>
+
+### User Icons Toolbar
+- A user can view their followed feed from the Toolbar
+- Used consistently throughout all pages (apart from form pages)
+- A user can view their hearted posts
+- A user can also create posts using the Toolbar
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/toolbar-feature.PNG">
+</details>
+
+### Scroll To Top Button
+- Designed to be user friendly on mobile devices, allowing quick access to toolbar if user wants to access other pages
+- Created to prevent taking control away from user flow on application
+- Animated to give visual prompt to user that it goes back to the top of page
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/scrolltotopbtn-feature.png">
+</details>
+
+### Following and Unfollowing
+- Users can follow and unfollow any post that they desire, to allow them to have access to that user's posts in their feed
+- This can be done from the most followed section and the profile section
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/follow-feature.PNG">
+<img src="./docs/features/unfollow-feature.PNG">
+</details>
+
+### Most Followed Users
+- A user can view the most followed profiles on page
+- Follow and unfollow buttons are displayed below the most popular profiles if a user wants to view their content on their personal feed
+- This is visible on all pages apart from forms
+- Maximum of 5 most popular users on profile to allow for user friendly layout if there are many accounts created
+- On mobile there is a scrollbar visible to allow for shortened content and user friendly scrolling
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/mostfollowed-feature.PNG">
+</details>
+
+### Search Bar
+- A user can use the search bar to find a user profile or a post
+- A user can search for any keyword they are interested in and it will show all related results
+- Search functionality can be used within the "my hearts" and "feed" section to filter content inside the posts they enjoy
+- Search is linked to the:
+1. User (owner) of created post
+2. Tags of created post
+3. Content of created post
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/search-feature.PNG">
+</details>
+
+### Tags Section
+- A user can view and click on any tag they want to search for to get all posts associated with that tag
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/tags-feature.PNG">
+</details>
+
+### 404 Page Not Found Page
+- If a URL that doesn't exist is entered, this page is displayed to give visual feedback to the user that it is incorrect
+- A "Go back" button is displayed to take the user back to the page they were previously on
+
+<details><summary>Project Feature Screenshot</summary>
+<img src="./docs/features/404-feature.PNG">
+</details>
+
+
+## Future features & improvements
+
+Improvements I feel could be made to my application:
+
+- Authentication
+  - Allow account creation and signup using different social media platform accounts (Google, Facebook etc.)
+  - Password reset if a user forgets it sent through email 
+  - Authentication tokens being set on `localStorage()` if user is not on IOS, and cookies if on IOS.
+- Posts
+  - Video uploads
+  - Voice memo's for user to send via comments
+- Profile
+  - Profile commenting
+  - Profile liking
+- Comments
+  - Comment liking
+- App rework on IOS due to `localStorage()` authentication token bugs
+  - Create Post Rework (401 Unauthorised Bug)
+  - Like Rework (401 Unauthorised Bug)
+  - Edit Post and Profile Rework (401 Unauthorised Bug)
+
 ## Validation
 
 ### HTML

@@ -3,11 +3,9 @@ import { useParams } from "react-router-dom";
 import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Post.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -27,6 +25,10 @@ function PostPage() {
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
 
+  /*
+    Handles request for post and all post comment data
+    If different post id is viewed, get data for that id
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {

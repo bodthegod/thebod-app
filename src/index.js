@@ -8,6 +8,9 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { CookiesProvider } from "react-cookie";
 
+/* 
+  Render of app using user contexts for authentication
+*/
 ReactDOM.render(
   <Router>
     <CookiesProvider>

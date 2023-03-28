@@ -9,7 +9,6 @@ import { RiChat3Line, RiHeartsFill, RiHeartsLine } from "react-icons/ri";
 import styles from "../../styles/Post.module.css";
 import tagsStyles from "../../styles/GeneralPostsPage.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
@@ -38,10 +37,17 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  /*
+    Allows for edit of post by id
+  */
   const handleEdit = () => {
     history.push(`/posts/${id}/edit/`);
   };
 
+  /*
+    Handles delete of post by id,
+    pushes user to home after
+  */
   const handleDelete = async () => {
     try {
       await axios.delete(`/posts/${id}/`);
@@ -51,9 +57,18 @@ const Post = (props) => {
     }
   };
 
+  /*
+    Handles like on a post by a user,
+    sends API request for a post by id
+    and by what profile_id likes it,
+    increses like total by one
+  */
   const handleLike = async () => {
     try {
-      const { data } = await axiosReq.post("/likes/", { post: id, profile_id: profile_id });
+      const { data } = await axiosReq.post("/likes/", {
+        post: id,
+        profile_id: profile_id,
+      });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -67,6 +82,11 @@ const Post = (props) => {
     }
   };
 
+  /*
+    Handles unlike on a post by a user,
+    sends API request for a post by id
+    Decreases likes total by one
+  */
   const handleUnlike = async () => {
     try {
       await axios.delete(`/likes/${like_id}/`);
@@ -127,6 +147,7 @@ const Post = (props) => {
           )}
           <div>
             {is_owner ? (
+              // if owner of post, cannot like
               <OverlayTrigger
                 placement="top"
                 aria-label="You cant heart this"
@@ -137,12 +158,14 @@ const Post = (props) => {
                 </i>
               </OverlayTrigger>
             ) : like_id ? (
+              // has post been liked check
               <span onClick={handleUnlike} aria-label="Unlike Post">
                 <i className={styles.LikedIcon}>
                   <RiHeartsFill />
                 </i>
               </span>
             ) : currentUser ? (
+              // handle like call to allow like post
               <span onClick={handleLike} aria-label="Like Post">
                 <i className={styles.Icon}>
                   <RiHeartsLine />

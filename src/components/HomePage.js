@@ -1,10 +1,8 @@
 import React from "react";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { NavLink } from "react-router-dom"
-
+import { NavLink } from "react-router-dom";
 import styles from "../styles/HomePage.module.css";
 import appStyles from "../App.module.css";
-
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,6 +10,10 @@ import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import CSSTransition from "react-transition-group/CSSTransition";
 
+/*
+  Home page that displays description of website, contains
+  social links below
+*/
 const HomePage = () => {
   const currentUser = useCurrentUser();
 
@@ -85,7 +87,7 @@ const HomePage = () => {
             </Col>
           </Row>
         </Container>
-        <footer className={styles.footer}>
+        <footer>
           <div className="text-center">
             <p className={`${styles.ContactIcons} text-white`}>
               Created by Joe Playdon

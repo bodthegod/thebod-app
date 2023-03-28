@@ -2,18 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/GeneralPostsPage.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
 import { CgSearch } from "react-icons/cg";
-
 import Badge from "react-bootstrap/Badge";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-
 import Asset from "../../components/Asset";
 import Toolbar from "../../components/Toolbar.js";
 import Post from "./Post";
@@ -31,6 +28,14 @@ function GeneralPostsPage({ message, filter = "" }) {
   const currentUser = useCurrentUser();
   const [query, setQuery] = useState("");
 
+  /*
+    Handles API request by search filters
+    displays only posts linked to search results
+    Displays list of all posts, hearted posts, 
+    followed users posts and posts related to tags 
+    When content is loading, loading spinner is
+    displayed
+  */
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -47,6 +52,10 @@ function GeneralPostsPage({ message, filter = "" }) {
     };
 
     setHasLoaded(false);
+    /*
+      API has search timer to prevent
+      unnecessary requests on keystroke
+    */
     const fetchTimer = setTimeout(() => {
       fetchPosts();
     }, 800);
@@ -87,6 +96,7 @@ function GeneralPostsPage({ message, filter = "" }) {
             {hasLoaded ? (
               <>
                 {posts.results.length ? (
+                  // InfiniteScroll allows for loading of more posts on scroll
                   <InfiniteScroll
                     dataLength={posts.results.length}
                     loader={<Asset spinner />}
@@ -107,6 +117,7 @@ function GeneralPostsPage({ message, filter = "" }) {
                     ))}
                   </InfiniteScroll>
                 ) : (
+                  // No results displays noresults image and message
                   <Container className={appStyles.Content}>
                     <Asset
                       className={styles.NoResultsImage}

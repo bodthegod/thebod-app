@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
 import { useCookies } from "react-cookie";
@@ -8,11 +8,9 @@ import {
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import axios from "axios";
-
 import styles from "../styles/NavBar.module.css";
 import Avatar from "./Avatar";
 import { AiOutlineUser, AiOutlineLogout } from "react-icons/ai";
-
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
@@ -24,6 +22,12 @@ const NavBar = () => {
   const [, , removeCookie] = useCookies(["refreshTokenTimestamp"]);
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+  /*
+    Handles user logout
+    Removes currently logged in user
+    Removes authentication token stored in cookies
+    Redirects to the home page
+  */
   const handleLogOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -37,6 +41,10 @@ const NavBar = () => {
     }
   };
 
+  /*
+    Icon for "create post"
+    links to posts/create url
+  */
   const createPostIcon = (
     <NavLink
       className={styles.NavLink}
@@ -45,8 +53,12 @@ const NavBar = () => {
     ></NavLink>
   );
 
-  // authIcons variable to display icons if a user is
-  // authenticated / logged in
+  /*
+    authIcons variable to display icons if a user is
+    authenticated / logged in, displays username and 
+    profile picture of current user in navbar with
+    dropdown menu to logout or view my profile
+  */
   const authIcons = (
     <>
       <NavDropdown
@@ -79,8 +91,12 @@ const NavBar = () => {
       </NavDropdown>
     </>
   );
-  // unAuthIcons variable to display icons if a user is
-  // unauthenticated / logged out
+
+  /*
+    unAuthIcons variable to display icons if a user is
+    unauthenticated / logged out, icons display in navbar
+    component, shows login or signup links
+  */
   const unAuthIcons = (
     <>
       <NavLink

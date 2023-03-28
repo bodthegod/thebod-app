@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -13,10 +11,17 @@ function CommentCreateForm(props) {
   const { profileImage, profile_id, post, setPost, setComments } = props;
   const [comment_info, setCommentInfo] = useState("");
 
+  /* 
+    Handles changes to comment input field
+  */
   const handleChange = (e) => {
     setCommentInfo(e.target.value);
   };
 
+  /* 
+    Handles submission of comment text input field
+    Increases number of comments by 1
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

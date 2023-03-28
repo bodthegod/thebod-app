@@ -5,13 +5,11 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-
 import alertStyles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import inputStyles from "../../styles/LogInSignUpForm.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -36,6 +34,10 @@ const ProfileEditForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  /*
+    Allows for edit of user profile based upon
+    if profile is owned by user, requests by id
+  */
   useEffect(() => {
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
@@ -54,6 +56,9 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
+  /* 
+    Handles changes to the profile edit form fields
+  */
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -61,6 +66,10 @@ const ProfileEditForm = () => {
     });
   };
 
+  /* 
+    Handles the profile edit form submit
+    Redirects the user to the profile page
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();

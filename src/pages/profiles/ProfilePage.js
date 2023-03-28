@@ -8,11 +8,9 @@ import {
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 import { axiosReq } from "../../api/axiosDefaults";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/ProfilePage.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import NoResultsFoundImage from "../../assets/no-result-found.jpg";
 import { ProfileEditDropdownMenu } from "../../components/DropdownMenu";
 import Button from "react-bootstrap/Button";
@@ -35,6 +33,10 @@ function ProfilePage() {
   const is_owner = currentUser?.username === profile?.owner;
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 
+  /*
+    Fetches user profile and the posts they have created,
+    sets posts when they are made onto profile
+  */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -56,6 +58,9 @@ function ProfilePage() {
     fetchData();
   }, [id, setProfileData]);
 
+  /*
+    Shows all details related to profile
+  */
   const profileDetail = (
     <>
       <Row noGutters className="p-3 text-center">
@@ -106,7 +111,10 @@ function ProfilePage() {
       </Row>
     </>
   );
-
+  
+  /*
+    Displays posts created by profile owner
+  */
   const profileDetailPosts = (
     <>
       <hr />

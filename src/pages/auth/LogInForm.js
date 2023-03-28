@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-
 import styles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/HomePage.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import { RiLockPasswordLine } from "react-icons/ri";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -20,14 +18,20 @@ import jwtDecode from "jwt-decode";
 
 const LogInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+
   const [logInData, setLogInData] = useState({
     username: "",
     password: "",
   });
+
   const { username, password } = logInData;
-  const [, setCookie] = useCookies(['refreshTokenTimestamp']);
+  const [, setCookie] = useCookies(["refreshTokenTimestamp"]);
   const [errors, setErrors] = useState({});
 
+  /* 
+    Handles changes and allows
+    for input field data input
+  */
   const handleChange = (e) => {
     setLogInData({
       ...logInData,
@@ -36,13 +40,22 @@ const LogInForm = () => {
   };
 
   const history = useHistory();
-
+  /* 
+    Sets authentication token
+    in cookies, sets cookie for
+    profile_id
+  */
   const setAuthToken = (data) => {
-      const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
-      setCookie("refreshTokenTimestamp", refreshTokenTimestamp)
-      setCookie("profile_id", data?.user.profile_id)
-  }
+    const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+    setCookie("refreshTokenTimestamp", refreshTokenTimestamp);
+    setCookie("profile_id", data?.user.profile_id);
+  };
 
+  /* 
+    Handles form data submit, 
+    sets current user and auth
+    token, pushes to home page
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -50,7 +63,7 @@ const LogInForm = () => {
       setCurrentUser(data.user);
       setAuthToken(data);
 
-      history.push("/")
+      history.push("/");
     } catch (err) {
       if (err.response) {
         setErrors(err.response?.data);

@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
-
 import { useCurrentUser } from "./CurrentUserContext";
 import { followHelper, unfollowHelper } from "../utils/utils";
 
@@ -18,6 +17,13 @@ export const ProfileDataProvider = ({ children }) => {
 
   const currentUser = useCurrentUser();
 
+  /*
+    Makes a request to the /followers/ endpoint
+    Sends id information about profile
+    to identify what profile user followed
+    new info posted is reflected to most followed
+    users and profile page
+  */
   const handleFollow = async (clickedProfile) => {
     try {
       const { data } = await axiosRes.post("/followers/", {
@@ -42,6 +48,13 @@ export const ProfileDataProvider = ({ children }) => {
       return err;
     }
   };
+
+  /*
+    Makes a request to the /followers/ endpoint
+    Sends id information about profile
+    Deletes following id and reflects to 
+    most followed and profilepage
+  */
   const handleUnfollow = async (clickedProfile) => {
     try {
       await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);
@@ -63,6 +76,11 @@ export const ProfileDataProvider = ({ children }) => {
       return err;
     }
   };
+
+  /*
+    Fetches data and displays most followed
+    user at top of most followed section
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {

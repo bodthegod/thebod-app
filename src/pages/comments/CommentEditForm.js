@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { axiosRes } from "../../api/axiosDefaults";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
-
 import Form from "react-bootstrap/Form";
 
 function CommentEditForm(props) {
   const { id, comment_info, setShowEditForm, setComments } = props;
-
   const [formContent, setFormContent] = useState(comment_info);
 
+  /* 
+    Handles changes to form input field
+  */
   const handleChange = (event) => {
     setFormContent(event.target.value);
   };
 
+  /* 
+    Handles the edit comment form input submit
+    Date of updated comment is reset to the 
+    new time updated
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

@@ -7,8 +7,6 @@ import React, {
 } from "react";
 import { useHistory } from "react-router-dom";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
-export const CurrentUserContext = createContext();
-export const SetCurrentUserContext = createContext();
 import axios from "axios";
 import {
   getCookie,
@@ -17,12 +15,22 @@ import {
   shouldRefreshToken,
 } from "../utils/utils";
 
+export const CurrentUserContext = createContext();
+export const SetCurrentUserContext = createContext();
+
 export const useCurrentUser = () => useContext(CurrentUserContext);
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
+
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
+  /*
+    handleMount function that logs user
+    out if their authentication token
+    cookie has expired, request of user
+    data when component is mounted
+  */
   const handleMount = async () => {
     try {
       if (getCookie("refreshTokenTimestamp") === "") {
@@ -39,8 +47,12 @@ export const CurrentUserProvider = ({ children }) => {
     handleMount();
   }, []);
 
+  /* 
+    Handles user authentication tokens
+    If refresh token fails, redirect to
+    log in page
+  */
   useMemo(() => {
-    // always refreshes access token before request
     axiosReq.interceptors.request.use(
       async (config) => {
         if (shouldRefreshPage(config.data)) {
@@ -68,16 +80,17 @@ export const CurrentUserProvider = ({ children }) => {
       }
     );
 
-    // refreshes access_token if 401 error
-
-    // Use for liking, unliking and getting a
+    /*
+      Refreshes access_token if 401 error
+      This request on IOS is returning a 401,
+      which causes the catch block to hit and 
+      then wont login
+    */
     axiosRes.interceptors.response.use(
       (response) => response,
       async (err) => {
         if (err.response?.status === 401) {
           try {
-            // This request on mobile is returning a 401,
-            // which causes the catch block to hit and then wont
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {

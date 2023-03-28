@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 import Asset from "../../components/Asset";
-
 import Upload from "../../assets/upload-img.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
@@ -12,7 +11,6 @@ import btnStyles from "../../styles/Button.module.css";
 import formStyles from "../../styles/PostCreateEditForm.module.css";
 import assetStyles from "../../styles/Asset.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -33,10 +31,12 @@ function PostCreateForm() {
   });
 
   const { title, tags, content, image } = postData;
-
   const imageInput = useRef(null);
   const history = useHistory();
 
+  /* 
+    Handles changes to post create form fields
+  */
   const handleChange = (e) => {
     setPostData({
       ...postData,
@@ -44,6 +44,9 @@ function PostCreateForm() {
     });
   };
 
+  /* 
+    Handles change to the image field (image file)
+  */
   const handleChangeImage = (e) => {
     if (e.target.files.length) {
       URL.revokeObjectURL(image); // clears browser reference to previous file
@@ -54,6 +57,11 @@ function PostCreateForm() {
     }
   };
 
+  /* 
+    Handles submit of post data
+    if unauthenticated posting is
+    not allowed and error is given
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -72,7 +80,9 @@ function PostCreateForm() {
       }
     }
   };
-
+  /* 
+    Form input fields and creation buttons
+  */
   const textFields = (
     <div className="text-center">
       <Form.Group>

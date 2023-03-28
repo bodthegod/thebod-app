@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/ScrollToTopButton.module.css";
 
+/*
+  Button that displays when a user scrolls
+  past a certain point, scrolls user back
+  to top of page with smooth scroll
+*/
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 

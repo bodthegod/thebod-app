@@ -1,5 +1,6 @@
 import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
+
 /*
   Get request to render and update all types of
   data for the InfiniteScroll component
@@ -23,6 +24,7 @@ export const fetchMoreData = async (resource, setResource) => {
     return err;
   }
 };
+
 /*
   Decreases the number of followers by one
   Decreate the number of following users by one
@@ -38,11 +40,11 @@ export const unfollowHelper = (profile, clickedProfile) => {
     ? { ...profile, following_total: profile.following_total - 1 }
     : profile;
 };
+
 /*
   Increases the number of followers by one
   Increases the number of following users by one
 */
-
 export const followHelper = (profile, clickedProfile, following_id) => {
   return profile.id === clickedProfile.id
     ? {

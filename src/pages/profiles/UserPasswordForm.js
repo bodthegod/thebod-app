@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
-
 import appStyles from "../../App.module.css";
 import inputStyles from "../../styles/LogInSignUpForm.module.css";
 import alertStyles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
-
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -26,9 +24,11 @@ const UserPasswordForm = () => {
     new_password2: "",
   });
   const { new_password1, new_password2 } = userData;
-
   const [errors, setErrors] = useState({});
 
+  /* 
+    Handles changes to user password input form fields
+  */
   const handleChange = (event) => {
     setUserData({
       ...userData,
@@ -36,12 +36,20 @@ const UserPasswordForm = () => {
     });
   };
 
+  /*
+    Handles the editing of password, pushes to home
+  */
   useEffect(() => {
     if (currentUser?.profile_id?.toString() !== id) {
       history.push("/");
     }
   }, [currentUser, history, id]);
-
+  
+  /* 
+    Handles the submit of new password data
+    Uses history.goBack() to take user back to
+    last page they were on
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

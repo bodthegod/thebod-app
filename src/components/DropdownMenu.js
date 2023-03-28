@@ -6,24 +6,27 @@ import { TbGridDots } from "react-icons/tb";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
-const DropdownSelect = React.forwardRef(({ onClick }, ref) => (
-  DropdownSelect.displayName="DropdownSelect",
-  <i
-    ref={ref}
-    onClick={(e) => {
-      e.preventDefault();
-      onClick(e);
-    }}
-  >
-    <TbGridDots className={styles.DropdownItem} />
-  </i>
-));
+const DropdownSelect = React.forwardRef(
+  ({ onClick }, ref) => (
+    (DropdownSelect.displayName = "DropdownSelect"),
+    (
+      <i
+        ref={ref}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick(e);
+        }}
+      >
+        <TbGridDots className={styles.DropdownItem} />
+      </i>
+    )
+  )
+);
 
 /*
   Dropdown menu for post owners to choose to edit or delete a post
   Calls the handleEdit & handleDelete functions based on destructured props
 */
-
 export const DropdownMenu = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="mr-auto" drop="right">
@@ -55,8 +58,9 @@ export const DropdownMenu = ({ handleEdit, handleDelete }) => {
     </Dropdown>
   );
 };
+
 /*
-  Dropdown menu on the profile page that
+  Dropdown menu within profile page,
   displays icons for edit user profile & change password
   Makes a fetch request for profile data based on the profile id
 */

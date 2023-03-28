@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
 import styles from "../../styles/Comment.module.css";
-
 import Avatar from "../../components/Avatar";
 import Media from "react-bootstrap/Media";
 import { DropdownMenu } from "../../components/DropdownMenu";
@@ -26,6 +24,11 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const is_owner = currentUser?.username === owner;
 
+  /*
+    Handles delete of comment based on comment id
+    Removes comment and decreases comments_total by 
+    1
+  */
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);

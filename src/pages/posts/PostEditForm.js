@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import inputStyles from "../../styles/LogInSignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import formStyles from "../../styles/PostCreateEditForm.module.css";
 import { CSSTransition } from "react-transition-group";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -33,6 +31,13 @@ function PostEditForm() {
   const history = useHistory();
   const { id } = useParams();
 
+  /*
+    Requests API data about post
+    Doesn't allow other user to edit
+    post that is not owned by them
+    If is not owner and edit is 
+    attempted, redirect to home
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -49,6 +54,9 @@ function PostEditForm() {
     handleMount();
   }, [id, history]);
 
+  /* 
+    Handles changes to the post form fields
+  */
   const handleChange = (e) => {
     setPostData({
       ...postData,
@@ -56,6 +64,9 @@ function PostEditForm() {
     });
   };
 
+  /* 
+    Handles change to the image field (image file)
+  */
   const handleChangeImage = (e) => {
     if (e.target.files.length) {
       URL.revokeObjectURL(image); // clears browser reference to previous file
@@ -66,6 +77,12 @@ function PostEditForm() {
     }
   };
 
+  /* 
+    Handles submit of post data
+    if unauthenticated posting is
+    not allowed and error is given
+    redirects to new post with new id
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -216,7 +233,6 @@ function PostEditForm() {
                   {message}
                 </Alert>
               ))}
-
               <div className="d-md-none">{textFields}</div>
             </Container>
           </Col>

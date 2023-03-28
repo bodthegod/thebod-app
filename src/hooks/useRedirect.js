@@ -5,6 +5,13 @@ import axios from "axios";
 export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
 
+  /*
+    Checks if the user is currently logged in or not
+    If logged in, refresh token
+    Sends user to home page if logged in and out
+    "/" page has different view for loggedIn
+    and loggedOut
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {

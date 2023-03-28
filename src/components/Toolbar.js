@@ -1,15 +1,18 @@
 import React from "react";
 import Link from "react-router-dom/Link";
 import { useLocation } from "react-router-dom";
-
 import styles from "../styles/Toolbar.module.css";
 import appStyles from "../App.module.css";
 import { MdOutlineLibraryAdd, MdOutlineSportsHandball } from "react-icons/md";
 import { RiHeartsFill } from "react-icons/ri";
-
 import Container from "react-bootstrap/Container";
 import ScrollToTopButton from "./ScrollToTopButton";
 
+/*
+  Toolbar menu for a user to access
+  different links, containing "my feed",
+  "my hearts", "+ create post"
+*/
 const Toolbar = () => {
   const { pathname } = useLocation();
   return (

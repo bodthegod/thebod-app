@@ -4,7 +4,7 @@ import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 import styles from "../../styles/LogInSignUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/HomePage.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
 
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -117,7 +117,7 @@ const LogInForm = () => {
                 </Alert>
               ))}
               <Button
-                className={` ${btnStyles.Button} ${styles.LogInSignUpButton}`}
+                className={` ${btnStyles.HomeButton} ${styles.LogInSignUpButton}`}
                 type="submit"
               >
                 Log In!

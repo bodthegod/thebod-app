@@ -4,7 +4,7 @@ import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
 
 import styles from "../../styles/LogInSignUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/HomePage.module.css";
 import CSSTransition from "react-transition-group/CSSTransition";
 import { TbUserPlus } from "react-icons/tb";
 
@@ -122,7 +122,7 @@ const SignUpForm = () => {
                 </Alert>
               ))}
               <Button
-                className={`${btnStyles.Button} ${styles.LogInSignUpButton}`}
+                className={`${btnStyles.HomeButton} ${styles.LogInSignUpButton}`}
                 type="submit"
               >
                 Create account!

@@ -19,7 +19,7 @@ const PopularProfiles = () => {
           <p className={`${styles.MostFollowedBloggers} text-center`}>
             <BiCrown size={25} className={styles.CrownIcon} /> Most Followed
           </p>
-          {popularProfiles.results.map((profile) => (
+          {popularProfiles.results.slice(0, 5).map((profile) => (
             <Profile key={profile.id} profile={profile} />
           ))}
         </>

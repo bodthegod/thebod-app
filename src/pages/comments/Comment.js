@@ -7,6 +7,7 @@ import Avatar from "../../components/Avatar";
 import Media from "react-bootstrap/Media";
 import { DropdownMenu } from "../../components/DropdownMenu";
 import CommentEditForm from "./CommentEditForm";
+import UserFeedbackCue from "../../components/UserFeedbackCue";
 
 const Comment = (props) => {
   const {
@@ -23,6 +24,8 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const [showEditForm, setShowEditForm] = useState(false);
   const is_owner = currentUser?.username === owner;
+  const [showAlert, setShowAlert] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   /*
     Handles delete of comment based on comment id
@@ -30,28 +33,34 @@ const Comment = (props) => {
     1
   */
   const handleDelete = async () => {
-    try {
-      await axiosRes.delete(`/comments/${id}/`);
-      setPost((prevPost) => ({
-        results: [
-          {
-            ...prevPost.results[0],
-            comments_total: prevPost.results[0].comments_total - 1,
-          },
-        ],
-      }));
+    setIsDeleted(true);
+    setTimeout(async () => {
+      try {
+        await axiosRes.delete(`/comments/${id}/`);
+        setPost((prevPost) => ({
+          results: [
+            {
+              ...prevPost.results[0],
+              comments_total: prevPost.results[0].comments_total - 1,
+            },
+          ],
+        }));
 
-      setComments((prevComments) => ({
-        ...prevComments,
-        results: prevComments.results.filter((comment) => comment.id !== id),
-      }));
-    } catch (err) {
-      return err;
-    }
+        setComments((prevComments) => ({
+          ...prevComments,
+          results: prevComments.results.filter((comment) => comment.id !== id),
+        }));
+      } catch (err) {
+        return err;
+      }
+    }, 2000);
   };
 
-  return (
+  return isDeleted ? (
+    <UserFeedbackCue variant="Info" message="Comment deleted" />
+  ) : (
     <div>
+      {showAlert && <UserFeedbackCue variant="Info" message="Comment edited" />}
       <Media>
         <Link to={`/profiles/${profile_id}`} className="my-2">
           <Avatar src={profile_image} />
@@ -77,6 +86,7 @@ const Comment = (props) => {
               comment_info={comment_info}
               setShowEditForm={setShowEditForm}
               setComments={setComments}
+              setShowAlert={setShowAlert}
             />
           ) : (
             <p>{comment_info}</p>

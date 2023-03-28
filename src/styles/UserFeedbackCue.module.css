@@ -1,0 +1,35 @@
+/* user feedback cue message box */
+.Alert {
+  position: relative;
+  padding: 1rem 1rem;
+  border: 0.5px solid transparent;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.Info {
+  background-color: #e4cffc;
+  border-color: #e4cffc;
+}
+
+/* The close button */
+.Close {
+  margin-left: 20px;
+  color: darkslategray;
+  font-weight: bold;
+  float: right;
+  font-size: 18px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* When moving the mouse over the close button */
+.Close:hover {
+  color: #9d4edd;
+}
+
+.Hidden {
+  display: none;
+}

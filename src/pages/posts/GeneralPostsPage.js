@@ -92,9 +92,20 @@ function GeneralPostsPage({ message, filter = "" }) {
                     loader={<Asset spinner />}
                     hasMore={!!posts.next}
                     next={() => fetchMoreData(posts, setPosts)}
-                  >{posts.results.map((post) => (
-                    <Post key={post.id} {...post} setPosts={setPosts} />
-                  ))}</InfiniteScroll>
+                  >
+                    {posts.results.map((post) => (
+                      <Post
+                        key={post.id}
+                        content={
+                          post.content.length > 200
+                            ? post.content.slice(0, 200) + " ....."
+                            : post.content
+                        }
+                        {...post}
+                        setPosts={setPosts}
+                      />
+                    ))}
+                  </InfiniteScroll>
                 ) : (
                   <Container className={appStyles.Content}>
                     <Asset

@@ -91,7 +91,7 @@ function PostEditForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Edit your title:</Form.Label>
+        <Form.Label>Change title?</Form.Label>
         {errors.title?.map((message, idx) => (
           <Alert variant="warning" className={styles.AlertStyles} key={idx}>
             {message}
@@ -108,7 +108,7 @@ function PostEditForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Tags</Form.Label>
+        <Form.Label>Change Tag?</Form.Label>
         {errors.tags?.map((message, idx) => (
           <Alert variant="warning" className={styles.AlertStyles} key={idx}>
             {message}
@@ -135,7 +135,7 @@ function PostEditForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Edit your description:</Form.Label>
+        <Form.Label>Edit your description?</Form.Label>
         <Form.Control
           as="textarea"
           rows={5}

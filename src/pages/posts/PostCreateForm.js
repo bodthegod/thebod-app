@@ -76,7 +76,7 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Enter your title:</Form.Label>
+        <Form.Label>Give your post a title!</Form.Label>
         <Form.Control
           type="text"
           name="title"
@@ -92,7 +92,7 @@ function PostCreateForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Tags</Form.Label>
+        <Form.Label>Choose a Tag</Form.Label>
         {errors.tags?.map((message, idx) => (
           <Alert variant="warning" className={styles.AlertStyles} key={idx}>
             {message}
@@ -118,7 +118,7 @@ function PostCreateForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Describe your post!</Form.Label>
+        <Form.Label>Describe your post, blogger!</Form.Label>
         <Form.Control
           as="textarea"
           rows={5}

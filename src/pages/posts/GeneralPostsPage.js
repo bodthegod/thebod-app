@@ -128,8 +128,8 @@ function GeneralPostsPage({ message, filter = "" }) {
             <Container
               className={`${appStyles.Content} mb-3 mt-3 d-none d-lg-block`}
             >
-              <p className=" font-weight-bold text-center">
-                Search by Post Tags
+              <p className={`${styles.PostTags} font-weight-bold text-center`}>
+              <i className={`${styles.TagIcon} fas fa-tag`} ></i> Search by Post Tags
               </p>
               <Badge
                 variant="primary"

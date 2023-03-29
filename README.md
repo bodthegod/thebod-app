@@ -48,33 +48,34 @@ This blog is for all fitness lovers, amateur or expert- to share their healthy a
 The goal of this project was for me to put a twist on a usual blog, add interactive and fun colour schemes and relate it to fitness- a topic I am passionate about. I really wanted this website to engage the user and have a fun and refreshing feel to it.
 
 Required functions that my website needed:
-- Good user experience and a clear understanding of the user flow
-- User engagement (posting, liking, commenting, following)
-- User login authentication status
-- Full CRUD functionality for posts, comments, likes, followers and profile data
-- Profiles that could be personalised (images, bio)
-- Filtering posts by tags
-- Filtering posts by search functionality of data related to a post (title, user)
-- Like filtering by viewing all previously liked posts
-- Feed filtering by viewing all followed user's posts
-- Mobile responsiveness for website to be fully functionable and accesable on different screen sizes
+
+1. Good user experience and a clear understanding of the user flow
+2. User engagement (posting, liking, commenting, following)
+3. User login authentication status
+4. Full CRUD functionality for posts, comments, likes, followers and profile data
+5. Profiles that could be personalised (images, bio)
+6. Filtering posts by tags
+7. Filtering posts by search functionality of data related to a post (title, user)
+8. Like filtering by viewing all previously liked posts
+9. Feed filtering by viewing all followed user's posts
+10. Mobile responsiveness for website to be fully functionable and accessable on different screen sizes
 
 
 ## User Stories
 
-#### Navigation 
+#### Navigation (Project Goal # Covered: 1, 3)
 
 1. As a user I can view the home page so that I can understand the use and purpose of the blog site
 2. As a user I can view the navigation bar at all times so that I have easy access to switch to any page for good user experience
 3. As a previous or new user I can view the log in and sign up buttons so that I can log into an account or create an account
  
-#### Authentication 
+#### Authentication (Project Goal # Covered: 1, 3)
 
 4. As a new or existing user I can create an account so that I can access all login required features to the website
 5. As a previous user I can log into my account so that I can access all features for a logged in user
 6. As a user I can remain logged in when changing pages so that I can use the app as I please until I log out
 
-#### Posts
+#### Posts (Project Goal # Covered: 1, 2, 4, 9)
 
 7. As a user I can post content on the website so that I can keep my following users up to date on my fitness goals, and upload images
 8. As a user I can view the tags related to a post so that I can see how relevant the content is to me as a user
@@ -82,7 +83,7 @@ Required functions that my website needed:
 10. As a user I can view any other user's specific posts so that I can see all the latest activity on their posts, and see all previous posts they have made
 11. As a user I can view the date a post was uploaded on so that I can know how time relevant the post is, and if it is worth viewing
 
-#### Post Detail Page 
+#### Post Detail Page (Project Goal # Covered: 1, 2, 4, 6, 7)
 
 12. As a user I can view more information on a specific post so that I can see the entirety of the content related to the post they have made
 13. As a user I can view posts that are associated with tags so that I can search for more specific results catered to me
@@ -92,16 +93,16 @@ Required functions that my website needed:
 17. As a user I can click the delete comment button so that I can remove any comments I have made if I choose to 
 18. As a user I can edit my posts so that I can change the content in my post if I choose to  
 
-#### Main feed page
+#### Main feed page (Project Goal # Covered: 1, 2, 6, 8, 9)
 
 19. As a user I can view the most recent posts so that I can view the newest and therefor most date relevant content on my feed
 20. As a user I can infinitely scroll the website so that I can easily view all posts on the site without interruption
 21. As a user I can view the posts that I have previously liked so that I can freely view the content that I like or find informative
 22. As a user I can view a list of all relevant posts so that I can see content that has been uploaded by the users I follow
 23. As a user I can use the search bar so that I can filter the content I want to see
-24.As a user I can view posts that are associated with tags so that I can search for more specific results catered to me
+24. As a user I can view posts that are associated with tags so that I can search for more specific results catered to me
 
-#### Profile Page 
+#### Profile Page (Project Goal # Covered: 1, 4, 5)
 
 25. As a user I can upload a profile picture so that I can style my profile to make me recognisable
 26. As a user I can view other user's profile pictures so that I can identify the user by their image
@@ -109,14 +110,14 @@ Required functions that my website needed:
 28. As a user I can update my profile bio so that I can write a little about myself and personalise my own profile
 29. As a user I can change my password so that I can keep my profile secure
 
-#### Other Site Users
+#### Other Site Users (Project Goal # Covered: 1, 2)
 30. As a user I can view any other user's specific posts so that I can see all the latest activity on their posts, and see all previous posts they have made
 31. As a user I can view other profiles so that I can stay up to date on their following, followed and posts
 32. As a user I can view a profile picture and a name so that I can check a user's profile page
 33. As a user I can view the most popular profiles so that I can see who the most followed users on the site are
 34. As a user I can use the follow and unfollow buttons on a user so that I can choose what content I want to see on my feed, and filter the content
 
-#### User Experience
+#### User Experience(Project Goal # Covered: 1, 10)
 
 35. As a site owner I want my blog app to be responsive so that my users can view the website on any device they choose with any screen size
 36. As a user I can view a no results found error page so that I know the page I am on has no content

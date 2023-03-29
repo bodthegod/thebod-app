@@ -117,7 +117,7 @@ Required functions that my website needed:
 33. As a user I can view the most popular profiles so that I can see who the most followed users on the site are
 34. As a user I can use the follow and unfollow buttons on a user so that I can choose what content I want to see on my feed, and filter the content
 
-#### User Experience(Project Goal # Covered: 1, 10)
+#### User Experience (Project Goal # Covered: 1, 10)
 
 35. As a site owner I want my blog app to be responsive so that my users can view the website on any device they choose with any screen size
 36. As a user I can view a no results found error page so that I know the page I am on has no content
@@ -1149,6 +1149,11 @@ To store static files within this app, I used Cloudinary as a media library to a
 
 6. Make sure all related cloudinary packages are installed in your API `requirements.txt` (can be found [here](https://www.npmjs.com/package/cloudinary))
 
+## ElephantSQL
+
+In order to host my backend database, I had to use ElephantSQL to allow me to manage administrative tasks of PostgreSQL. [Here](https://www.elephantsql.com/docs/#:~:text=It%20is%20easy%20to%20get,press%20the%20Log%20in%20button.) is a brilliant guide to get you setup.
+
+- Once you have setup your ElephantSQL database, you must go into your backend `env.py` file, and set `os.environ.setdefault("DATABASE_URL", "postgres://yourelephantsqlurlhere...")` to your given URL.
 
 ### Forking the GitHub Repository
 

@@ -16,6 +16,7 @@
   - [User Stories](#user-stories)
   - [Design Choices](#design-choices)
     - [Colour Scheme](#colour-scheme)
+    - [Animations](#animations)
     - [Fonts](#fonts)
     - [Wireframes](#wireframes)
   - [Technologies Used](#technologies-used)
@@ -131,7 +132,23 @@ My colour scheme that I decided to use within my app was aimed to fun and intera
 
 Furthermore, I kept the toolbar icon colour scheme consistent using a teal colour for the "create post" icon (#51a7a7), a red for the "liked posts"/ "my hearts" icon (#e52828) and finally a dark blue colour (#493fd4) for the "my feed" icon. I wanted these icons to have specific colours for a user to easily identify what they want to do and have an intuitive experience on my site.
 
+One of the main aims of this colour scheme within my project was to make a fitness blog that was inclusive, for anybody of all ages to use and feel welcomed to share their fitness experiences.
+
 <img src="docs/readme/thebod-colourscheme.png">
+
+### Animations
+
+When building this website, I really wanted to keep it fun- so I added my own twist to it. These are the animations I have used:
+- When loading the page, I have faded the navbar in from top to bottom, to keep it fun for the user.
+- When hovering over icons, I have added a shake to navbar icons, and gentleshake to smaller icons to allow user interactivity. This makes it intuitive to a user when navigating the website.
+- When hovering over profile pictures, there is a gentleshake to allow the user to understand what they are hovered over.
+- When navigating to a new page, I have applied a fade in to allow for the replicated smooth animation similar to the navbar.
+- In the "Most Followed" Section, I have added a slight tilt animation to prompt a user that the most followed section is special.
+- In the "Search by Post Tags" Section, I have added a slight bounce-right animation to prompt to a user that tags searching is possible.
+- The scroll to top button is also animated, bouncing up and down slighlty to give a visual cue to the user that they can use it to navigate up. This fades in once the website has been scrolled down to a certain point.
+- The "Follow" and "Unfollow" button on the profile page has a slight bounce to imply that it has a use.
+- Buttons throughout the website have a gentleshake when hovering, again adding interactivity and a fun user experience.
+
 
 ### Fonts
 

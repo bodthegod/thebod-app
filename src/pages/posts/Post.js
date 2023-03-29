@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "react-router-dom/Link";
 import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -15,6 +15,7 @@ import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { axiosReq } from "../../api/axiosDefaults";
+import UserFeedbackCue from "../../components/UserFeedbackCue";
 
 const Post = (props) => {
   const {
@@ -36,6 +37,7 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+  const [showPostMsg, setShowPostMsg] = useState(false);
 
   /*
     Allows for edit of post by id
@@ -51,7 +53,10 @@ const Post = (props) => {
   const handleDelete = async () => {
     try {
       await axios.delete(`/posts/${id}/`);
-      history.push("/");
+      setShowPostMsg(true);
+      setTimeout(function () {
+        history.push("/");
+      }, 2000);
     } catch (err) {
       return err;
     }
@@ -111,6 +116,9 @@ const Post = (props) => {
       classNames="fade"
     >
       <Card className={styles.Post}>
+        {showPostMsg && (
+          <UserFeedbackCue variant="Info" message="This post is being deleted...!" />
+        )}
         <Card.Body>
           <Media className={styles.Container}>
             <Link to={`/profiles/${profile_id}`}>

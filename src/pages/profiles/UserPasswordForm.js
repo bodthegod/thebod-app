@@ -13,6 +13,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+import UserFeedbackCue from "../../components/UserFeedbackCue";
 
 const UserPasswordForm = () => {
   const history = useHistory();
@@ -24,6 +25,7 @@ const UserPasswordForm = () => {
     new_password2: "",
   });
   const { new_password1, new_password2 } = userData;
+  const [showPasswordMsg, setPasswordMsg] = useState();
   const [errors, setErrors] = useState({});
 
   /* 
@@ -44,7 +46,7 @@ const UserPasswordForm = () => {
       history.push("/");
     }
   }, [currentUser, history, id]);
-  
+
   /* 
     Handles the submit of new password data
     Uses history.goBack() to take user back to
@@ -54,7 +56,10 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
-      history.goBack();
+      setPasswordMsg(true);
+      setTimeout(function () {
+        history.goBack();
+      }, 2000);
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -69,6 +74,12 @@ const UserPasswordForm = () => {
     >
       <Row>
         <Col className="py-2 mx-auto text-center font-weight-bold" md={10}>
+          {showPasswordMsg && (
+            <UserFeedbackCue
+              variant="Info"
+              message="Password changed! Taking you back, blogger!"
+            />
+          )}
           <Container className={appStyles.Content}>
             <Form onSubmit={handleSubmit}>
               <Form.Group>

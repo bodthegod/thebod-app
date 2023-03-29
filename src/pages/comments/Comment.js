@@ -24,8 +24,8 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const [showEditForm, setShowEditForm] = useState(false);
   const is_owner = currentUser?.username === owner;
-  const [showAlert, setShowAlert] = useState(false);
-  const [isDeleted, setIsDeleted] = useState(false);
+  const [showCommentMsg, setCommentMsg] = useState(false);
+  const [wasDeleted, setWasDeleted] = useState(false);
 
   /*
     Handles delete of comment based on comment id
@@ -33,7 +33,7 @@ const Comment = (props) => {
     1
   */
   const handleDelete = async () => {
-    setIsDeleted(true);
+    setWasDeleted(true);
     setTimeout(async () => {
       try {
         await axiosRes.delete(`/comments/${id}/`);
@@ -56,11 +56,14 @@ const Comment = (props) => {
     }, 2000);
   };
 
-  return isDeleted ? (
-    <UserFeedbackCue variant="Info" message="Comment deleted" />
+  return wasDeleted ? (
+    <UserFeedbackCue variant="Info" message="Comment deleted!" />
   ) : (
     <div>
-      {showAlert && <UserFeedbackCue variant="Info" message="Comment edited" />}
+      {showCommentMsg && (
+        <UserFeedbackCue variant="Info" message="Comment edited!" />
+      )}
+
       <Media>
         <Link to={`/profiles/${profile_id}`} className="my-2">
           <Avatar src={profile_image} />
@@ -84,9 +87,9 @@ const Comment = (props) => {
               profile_id={profile_id}
               profile_image={profile_image}
               comment_info={comment_info}
-              setShowEditForm={setShowEditForm}
               setComments={setComments}
-              setShowAlert={setShowAlert}
+              setShowEditForm={setShowEditForm}
+              setCommentMsg={setCommentMsg}
             />
           ) : (
             <p>{comment_info}</p>

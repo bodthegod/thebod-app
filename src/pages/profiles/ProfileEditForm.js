@@ -17,6 +17,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
+import UserFeedbackCue from "../../components/UserFeedbackCue";
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -31,7 +32,7 @@ const ProfileEditForm = () => {
     image: "",
   });
   const { name, content, image } = profileData;
-
+  const [showProfileMsg, setProfileMsg] = useState(false);
   const [errors, setErrors] = useState({});
 
   /*
@@ -86,7 +87,10 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
-      history.goBack();
+      setProfileMsg(true);
+      setTimeout(function () {
+        history.goBack();
+      }, 2000);
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -95,6 +99,12 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
+        {showProfileMsg && (
+          <UserFeedbackCue
+            message="Profile updated! Taking you back, blogger!"
+            variant="Info"
+          />
+        )}
         <Form.Label className="font-weight-bold">My Profile bio:</Form.Label>
         <Form.Control
           as="textarea"

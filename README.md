@@ -1092,6 +1092,64 @@ I am aware of the issues that arise on IOS devices however due to the lack of `l
 
 ## Configuring this App
 
+### Heroku Deployment
+
+To deploy this project, I have used Heroku.
+These are the steps used for deployment to Heroku:
+
+1. Head over to heroku to create new app and click "New" on the top right, select create new app.
+<details><summary>Step 1</summary>
+<img src="docs/readme/heroku/herokudeploy-1.jpg">
+</details>
+
+2. You should be displayed with a page named "Create New App", enter your chosen app name and region closest to you here.
+<details><summary>Step 2</summary>
+<img src="docs/readme/heroku/herokudeploy-2.jpg">
+</details>
+
+3. Once created, go to the new page for your heroku project, and click on the "Deploy" tab- then click on GitHub in the "Deployment Method" section. Once clicked, type in your GitHub repository name and click "Connect". 
+<details><summary>Step 3</summary>
+<img src="docs/readme/heroku/herokudeploy-3.jpg">
+</details>
+
+4. You can then click on the black button named "Deploy Branch". This will build and deploy your project using heroku. 
+<details><summary>Step 4</summary>
+<img src="docs/readme/heroku/herokudeploy-4.jpg">
+</details>
+
+Make sure you have a `Procfile` with this line of code in it `web: serve -s build` to configure your dynos.
+
+5. An "Open App" button will apear on the top right, click it to open your newly deployed project.
+<details><summary>Step 5</summary>
+<img src="docs/readme/heroku/herokudeploy-5.jpg">
+</details>
+
+Your repository is now deployed to heroku! 
+
+### Cloudinary
+
+To store static files within this app, I used Cloudinary as a media library to allow me to get and post images. In order to use Cloudinary, first:
+
+1. Create a Cloudinary account by linking your GitHub Profile.
+2. Navigate to "Dashboard" on the left
+
+<details><summary>Step</summary>
+<img src="docs/readme/cloudinary/cloudinarydeploy-1.jpg">
+</details>
+
+3. Use this API Environment variable to serve the static files within the `settings.py` file in your chosen API repository.
+
+4. Add these lines of code to your `settings.py` file:
+`CLOUDINARY_STORAGE = {'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')}`
+`MEDIA_URL = '/media/'`
+`DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
+
+5. Make sure that you create and `env.py` file to store your hidden environment variables, and define the `CLOUDINARY_URL` here:
+`os.environ['CLOUDINARY_URL'] = 'cloudinary://yourcloudinaryurlhere...'`
+
+6. Make sure all related cloudinary packages are installed in your API `requirements.txt` (can be found [here](https://www.npmjs.com/package/cloudinary))
+
+
 ### Forking the GitHub Repository
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...

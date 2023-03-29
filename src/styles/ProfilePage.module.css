@@ -105,7 +105,6 @@
 }
 
 /* Avatar media query to change image size for smaller screens */
-
 @media screen and (max-width: 850px) {
   .UserAvatar {
     width: 160px;
@@ -113,8 +112,7 @@
   }
 }
 
-/* Button animations */
-
+/* Button bounce and shake animations */
 @keyframes bounce {
   to {
     transform: scale(1.03);

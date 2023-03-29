@@ -3,11 +3,9 @@ import Link from "react-router-dom/Link";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 import Avatar from "../../components/Avatar";
-
 import btnStyles from "../../styles/CommentCreateEditForm.module.css";
 import styles from "../../styles/Profile.module.css";
 import { AiOutlineUserAdd, AiOutlineUserDelete } from "react-icons/ai";
-
 import Button from "react-bootstrap/Button";
 
 const Profile = (props) => {
@@ -30,6 +28,8 @@ const Profile = (props) => {
         <strong>{owner}</strong>
       </div>
       <div className={`text-center`}>
+        {/* Displays follow/unfollow buttons, button does not appear if on
+        own account */}
         {currentUser &&
           !is_owner &&
           (following_id ? (

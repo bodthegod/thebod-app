@@ -35,6 +35,7 @@ function App() {
           </Switch>
         ) : (
           <Switch>
+            {/* General posts home route */}
             <Route
               exact
               path="/"
@@ -42,6 +43,7 @@ function App() {
                 <GeneralPostsPage message="No results found, try another keyword or tag?" />
               )}
             />
+            {/* Feed route */}
             <Route
               exact
               path="/feed"
@@ -52,6 +54,7 @@ function App() {
                 />
               )}
             />
+            {/* Liked posts route */}
             <Route
               exact
               path="/liked"

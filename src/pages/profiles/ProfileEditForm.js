@@ -81,6 +81,10 @@ const ProfileEditForm = () => {
       formData.append("image", imageFile?.current?.files[0]);
     }
 
+    /* 
+    When profile has been edited, displays
+    edit confirmation message
+  */
     try {
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
       setCurrentUser((currentUser) => ({

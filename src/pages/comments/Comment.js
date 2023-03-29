@@ -56,6 +56,9 @@ const Comment = (props) => {
     }, 2000);
   };
 
+  /* 
+    When comment deleted, return "deleted" message
+  */
   return wasDeleted ? (
     <UserFeedbackCue variant="Info" message="Comment deleted!" />
   ) : (

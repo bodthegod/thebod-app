@@ -7,7 +7,9 @@ export default function UserFeedbackCue({ variant, message }) {
   const [isShown, setIsShown] = useState(true);
 
   /*
-    Handles closing of the alert message
+    Handles closing of the alert message, 
+    displays userfeedbackcue for visual
+    confirmation to user interactions
   */
   const handleClose = (e) => {
     e.preventDefault();

@@ -50,7 +50,8 @@ const UserPasswordForm = () => {
   /* 
     Handles the submit of new password data
     Uses history.goBack() to take user back to
-    last page they were on
+    last page they were on- displays password
+    edited message
   */
   const handleSubmit = async (event) => {
     event.preventDefault();
